@@ -1,0 +1,49 @@
+set guioptions-=T
+
+color molokai
+" color mustang
+" color railscast2
+" color tirblack
+" color wombat
+" set guifont=Monaco:h14.00
+set guifont=Inconsolata\ for\ Powerline:h17
+set wildmenu
+
+function! InsertStatuslineColor(mode)
+  if a:mode == 'i'
+    hi statusline guibg=magenta
+  elseif a:mode == 'r'
+    hi statusline guibg=blue
+  else
+    hi statusline guibg=red
+  endif
+endfunction
+
+au InsertEnter * call InsertStatuslineColor(v:insertmode)
+au InsertLeave * hi statusline guibg=green
+
+" default the statusline to cyan when entering Vim
+hi statusline guibg=cyan
+
+" strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+if has("gui_macvim") && has("gui_running")
+  " Command-Shift-F on OSX
+  nmap <D-S-F> :Ack<space>
+endif
+
+nnoremap <silent> <leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
+
+set autoindent
+set smartindent
+" noexpandtab to insert tabs instead of spaces in new lines
+" expandtab to insert spaces instead in new lines
+set noexpandtab tabstop=4 shiftwidth=4 smarttab softtabstop=4
+
+set cursorline
+set cursorcolumn
+" show invisible
+set list listchars=tab:▸─,trail:·,extends:»,precedes:«,nbsp:×
+hi NonText ctermfg=16 guifg=#4a4a59
+hi SpecialKey ctermfg=16 guifg=#4a4a59

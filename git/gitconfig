@@ -1,0 +1,8 @@
+[user]
+	name = Alejandro Ventura Contreras
+	email = venturacontreras@icloud.com
+[color]
+	ui = true
+[core]
+	excludesfile = /Users/alexventura/.gitignore_global
+	editor = vim

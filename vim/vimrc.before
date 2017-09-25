@@ -1,0 +1,4 @@
+" Re-map default <leader> key
+let mapleader = ","
+" show hidden files by default
+let NERDTreeShowHidden=1
