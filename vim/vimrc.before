@@ -2,3 +2,10 @@
 let mapleader = ","
 " show hidden files by default
 let NERDTreeShowHidden=1
+" Setting up a status bar theme
+let g:airline_theme='simple'
+" let g:airline_theme='murmur'
+" let g:airline_theme='sol'
+" let g:airline_theme='cobalt2'
+" let g:airline_theme='light'
+" let g:airline_theme='powerlineish'

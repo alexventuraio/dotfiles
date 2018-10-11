@@ -7,6 +7,7 @@ color molokai
 " color wombat
 " set guifont=Monaco:h14.00
 set guifont=Inconsolata\ for\ Powerline:h17
+" set guifont=Operator\ Mono:h16
 set wildmenu
 
 function! InsertStatuslineColor(mode)
@@ -39,7 +40,7 @@ set autoindent
 set smartindent
 " noexpandtab to insert tabs instead of spaces in new lines
 " expandtab to insert spaces instead in new lines
-set noexpandtab tabstop=4 shiftwidth=4 smarttab softtabstop=4
+"set noexpandtab tabstop=4 shiftwidth=4 smarttab softtabstop=4
 
 set cursorline
 set cursorcolumn
@@ -47,3 +48,7 @@ set cursorcolumn
 set list listchars=tab:▸─,trail:·,extends:»,precedes:«,nbsp:×
 hi NonText ctermfg=16 guifg=#4a4a59
 hi SpecialKey ctermfg=16 guifg=#4a4a59
+
+" Set a line length marker
+set colorcolumn=100
+highlight ColorColumn ctermbg=black guibg=#4a4a59

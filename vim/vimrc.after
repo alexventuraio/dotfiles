@@ -1,0 +1,39 @@
+:set t_Co=256
+:set autoindent
+:set smartindent
+
+" Enable cursor line position tracking:
+color elflord
+
+" Highlight the current line and column
+:set cursorline
+:set cursorcolumn
+
+" Set cursorline and column colors
+" defines a gray colour horizontal
+:hi CursorLine ctermbg=238
+:hi CursorColumn ctermbg=238
+
+" If you want to turn the underline on use either one of:
+":hi CursorLine cterm=underline
+":hi CursorLine gui=underline
+
+" Otherwise use one of those:
+:hi CursorLine cterm=none
+:hi CursorLine gui=none
+
+" Set line numbering to red background on the Cursosr
+":highlight CursorLineNR ctermbg=red
+" Set colors for the line numbers panel with Cursosr to bold and red
+:highlight CursorLineNR term=bold cterm=bold ctermbg=gray ctermfg=red
+
+" Set colors for the line numbers panel
+":hi LineNr term=bold cterm=bold ctermfg=2
+:hi LineNr term=bold cterm=bold ctermfg=2 guifg=Grey guibg=Grey90
+
+" Set background colors for the line numbers panel
+highlight LineNr ctermbg=234
+
+" Set a line length marker
+set colorcolumn=100
+highlight ColorColumn ctermbg=black
