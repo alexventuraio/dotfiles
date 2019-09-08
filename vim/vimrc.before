@@ -16,3 +16,6 @@ let g:UltiSnipsSnippetDirectories=["~/Dropbox/Code/dotfiles/vim/UltiSnips", "Ult
 let g:UltiSnipsExpandTrigger="<tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Run tests with colors vroom.vim
+let g:vroom_use_colors=1
