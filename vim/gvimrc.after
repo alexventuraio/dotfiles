@@ -52,3 +52,8 @@ hi SpecialKey ctermfg=16 guifg=#4a4a59
 " Set a line length marker
 set colorcolumn=100
 highlight ColorColumn ctermbg=black guibg=#4a4a59
+
+" Clear highlights on hitting 'ESC' twice
+nnoremap <esc><esc> :noh<return>
+
+filetype plugin indent on

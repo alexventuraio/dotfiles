@@ -37,3 +37,6 @@ highlight LineNr ctermbg=234
 " Set a line length marker
 set colorcolumn=100
 highlight ColorColumn ctermbg=black
+
+" Clear highlights on hitting 'ESC' twice
+nnoremap <esc><esc> :noh<return>
