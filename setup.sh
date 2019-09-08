@@ -90,10 +90,10 @@ git clone https://github.com/itchyny/lightline.vim
 git clone https://github.com/mattn/emmet-vim.git
 git clone https://github.com/mxw/vim-jsx.git
 git clone https://github.com/pangloss/vim-javascript.git
+git clone https://github.com/prettier/vim-prettier
 git clone https://github.com/jlanzarotta/bufexplorer
 git clone https://github.com/tpope/vim-bundler
 git clone https://github.com/tpope/vim-rails
-git clone https://github.com/prettier/vim-prettier
 vim -u NONE -c "helptags vim-rails/doc" -c q
 
 # - Configure custom files for Janus vim
