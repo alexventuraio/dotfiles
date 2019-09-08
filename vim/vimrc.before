@@ -19,3 +19,6 @@ let g:UltiSnipsEditSplit="vertical"
 
 " Run tests with colors vroom.vim
 let g:vroom_use_colors=1
+
+" Redefine the trigger key for Emmet-vim (,,)
+let g:user_emmet_leader_key=','
