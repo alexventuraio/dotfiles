@@ -77,6 +77,6 @@ cask "typora"
 # ——————— Other less common utilities ———————
 # brew "qt55"
 # brew "imagemagick"
-# cask "zoom"
+# cask "zoomus"
 # cask "sitesucker"
 # cask "transmission"
