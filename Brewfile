@@ -59,6 +59,7 @@ cask "bartender"
 cask "bitbar"
 cask "dropbox"
 # cask "flash"
+cask "hyperswitch"
 # cask 'insomnia'
 cask "macpass"
 cask "muzzle"
@@ -72,6 +73,7 @@ cask "sourcetree"
 cask "spotify"
 cask "tableplus"
 cask "teamviewer"
+cask "time-out"
 # cask "the-unarchiver"		    # don't know which one ...
 cask "typora"
 # ——————— Other less common utilities ———————
