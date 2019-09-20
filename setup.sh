@@ -66,6 +66,17 @@ fancy_echo "Installing Rails..."
 gem install rails --no-document
 rails --version
 
+# - Install NodeJs
+fancy_echo "Installing NVM for node..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+fancy_echo "Verifying installation..."
+command -v nvm
+fancy_echo "Installing NodeJs LTS version..."
+# https://github.com/nvm-sh/nvm#long-term-support
+nvm install --lts
+fancy_echo "Installing Prettier for vim-prettier plugin..."
+npm install --global prettier
+
 # - Setup custom Cobalt2 theme for oh-my-zsh
 fancy_echo "Setting up theme for oh-my-zsh..."
 cp zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-theme
