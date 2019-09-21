@@ -26,5 +26,18 @@ let g:vroom_use_colors=1
 " -- Redefine the trigger key for Emmet-vim to double comma (,,)
 let g:user_emmet_leader_key=','
 
+" -- Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
+
+" -- (Hopefully) removes the delay when hitting ESC in insert mode
+set ttimeout
+set ttimeoutlen=1
+set listchars=tab:>-,trail:~,extends:>,precedes:<,space:.
+set ttyfast
+
 " -- Autoindent files based on its type
 filetype plugin indent on
