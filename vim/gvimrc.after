@@ -1,66 +1,44 @@
 set guioptions-=T
 
-" Config for material colorscheme
+" -- Config for material colorscheme
 let g:material_terminal_italics = 1
 let g:material_theme_style = 'darker'
 let g:lightline = { 'colorscheme': 'material_vim' }
 colorscheme material
 
-" Other possible colorschemes
+" -- Other possible colorschemes
 " color molokai
 " color mustang
 " color railscast2
 " color tirblack
 " color wombat
+
+" -- Configure font
 " set guifont=Monaco:h14.00
-set guifont=Inconsolata\ for\ Powerline:h17
 " set guifont=Operator\ Mono:h16
-set wildmenu
+set guifont=Inconsolata\ for\ Powerline:h17
 
-function! InsertStatuslineColor(mode)
-  if a:mode == 'i'
-    hi statusline guibg=magenta
-  elseif a:mode == 'r'
-    hi statusline guibg=blue
-  else
-    hi statusline guibg=red
-  endif
-endfunction
-
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * hi statusline guibg=green
-
-" default the statusline to cyan when entering Vim
-hi statusline guibg=cyan
-
-" strip trailing whitespace on save
+" -- Strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-if has("gui_macvim") && has("gui_running")
-  " Command-Shift-F on OSX
-  nmap <D-S-F> :Ack<space>
-endif
-
+" -- Shorcut to execute :ClearCtrlPCache
 nnoremap <silent> <leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
 
+" -- Config to show tab symbols
 set autoindent
 set smartindent
-" noexpandtab to insert tabs instead of spaces in new lines
-" expandtab to insert spaces instead in new lines
-"set noexpandtab tabstop=4 shiftwidth=4 smarttab softtabstop=4
+" -- noexpandtab to insert tabs instead of spaces in new lines
+" -- expandtab to insert spaces instead in new lines
+set noexpandtab tabstop=4 shiftwidth=4 smarttab softtabstop=4
 
+" -- Show tracking lines for the cursor
 set cursorline
 set cursorcolumn
-" show invisible
+" -- show invisible
 set list listchars=tab:▸─,trail:·,extends:»,precedes:«,nbsp:×
 hi NonText ctermfg=16 guifg=#4a4a59
 hi SpecialKey ctermfg=16 guifg=#4a4a59
 
-" Set a line length marker
+" -- Set a line length marker (override color from .vimrc.after)
 set colorcolumn=100
 highlight ColorColumn ctermbg=black guibg=#4a4a59
-
-" Clear highlights on hitting 'ESC' twice
-nnoremap <esc><esc> :noh<return>
-
-filetype plugin indent on

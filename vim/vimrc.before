@@ -1,8 +1,10 @@
-" Re-map default <leader> key
+" -- Re-map default <leader> key
 let mapleader = ","
-" show hidden files by default
+
+" -- Show hidden files by default
 let NERDTreeShowHidden=1
-" Setting up a status bar theme
+
+" -- Setting up a status bar theme
 let g:airline_theme='simple'
 " let g:airline_theme='murmur'
 " let g:airline_theme='sol'
@@ -10,15 +12,19 @@ let g:airline_theme='simple'
 " let g:airline_theme='light'
 " let g:airline_theme='powerlineish'
 
-" Define a directory where my snippets were to be located:
+" -- Config for UltiSnips
+" -- Define a directory where my snippets were to be located:
 let g:UltiSnipsSnippetDirectories=["~/Dropbox/Code/dotfiles/vim/UltiSnips", "UltiSnips"]
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+" -- Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-" If you want :UltiSnipsEdit to split your window.
+" -- If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-" Run tests with colors vroom.vim
+" -- Run tests with colors vroom.vim
 let g:vroom_use_colors=1
 
-" Redefine the trigger key for Emmet-vim (,,)
+" -- Redefine the trigger key for Emmet-vim to double comma (,,)
 let g:user_emmet_leader_key=','
+
+" -- Autoindent files based on its type
+filetype plugin indent on
