@@ -5,6 +5,15 @@
 " Enable cursor line position tracking:
 color elflord
 
+" Config for material colorscheme
+if (has('termguicolors'))
+  set termguicolors
+endif
+let g:material_terminal_italics = 1
+let g:material_theme_style = 'darker'
+let g:lightline = { 'colorscheme': 'material_vim' }
+colorscheme material
+
 " Highlight the current line and column
 :set cursorline
 :set cursorcolumn
