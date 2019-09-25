@@ -4,8 +4,8 @@ let mapleader = ","
 " -- Show hidden files by default
 let NERDTreeShowHidden=1
 
-" -- Setting up a status bar theme
-let g:airline_theme='simple'
+" -- Setting up a status bar theme (if using Airline)
+" let g:airline_theme='simple'
 " let g:airline_theme='murmur'
 " let g:airline_theme='sol'
 " let g:airline_theme='cobalt2'

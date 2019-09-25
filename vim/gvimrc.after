@@ -41,4 +41,15 @@ hi SpecialKey ctermfg=16 guifg=#4a4a59
 
 " -- Set a line length marker (override color from .vimrc.after)
 set colorcolumn=100
-highlight ColorColumn ctermbg=black guibg=#4a4a59
+highlight ColorColumn guibg=#4a4a59
+
+" -- Set background and font colors for the line numbers panel
+" --- This is the font color (fore-ground)
+hi LineNr guifg=#66d8ee
+" --- This is the background color (backg-ground)
+hi LineNr guibg=#4a4a59
+" --- This is the background color (backg-ground) of current line
+hi CursorLineNr guibg=gray guifg=black
+
+" *********** guibg & guifg --> For not terminal vim ***********
+" *********** ctermfg & ctermbg --> For terminal vim ***********
