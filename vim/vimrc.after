@@ -27,9 +27,9 @@ colorscheme material
 " -- Set background and font colors for the line numbers panel
 hi LineNr term=bold cterm=bold ctermfg=2
 " --- This is the font color (fore-ground)
-hi LineNr guifg=yellow
+hi LineNr guifg=#66d8ee
 " --- This is the background color (backg-ground)
-hi LineNr guibg=black
+hi LineNr guibg=#4a4a59
 " --- This is the background color (backg-ground) of current line
 hi CursorLineNr guibg=gray guifg=black
 
