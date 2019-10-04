@@ -98,6 +98,7 @@ fancy_echo "Installing plugings for Janus for vim..."
 #git clone https://github.com/GertjanReynaert/cobalt2-vim-theme
 git clone https://github.com/kaicataldo/material.vim
 git clone https://github.com/wakatime/vim-wakatime
+git clone https://github.com/jiangmiao/auto-pairs
 git clone https://github.com/vim-scripts/UltiSnips
 git clone https://github.com/itchyny/lightline.vim
 git clone https://github.com/mattn/emmet-vim.git
