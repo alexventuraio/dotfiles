@@ -17,3 +17,114 @@ endsnippet
 snippet cle "Browser console output as error" b
 console.error(${1:data});
 endsnippet
+
+snippet clc "Browser console output as counter" b
+console.count(${1:data});
+endsnippet
+
+snippet ccom "Class React Component" bA
+import React, { Component } from 'react';
+
+class ${1:`!p snip.rv = snip.basename`} extends Component {
+  render() {
+    return (
+      <div>
+        $0
+      </div>
+    );
+  }
+}
+
+export default $1;
+endsnippet
+
+snippet fcom "Functional Component" bA
+import React from 'react';
+
+const ${1:`!p snip.rv = snip.basename`} = (props) => (
+	<div>
+		$0
+	</div>
+)
+
+export default $1;
+endsnippet
+
+snippet nimp "Import" bA
+import $1 from '$2';$0
+endsnippet
+
+snippet impr "React import" bA
+import React from 'react';$0
+endsnippet
+
+snippet impp "Import prop types" bA
+import PropTypes from 'prop-types';$0
+endsnippet
+
+snippet impc "Import Connect" bA
+import { connect } from 'react-redux';$0
+endsnippet
+
+snippet rmap "mapStateToProps" bA
+function mapStateToProps(state) {
+	return {$0}
+}
+endsnippet
+
+snippet c
+connect(${1:mapStateToProps}${2:, ${3:dispatch}})(${VISUAL})$0
+endsnippet
+
+snippet ract "Redux action" bA
+export const ${1:action} = payload => ({
+  type: ${2:type},
+  payload
+});$0
+endsnippet
+
+snippet rred "Reducer definition" bA
+export default function ${1:`!p snip.rv = snip.basename`}(state = {}, action = {}) {
+	switch(action.type) {
+		default: return state;
+	}
+}$0
+endsnippet
+
+snippet fsub "Form onSubmit" bA
+onSubmit = e => {
+	e.preventDefault();
+	const errors = this.validate(this.state.data);
+	this.setState({ errors });
+	if (Object.keys(errors).length === 0) {
+		this.setState({ loading: true });
+		this.props
+			.submit(this.state.data)
+			.catch(err =>
+				this.setState({ errors: err.response.data.errors, loading: false })
+			);
+	}
+};
+endsnippet
+
+snippet fcha "Form onChange" bA
+onChangeString = e => {
+	this.setState({
+		data: { ...this.state.data, [e.target.name]: e.target.value }
+	});
+};
+endsnippet
+
+snippet fp "Arrow function" A
+($1) => ${2:\{$0\}}
+endsnippet
+
+snippet fw "Empty arrow function" A
+() => {
+	$0
+}
+endsnippet
+
+snippet cn "className" A
+className="$0"
+endsnippet
