@@ -121,6 +121,11 @@ alias rsb='rs -b 0.0.0.0'
 alias rsp='rs -p 5000'
 alias codi=vscodium
 
+# To open a Gem source code
+ogem () {
+  EDITOR=mvim bundle open $@
+}
+
 # To open a folder content or file on Sublime Text
 sub () {
   open -a "Sublime Text" $@
