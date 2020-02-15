@@ -28,7 +28,8 @@ set autoindent
 set smartindent
 " -- noexpandtab to insert tabs instead of spaces in new lines
 " -- expandtab to insert spaces instead in new lines
-set noexpandtab tabstop=4 shiftwidth=4 smarttab softtabstop=4
+"set noexpandtab tabstop=4 shiftwidth=4 smarttab softtabstop=4
+set expandtab tabstop=2 shiftwidth=2 smarttab softtabstop=2
 
 " -- Show tracking lines for the cursor
 set cursorline
