@@ -96,6 +96,7 @@ mkdir ~/.janus
 cd ~/.janus
 fancy_echo "Installing plugings for Janus for vim..."
 #git clone https://github.com/GertjanReynaert/cobalt2-vim-theme
+git clone https://github.com/hzchirs/vim-material
 git clone https://github.com/kaicataldo/material.vim
 git clone https://github.com/wakatime/vim-wakatime
 git clone https://github.com/jiangmiao/auto-pairs

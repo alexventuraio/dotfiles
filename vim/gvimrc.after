@@ -1,10 +1,9 @@
 set guioptions-=T
 
-" -- Config for material colorscheme
+" -- Config for vim-material plugin
 let g:material_terminal_italics = 1
-let g:material_theme_style = 'darker'
-let g:lightline = { 'colorscheme': 'material_vim' }
-colorscheme material
+set background=dark
+colorscheme vim-material
 
 " -- Other possible colorschemes
 " color molokai

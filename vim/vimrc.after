@@ -2,7 +2,7 @@
 :set autoindent
 :set smartindent
 
-" -- Config for material colorscheme
+" -- Config for material.vim plugin colorscheme
 if (has('termguicolors'))
   set termguicolors
 endif
