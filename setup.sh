@@ -34,7 +34,7 @@ append_to_zshrc() {
 # - If Homebrew is not installed
 if ! which brew > /dev/null; then
     fancy_echo "Installing Homebrew..."
-    # Install Homebrew 
+    # Install Homebrew
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi;
 
@@ -88,6 +88,10 @@ cp "iTerm/Inconsolata\ for\ Powerline.otf" "$font_dir/"
 cp "iTerm/OperatorMono-Light.otf" "$font_dir/"
 cp "iTerm/OperatorMono-Book.otf" "$font_dir/"
 cp "iTerm/OperatorMono-BookItalic.otf" "$font_dir/"
+cp "iTerm/OperatorMonoLig-Book.otf" "$font_dir/"
+cp "iTerm/OperatorMonoLig-BookItalic.otf" "$font_dir/"
+cp "iTerm/OperatorMonoLig-Light.otf" "$font_dir/"
+cp "iTerm/OperatorMonoLig-LightItalic.otf" "$font_dir/"
 
 # - Install Janus vim
 fancy_echo "Installing Janus for vim..."
