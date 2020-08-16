@@ -1,4 +1,10 @@
-snippet ppp "Just to print out any variable with emojis" bA
+snippet ppp "Just to print out any variable with emoji" bA
 puts "💭 " * 50
+pp(${1:variable_to_print_out})
+endsnippet
+
+snippet ppi "Just to print out any variable with random emojis" bA
+a = ["💭", "✅", "❤️", "🚀", "😎", "👻", "👍", "😸"]
+puts a.sample * 50
 pp(${1:variable_to_print_out})
 endsnippet
