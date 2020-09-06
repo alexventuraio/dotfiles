@@ -1,0 +1,191 @@
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+" Make sure you use single quotes
+
+" Themes
+" Plug 'morhetz/gruvbox'
+Plug 'tomasr/molokai'
+Plug 'hzchirs/vim-material'
+
+" IDE
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+" Plug 'wakatime/vim-wakatime'
+" Plug 'jiangmiao/auto-pairs'
+" Plug 'jlanzarotta/bufexplorer'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+
+" Ruby & Rails
+" Plug 'tpope/vim-bundler'
+" Plug 'tpope/vim-rails'
+
+" Javascript & React
+" Plug 'mattn/emmet-vim'
+" Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
+" Initialize plugin system
+call plug#end()
+
+filetype plugin on
+filetype plugin indent on              " Turn on filetype plugins (:help filetype-plugin)
+
+syntax enable                          " Turn on syntax highlighting allowing local overrides
+
+set t_Co=256
+set guioptions-=T
+set encoding=utf-8
+set background=dark
+set title                              " Display title
+set sw=2                               " Indentacion a dos espacios
+set mouse=a                            " Enable mouse inside terminal VIM
+set cursorline                         " Mostrar linea en la posicion actual del cursor
+set cursorcolumn                       " Show the column for the current cursor position
+set number                             " Show line-number
+set numberwidth=5                      " Ancho de la columna para line-number
+set relativenumber                     " Show line number relatively to cursor position
+set clipboard=unnamed                  " Copiar todo al clipboard del sistema
+set showmatch                          " Show matching brackets
+set showcmd                            " Mostrar los comandos que se estan ejecutando
+set ruler                              " Show cursor actual line and column number
+set laststatus=2                       " Display status bar in 2 lines
+set noshowmode                         " Do not show current VIM mode
+set wildmenu                           " Command line autocomplete menus
+set updatetime=100                     " Git diff markers refresh time
+
+set nowrap                             " Do not wrap lines
+" Indentation {{{
+set tabstop=2                          " a tab is two spaces
+set shiftwidth=2                       " an autoindent (with <<) is two spaces
+set shiftround                         " Round indent to multiple of 'shiftwidth'
+set expandtab                          " use spaces, not tabs
+set smarttab
+set autoindent
+set smartindent
+set cindent
+" }}}
+
+set list                               " Show invisible characters
+set backspace=indent,eol,start         " Backspace through everything in insert mode
+
+set hlsearch                           " Highlight search things
+set incsearch                          " Highlight next match on searching
+
+" Tab Split {{{
+set splitright
+set splitbelow
+" }}}
+
+
+" Backup and swap files
+set backupdir^=~/.vim/_backup//        " where to put backup files.
+set directory^=~/.vim/_temp//          " where to put swap files.
+
+
+let mapleader=","
+
+
+" GUI colorschems {{
+if (has('termguicolors'))
+  set termguicolors
+endif
+" colorscheme gruvbox
+" colorscheme molokai
+colorscheme vim-material
+let g:airline_theme='material'
+" }}}
+
+" GUI fonts {{
+if has('mac') && has('gui_running')
+  set macligatures                       " Show ligatures with supported fonts (MacVim GUI)
+  set guifont=Operator\ Mono\ Lig\ Book:h15
+endif
+" }}
+
+
+" -- Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+    let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+    let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+    let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
+" -- (Hopefully) removes the delay when hitting ESC in insert mode
+set ttimeout                           " Time out on key codes
+set ttimeoutlen=1                      " Used for key code delays
+set ttyfast                            " Indicates fast terminal connection
+
+" List chars {{{
+" set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀,eol:↲
+set list listchars=tab:▸─,nbsp:␣,trail:·,extends:»,precedes:«,eol:¬
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=white guibg=#ff005f
+" }}}
+
+" No sound on errors {{{
+set noerrorbells
+set visualbell t_vb=
+set tm=500
+" }}}
+
+" -- Strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+" -- Shorcut to execute :ClearCtrlPCache
+nnoremap <Silent> <Leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
+
+" Easymotion-shortcuts config
+nmap <Leader>s <Plug>(easymotion-s2)
+
+" NERDTree config
+autocmd StdinReadPre * let s:std_in=1  " This trick also prevents NERDTree from hiding when first selecting a file.
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+let NERDTreeShowHidden=1               " Show hidden files by default
+nmap <Leader>n :NERDTreeFind<CR>       " Find the current file in the file explorer
+nmap <Leader>m :NERDTreeToggle<CR>     " Open/close file explorer
+
+" NERDCommenter mappings
+if has("gui_macvim") && has("gui_running")
+  nmap <D-/> <Plug>NERDCommenterToggle<CR> " Toggle comment on current line
+  imap <D-/> <Esc><Plug>NERDCommenterToggle<CR>i " Toggle comment on current line
+else
+  nmap <Leader>/ <Plug>NERDCommenterToggle<CR>
+endif
+
+" CtrlP mappings/configuration
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" fugitive.vim mappings {{{
+nmap <leader>gb :Gblame<CR>
+nmap <leader>gs :Gstatus<CR>
+nmap <leader>gd :Gdiff<CR>
+nmap <leader>gl :Glog<CR>
+nmap <leader>gc :Gcommit<CR>
+nmap <leader>gp :Git push<CR>
+" }}}
+
+" -- Clear highlights on hitting 'ESC' twice
+nnoremap <esc><esc> :noh<return>
+
+" -- Set a line length marker
+set colorcolumn=100
+
+" Fix indentation in file
+map <Leader>i mmgg=G`m<CR>
+
+" Auto-commands {{{
+if has("autocmd")
+  " Set Syntax Highlighting for odd file types
+  augroup filetypedetect
+    au BufNewFile,BufRead .gitconfig,.git/* set noet
+    au BufNewFile,BufRead Dockerfile* setf dockerfile
+  augroup END
+  endif
+" }}}
