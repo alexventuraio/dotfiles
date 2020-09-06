@@ -83,12 +83,6 @@ command -v nvm
 fancy_echo "Upgrading NVM installation..."
 nvm upgrade
 
-# - Install Node Version Manager OLD WAY
-# fancy_echo "Installing NVM for mac..."
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-# fancy_echo "Verifying installation..."
-# command -v nvm
-
 # - Install NodeJs
 fancy_echo "Installing NodeJs LTS version..."
 # https://github.com/nvm-sh/nvm#long-term-support

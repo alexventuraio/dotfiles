@@ -55,11 +55,11 @@ cask "visual-studio-code"
 ######################################################################
 # Browser                                                            #
 ######################################################################
-cask "firefox"
 tap "homebrew/cask-versions"
+# cask "firefox"
 cask "firefox-developer-edition"
 cask "google-chrome"
-cask "opera"
+# cask "opera"
 cask "brave-browser"
 
 ######################################################################
@@ -88,10 +88,10 @@ cask "teamviewer"
 #cask "time-out"
 #cask "the-unarchiver"		    # don't know which one ...
 #cask "typora"
+cask "zoomus"
 # ——————— Other less common utilities ———————
 #brew "qt55"
 #brew "imagemagick"
-cask "zoomus"
 #cask "sitesucker"
 #cask "transmission"
 brew "youtube-dl"
