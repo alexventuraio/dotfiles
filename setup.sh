@@ -35,29 +35,35 @@ append_to_zshrc() {
 if ! which brew > /dev/null; then
     fancy_echo "Installing Homebrew..."
     # Install Homebrew
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi;
 
 # - Update brew
+fancy_echo "Updating brew..."
 brew update
 
 # - Install everything in Brewfile
 # brew bundle Brewfile
-brew bundle
+fancy_echo "Installing dependencies from Brewfile..."
+brew bundle install --verbose
 
-# — Install RVM and Ruby
+# — Install RVM
 fancy_echo "Configuring RVM as version manager for Ruby..."
 \curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 rvm | head -n 1
-rvm use ruby --install --default
+
+# — Install latest stable Ruby
+fancy_echo "Installing latest stable Ruby..."
+#rvm use ruby --install --default
+rvm use ruby --install --latest
 ruby -vs
 
 # — Install and config Git
 fancy_echo "Configuring git..."
 git --version
 git config --global user.name "Alejandro Ventura Contreras"
-git config --global user.email "venturacontreras@icloud.com"
+git config --global user.email "soyalexventura@gmail.com"
 git config --global color.ui true
 git config --global core.editor "vim"
 
@@ -66,16 +72,36 @@ fancy_echo "Installing Rails..."
 gem install rails --no-document
 rails --version
 
-# - Install NodeJs
-fancy_echo "Installing NVM for node..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-fancy_echo "Verifying installation..."
+# - Manually install Node Version Manager `zsh-nvm` as Zsh plugin for installing, updating and loading NVM
+fancy_echo "Installing ZSH-NVM plugin for oh-my-zsh..."
+# Clone this repository somewhere (~/.zsh-nvm for example)
+git clone https://github.com/lukechilds/zsh-nvm.git ~/.zsh-nvm
+# Then source it in your .zshrc (or .bashrc)
+source ~/.zsh-nvm/zsh-nvm.plugin.zsh
+fancy_echo "Verifying NVM installation..."
 command -v nvm
+fancy_echo "Upgrading NVM installation..."
+nvm upgrade
+
+# - Install Node Version Manager OLD WAY
+# fancy_echo "Installing NVM for mac..."
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+# fancy_echo "Verifying installation..."
+# command -v nvm
+
+# - Install NodeJs
 fancy_echo "Installing NodeJs LTS version..."
 # https://github.com/nvm-sh/nvm#long-term-support
 nvm install --lts
+
+# - Install Yarn
+fancy_echo "Installing Yarn..."
+brew install yarn
+
+# - Install Prettier global
 fancy_echo "Installing Prettier for vim-prettier plugin..."
-npm install --global prettier
+#npm install --global prettier
+yarn global add prettier
 
 # - Setup custom Cobalt2 theme for oh-my-zsh
 fancy_echo "Setting up theme for oh-my-zsh..."
@@ -84,42 +110,23 @@ cp zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-them
 # - Install fonts
 fancy_echo "Installing fonts for iTerm..."
 font_dir="$HOME/Library/Fonts"
-cp "iTerm/Inconsolata\ for\ Powerline.otf" "$font_dir/"
+cp "iTerm/InconsolataForPowerline.otf" "$font_dir/"
 cp "iTerm/OperatorMono-Light.otf" "$font_dir/"
 cp "iTerm/OperatorMono-Book.otf" "$font_dir/"
-cp "iTerm/OperatorMono-BookItalic.otf" "$font_dir/"
-cp "iTerm/OperatorMonoLig-Book.otf" "$font_dir/"
-cp "iTerm/OperatorMonoLig-BookItalic.otf" "$font_dir/"
-cp "iTerm/OperatorMonoLig-Light.otf" "$font_dir/"
-cp "iTerm/OperatorMonoLig-LightItalic.otf" "$font_dir/"
+#cp "iTerm/OperatorMono-BookItalic.otf" "$font_dir/"
+cp "iTerm/OperatorMono-Lig/OperatorMonoLig-Book.otf" "$font_dir/"
+cp "iTerm/OperatorMono-Lig/OperatorMonoLig-BookItalic.otf" "$font_dir/"
+cp "iTerm/OperatorMono-Lig/OperatorMonoLig-Light.otf" "$font_dir/"
+cp "iTerm/OperatorMono-Lig/OperatorMonoLig-LightItalic.otf" "$font_dir/"
 
-# - Install Janus vim
-fancy_echo "Installing Janus for vim..."
-curl -L https://bit.ly/janus-bootstrap | bash
-mkdir ~/.janus
-cd ~/.janus
-fancy_echo "Installing plugings for Janus for vim..."
-#git clone https://github.com/GertjanReynaert/cobalt2-vim-theme
-git clone https://github.com/hzchirs/vim-material
-git clone https://github.com/kaicataldo/material.vim
-git clone https://github.com/wakatime/vim-wakatime
-git clone https://github.com/jiangmiao/auto-pairs
-git clone https://github.com/vim-scripts/UltiSnips
-git clone https://github.com/itchyny/lightline.vim
-git clone https://github.com/mattn/emmet-vim.git
-git clone https://github.com/mxw/vim-jsx.git
-git clone https://github.com/pangloss/vim-javascript.git
-git clone https://github.com/prettier/vim-prettier
-git clone https://github.com/jlanzarotta/bufexplorer
-git clone https://github.com/tpope/vim-bundler
-git clone https://github.com/tpope/vim-rails
-vim -u NONE -c "helptags vim-rails/doc" -c q
+# - Install Vim plugin manager
+fancy_echo "Installing Vim-Plug for unix..."
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # - Configure custom files for Janus vim
-fancy_echo "Symlinking customization files for Janus vim..."
-ln -sf ~/Dropbox/Code/dotfiles/vim/gvimrc.after ~/.gvimrc.after
-ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc.before ~/.vimrc.before
-ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc.after ~/.vimrc.after
-ln -sf ~/Dropbox/Code/dotfiles/vim/UltiSnips/ ~/.vim/
+fancy_echo "Symlinking customization files for VIM..."
+ln -sf ~/Dropbox/Code/dotfiles/vim/gvimrc ~/.gvimrc
+ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc ~/.vimrc
 
 fancy_echo "Setting up Mac OS X development, done!!!!"
