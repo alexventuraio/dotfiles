@@ -104,14 +104,15 @@ cp zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-them
 # - Install fonts
 fancy_echo "Installing fonts for iTerm..."
 font_dir="$HOME/Library/Fonts"
-cp "iTerm/InconsolataForPowerline.otf" "$font_dir/"
-cp "iTerm/OperatorMono-Light.otf" "$font_dir/"
-cp "iTerm/OperatorMono-Book.otf" "$font_dir/"
-#cp "iTerm/OperatorMono-BookItalic.otf" "$font_dir/"
-cp "iTerm/OperatorMono-Lig/OperatorMonoLig-Book.otf" "$font_dir/"
-cp "iTerm/OperatorMono-Lig/OperatorMonoLig-BookItalic.otf" "$font_dir/"
-cp "iTerm/OperatorMono-Lig/OperatorMonoLig-Light.otf" "$font_dir/"
-cp "iTerm/OperatorMono-Lig/OperatorMonoLig-LightItalic.otf" "$font_dir/"
+cp "iTerm/fonts/InconsolataForPowerline.otf" "$font_dir/"
+cp "iTerm/fonts/OperatorMono-Book.otf" "$font_dir/"
+cp "iTerm/fonts/OperatorMono-BookItalic.otf" "$font_dir/"
+cp "iTerm/fonts/OperatorMono-Light.otf" "$font_dir/"
+cp "iTerm/fonts/OperatorMono-LightItalic.otf" "$font_dir/"
+cp "iTerm/fonts/OperatorMonoLig-Book.otf" "$font_dir/"
+cp "iTerm/fonts/OperatorMonoLig-BookItalic.otf" "$font_dir/"
+cp "iTerm/fonts/OperatorMonoLig-Light.otf" "$font_dir/"
+cp "iTerm/fonts/OperatorMonoLig-LightItalic.otf" "$font_dir/"
 
 # - Install Vim plugin manager
 fancy_echo "Installing Vim-Plug for unix..."
