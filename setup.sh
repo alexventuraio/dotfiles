@@ -77,6 +77,8 @@ fancy_echo "Installing ZSH-NVM plugin for oh-my-zsh..."
 # Clone this repository somewhere (~/.zsh-nvm for example)
 git clone https://github.com/lukechilds/zsh-nvm.git ~/.zsh-nvm
 # Then source it in your .zshrc (or .bashrc)
+fancy_echo "Adding NVM to .zshrc file..."
+echo "source ~/.zsh-nvm/zsh-nvm.plugin.zsh" > .zshrc
 source ~/.zsh-nvm/zsh-nvm.plugin.zsh
 fancy_echo "Verifying NVM installation..."
 command -v nvm
