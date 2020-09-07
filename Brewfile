@@ -5,7 +5,7 @@ cask_args appdir: "/Applications"
 tap "homebrew/cask"
 
 # Install simple cli for the Mac App Store
-brew "mas"
+#brew "mas"
 
 ######################################################################
 # Development, console and server stuff                              #
