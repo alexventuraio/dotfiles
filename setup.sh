@@ -123,5 +123,19 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 fancy_echo "Symlinking customization files for VIM..."
 ln -sf ~/Dropbox/Code/dotfiles/vim/gvimrc ~/.gvimrc
 ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/Dropbox/Code/dotfiles/ssh/config ~/.ssh/config
+
+# - Generate SSH keys
+fancy_echo "Generating a new SSH key..."
+ssh-keygen -t rsa -b 4096 -C "soyalexventura@gmail.com"
+fancy_echo "Start the ssh-agent in the background..."
+eval "$(ssh-agent -s)"
+fancy_echo "Add your SSH private key to the ssh-agent and store your passphrase in the keychain..."
+ssh-add -K ~/.ssh/id_rsa
+fancy_echo "Copying the SSH key to your clipboard...."
+pbcopy < ~/.ssh/id_rsa.pub
+fancy_echo "Opening Github.com user settings for SSH and GPG keys..."
+open https://github.com/settings/keys
+fancy_echo "Now you click `New SSH key`, set a tittle for the new key, finally paste your `id_rsa.pub`."
 
 fancy_echo "Setting up Mac OS X development, done!!!!"
