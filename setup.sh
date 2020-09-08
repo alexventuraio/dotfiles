@@ -123,6 +123,8 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # - Configure custom files for Janus vim
 fancy_echo "Symlinking customization files for VIM..."
+mkdir -p /.vim/_backup
+mkdir -p /.vim/_temp
 ln -sf ~/Dropbox/Code/dotfiles/vim/gvimrc ~/.gvimrc
 ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/Dropbox/Code/dotfiles/ssh/config ~/.ssh/config
