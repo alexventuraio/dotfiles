@@ -52,7 +52,7 @@ set cursorcolumn                       " Show the column for the current cursor 
 set number                             " Show line-number
 set numberwidth=5                      " Ancho de la columna para line-number
 set relativenumber                     " Show line number relatively to cursor position
-set clipboard=unnamed                  " Copiar todo al clipboard del sistema
+"set clipboard=unnamed                  " Copiar todo al clipboard del sistema
 set showmatch                          " Show matching brackets
 set showcmd                            " Mostrar los comandos que se estan ejecutando
 set ruler                              " Show cursor actual line and column number
