@@ -115,7 +115,7 @@ let g:airline_theme='material'
 " GUI fonts {{
 if has('mac') && has('gui_running')
   set macligatures                       " Show ligatures with supported fonts (MacVim GUI)
-  set guifont=Operator\ Mono\ Lig\ Book:h15
+  set guifont=Operator\ Mono\ Lig\ Book:h16
 endif
 " }}
 
