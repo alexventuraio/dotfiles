@@ -36,12 +36,13 @@ cask "redis"
 # Shell: iTerm2, zsh, oh-my-zsh plugins and themes                   #
 ######################################################################
 cask "iterm2"
-#brew "zsh"
-brew "zsh-syntax-highlighting"
-brew "zsh-autosuggestions"
 brew "ag"
-brew "jq"
 brew "fzf"
+brew "jq"
+brew "tree"
+#brew "zsh"
+brew "zsh-autosuggestions"
+brew "zsh-syntax-highlighting"
 
 ######################################################################
 # Text Editors                                                     #
