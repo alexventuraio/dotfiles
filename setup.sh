@@ -47,6 +47,12 @@ brew update
 fancy_echo "Installing dependencies from Brewfile..."
 brew bundle install --verbose
 
+# — Postinstall configuration for Postgres.app to use CLI Tools
+fancy_echo "Setting up CLI Tools from 'Postgres.app'..."
+sudo mkdir -p /etc/paths.d && echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
+fancy_echo "Verifying 'Postgres.app' CLI config..."
+which psql
+
 # — Install RVM
 fancy_echo "Configuring RVM as version manager for Ruby..."
 \curl -L https://get.rvm.io | bash -s stable
