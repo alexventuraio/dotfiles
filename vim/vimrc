@@ -38,6 +38,7 @@ call plug#end()
 filetype plugin on
 filetype plugin indent on              " Turn on filetype plugins (:help filetype-plugin)
 
+syntax on                              " Turn on syntax highlighting allowing local overrides
 syntax enable                          " Turn on syntax highlighting allowing local overrides
 
 set t_Co=256
@@ -63,7 +64,7 @@ set updatetime=100                     " Git diff markers refresh time
 
 set nowrap                             " Do not wrap lines
 " Indentation {{{
-set tabstop=2                          " a tab is two spaces
+set tabstop=2 softtabstop=2            " a tab is two spaces
 set shiftwidth=2                       " an autoindent (with <<) is two spaces
 set shiftround                         " Round indent to multiple of 'shiftwidth'
 set expandtab                          " use spaces, not tabs
