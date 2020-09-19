@@ -31,6 +31,13 @@ append_to_zshrc() {
 # - Install all the things with Homebrew, Casks and a Brewfile
 #
 
+# - Install Install Oh-My-Zsh
+fancy_echo "Installing oh-my-zsh..."
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fancy_echo "Fixing post-install oh-my-zsh autocompletition issues..."
+compaudit | xargs chmod g-w
+source ~/.zshrc
+
 # - If Homebrew is not installed
 if ! which brew > /dev/null; then
     fancy_echo "Installing Homebrew..."
