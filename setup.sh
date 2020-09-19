@@ -156,4 +156,12 @@ ln -sf ~/Dropbox/Code/dotfiles/vim/gvimrc ~/.gvimrc
 ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/Dropbox/Code/dotfiles/ssh/config ~/.ssh/config
 
+# - Applying customizations for oh-my-zsh
+fancy_echo "Changing the default theme for oh-my-zsh..."
+sed -i "" "s|robbyrussell|alexventuraio|" ~/.zshrc
+fancy_echo "Updating plugins section for oh-my-zsh..."
+sed -i "" "s|(git.*)|(git osx ruby rails bundler brew rake capistrano)|" ~/.zshrc
+fancy_echo "Appending personal customizations to .zshrc file..."
+cp ~/Dropbox/Code/dotfiles/zsh/zshrc.local >> ~/.zshrc
+
 fancy_echo "Setting up Mac OS X development, done!!!!"

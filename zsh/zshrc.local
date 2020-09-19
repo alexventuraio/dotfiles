@@ -1,0 +1,62 @@
+
+#========== Customize to your needs...
+
+# Default editor
+#export EDITOR="/Applications/Sublime\ Text.app/Contents/MacOS/Sublime\ Text"
+
+# Aliases
+alias cl='clear'
+alias gpom='git push origin master'
+alias gphm='git push heroku master'
+alias rsb='rs -b 0.0.0.0'
+alias rsp='rs -p 5000'
+alias codi=vscodium
+
+# To open a Gem source code
+ogem () {
+  EDITOR=mvim bundle open $@
+}
+
+# To open a folder content or file on Sublime Text
+sub () {
+  open -a "Sublime Text" $@
+}
+
+# Vagrant Provider
+export VAGRANT_DEFAULT_PROVIDER=parallels
+
+# Load ENV variables
+#export AWS_ACCESS_KEY_ID=xxxxxxxxxxxxxxxx
+#export AWS_SECRET_ACCESS_KEY=xxxxxxxxxxxxxxxx
+#export AWS_S3_BUCKET=xxxxxxxxxxxxxxxx
+#export AWS_REGION=xxxxxxxxxxxxxxxx
+#export SENDGRID_API_KEY=xxxxxxxxxxxxxxxx
+#export OPENPAY_MERCHANT_ID=xxxxxxxxxxxxxxxx
+#export OPENPAY_PRIVATE_KEY=xxxxxxxxxxxxxxxx
+#export MAILTRAP_USERNAME=xxxxxxxxxxxxxxxx
+#export MAILTRAP_PASSWORD=xxxxxxxxxxxxxxxx
+
+# Bullet-Train them for oh-my-zsh override config
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  context
+  dir
+  ruby
+  git
+)
+
+# To enable Syntax highlighting
+# Install: git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+function fzf_then_open_in_editor() {
+  local file=$(fzf)
+  # Open the file if it exists
+  if [ -n "$file" ]; then
+    # Use the default editor if it's defined, otherwise mvim
+    ${EDITOR:-vim} "$file"
+  fi
+}
+# Execute the function using Ctrl+f('^f') | fn+F1(^[OP)
+bindkey -s '^[OP' fzf_then_open_in_editor
