@@ -130,14 +130,6 @@ fancy_echo "Installing Vim-Plug for unix..."
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# - Configure custom files for Janus vim
-fancy_echo "Symlinking customization files for VIM..."
-mkdir -p /.vim/_backup
-mkdir -p /.vim/_temp
-ln -sf ~/Dropbox/Code/dotfiles/vim/gvimrc ~/.gvimrc
-ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc ~/.vimrc
-ln -sf ~/Dropbox/Code/dotfiles/ssh/config ~/.ssh/config
-
 # - Generate SSH keys
 fancy_echo "Generating a new SSH key..."
 ssh-keygen -t rsa -b 4096 -C "soyalexventura@gmail.com"
@@ -155,5 +147,13 @@ fancy_echo "Now you click `New SSH key`, set a tittle for the new key, finally p
 fancy_echo "Setting up theme for oh-my-zsh..."
 # cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-theme
 cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme $ZSH_CUSTOM/themes/
+
+# - Configure custom files for Janus vim
+fancy_echo "Symlinking customization files for VIM..."
+mkdir -p /.vim/_backup
+mkdir -p /.vim/_temp
+ln -sf ~/Dropbox/Code/dotfiles/vim/gvimrc ~/.gvimrc
+ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc ~/.vimrc
+ln -sf ~/Dropbox/Code/dotfiles/ssh/config ~/.ssh/config
 
 fancy_echo "Setting up Mac OS X development, done!!!!"
