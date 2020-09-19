@@ -143,12 +143,12 @@ fancy_echo "Opening Github.com user settings for SSH and GPG keys..."
 open https://github.com/settings/keys
 fancy_echo "Now you click `New SSH key`, set a tittle for the new key, finally paste your `id_rsa.pub`."
 
-# - Setup custom Cobalt2 theme for oh-my-zsh
+# - Setup custom theme for oh-my-zsh
 fancy_echo "Setting up theme for oh-my-zsh..."
 # cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-theme
 cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme $ZSH_CUSTOM/themes/
 
-# - Configure custom files for Janus vim
+# - Configure custom config files for Vim
 fancy_echo "Symlinking customization files for VIM..."
 mkdir -p /.vim/_backup
 mkdir -p /.vim/_temp
