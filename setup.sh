@@ -143,11 +143,6 @@ fancy_echo "Opening Github.com user settings for SSH and GPG keys..."
 open https://github.com/settings/keys
 fancy_echo "Now you click `New SSH key`, set a tittle for the new key, finally paste your `id_rsa.pub`."
 
-# - Setup custom theme for oh-my-zsh
-fancy_echo "Setting up theme for oh-my-zsh..."
-# cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-theme
-cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme $ZSH_CUSTOM/themes/
-
 # - Configure custom config files for Vim
 fancy_echo "Symlinking customization files for VIM..."
 mkdir -p /.vim/_backup
@@ -157,6 +152,9 @@ ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/Dropbox/Code/dotfiles/ssh/config ~/.ssh/config
 
 # - Applying customizations for oh-my-zsh
+fancy_echo "Setting your personal theme for oh-my-zsh..."
+# cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-theme
+cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme $ZSH_CUSTOM/themes/
 fancy_echo "Changing the default theme for oh-my-zsh..."
 sed -i "" "s|robbyrussell|alexventuraio|" ~/.zshrc
 fancy_echo "Updating plugins section for oh-my-zsh..."
