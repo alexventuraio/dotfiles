@@ -37,6 +37,7 @@ cask "redis"
 ######################################################################
 cask "iterm2"
 brew "ag"
+brew "cmake"
 brew "fzf"
 brew "jq"
 brew "tree"
