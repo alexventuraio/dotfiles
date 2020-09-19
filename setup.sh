@@ -153,6 +153,6 @@ fancy_echo "Now you click `New SSH key`, set a tittle for the new key, finally p
 
 # - Setup custom Cobalt2 theme for oh-my-zsh
 fancy_echo "Setting up theme for oh-my-zsh..."
-cp zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-theme
+cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-theme
 
 fancy_echo "Setting up Mac OS X development, done!!!!"
