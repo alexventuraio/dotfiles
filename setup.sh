@@ -153,7 +153,6 @@ ln -sf ~/Dropbox/Code/dotfiles/ssh/config ~/.ssh/config
 
 # - Applying customizations for oh-my-zsh
 fancy_echo "Setting your personal theme for oh-my-zsh..."
-# cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme ~/.oh-my-zsh/themes/alexventuraio.zsh-theme
 cp ~/Dropbox/Code/dotfiles/zsh/themes/alexventuraio.zsh-theme $ZSH_CUSTOM/themes/
 fancy_echo "Changing the default theme for oh-my-zsh..."
 sed -i "" "s|robbyrussell|alexventuraio|" ~/.zshrc
