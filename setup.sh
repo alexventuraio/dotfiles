@@ -85,7 +85,7 @@ fancy_echo "Installing Rails..."
 gem install rails --no-document
 rails --version
 
-# - Manually install Node Version Manager `zsh-nvm` as Zsh plugin for installing, updating and loading NVM
+# - Manually install Node Version Manager 'zsh-nvm' as Zsh plugin for installing, updating and loading NVM
 fancy_echo "Installing ZSH-NVM plugin for oh-my-zsh..."
 # Clone this repository somewhere (~/.zsh-nvm for example)
 git clone https://github.com/lukechilds/zsh-nvm.git ~/.zsh-nvm
@@ -141,7 +141,7 @@ fancy_echo "Copying the SSH key to your clipboard...."
 pbcopy < ~/.ssh/id_rsa.pub
 fancy_echo "Opening Github.com user settings for SSH and GPG keys..."
 open https://github.com/settings/keys
-fancy_echo "Now you click `New SSH key`, set a tittle for the new key, finally paste your `id_rsa.pub`."
+fancy_echo "Now click 'New SSH key', set a tittle for the new key, and finally paste the content of your 'id_rsa.pub' and save."
 
 # - Configure custom config files for Vim
 fancy_echo "Symlinking customization files for VIM..."
