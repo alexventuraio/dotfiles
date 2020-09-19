@@ -145,8 +145,8 @@ fancy_echo "Now you click `New SSH key`, set a tittle for the new key, finally p
 
 # - Configure custom config files for Vim
 fancy_echo "Symlinking customization files for VIM..."
-mkdir -p /.vim/_backup
-mkdir -p /.vim/_temp
+mkdir -p ~/.vim/_backup
+mkdir -p ~/.vim/_temp
 ln -sf ~/Dropbox/Code/dotfiles/vim/gvimrc ~/.gvimrc
 ln -sf ~/Dropbox/Code/dotfiles/vim/vimrc ~/.vimrc
 ln -sf ~/Dropbox/Code/dotfiles/ssh/config ~/.ssh/config
