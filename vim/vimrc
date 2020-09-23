@@ -29,6 +29,7 @@ Plug 'ycm-core/YouCompleteMe'
 " Plug 'tpope/vim-rails'
 
 " Javascript & React
+Plug 'prettier/vim-prettier'
 " Plug 'mattn/emmet-vim'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
