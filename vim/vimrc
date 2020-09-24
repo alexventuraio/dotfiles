@@ -8,8 +8,10 @@ call plug#begin('~/.vim/plugged')
 " Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'hzchirs/vim-material'
+" Plug 'phanviet/vim-monokai-pro'
 
 " IDE
+" Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
