@@ -112,7 +112,7 @@ endif
 " colorscheme gruvbox
 " colorscheme molokai
 colorscheme vim-material
-let g:airline_theme='material'
+" let g:airline_theme='material'
 " }}}
 
 " GUI fonts {{
