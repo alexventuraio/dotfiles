@@ -31,7 +31,9 @@ Plug 'ycm-core/YouCompleteMe'
 " Plug 'tpope/vim-rails'
 
 " Javascript & React
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 " Plug 'mattn/emmet-vim'
 " Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
@@ -200,4 +202,9 @@ if has("autocmd")
     au BufNewFile,BufRead Dockerfile* setf dockerfile
   augroup END
   endif
+" }}}
+
+" Prettier auto-format without "@format" or "@prettier" tag {{{
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 " }}}
