@@ -175,6 +175,11 @@ endif
 
 " CtrlP mappings/configuration
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
+  \ }
 
 " fugitive.vim mappings {{{
 nmap <leader>gb :Gblame<CR>
