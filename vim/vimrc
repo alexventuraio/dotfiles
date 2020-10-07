@@ -113,6 +113,10 @@ if (has('termguicolors'))
 endif
 " colorscheme gruvbox
 " colorscheme molokai
+" *** Required to show molokai with light-grey background ***
+" colorscheme molokai
+" let g:molokai_original = 1
+" set background=dark
 colorscheme vim-material
 " let g:airline_theme='material'
 " }}}
