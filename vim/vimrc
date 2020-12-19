@@ -1,3 +1,5 @@
+set nocompatible
+
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -45,11 +47,11 @@ Plug 'mxw/vim-jsx'
 " Initialize plugin system
 call plug#end()
 
-filetype plugin on
-filetype plugin indent on              " Turn on filetype plugins (:help filetype-plugin)
-
 syntax on                              " Turn on syntax highlighting allowing local overrides
 syntax enable                          " Turn on syntax highlighting allowing local overrides
+
+filetype plugin on
+filetype plugin indent on              " Turn on filetype plugins (:help filetype-plugin)
 
 set t_Co=256
 set guioptions-=T
@@ -175,7 +177,7 @@ nmap <Leader>m :NERDTreeToggle<CR>     " Open/close file explorer
 
 " NERDCommenter mappings
 if has("gui_macvim") && has("gui_running")
-  nmap <D-/> <Plug>NERDCommenterToggle<CR> " Toggle comment on current line
+  nmap <D-/> <Plug>NERDCommenterToggle<CR>       " Toggle comment on current line
   imap <D-/> <Esc><Plug>NERDCommenterToggle<CR>i " Toggle comment on current line
 else
   nmap <Leader>/ <Plug>NERDCommenterToggle<CR>
