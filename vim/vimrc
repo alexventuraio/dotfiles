@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tomasr/molokai'
 Plug 'hzchirs/vim-material'
 " Plug 'phanviet/vim-monokai-pro'
+" Plug 'Erichain/vim-monokai-pro'
 
 " IDE
 " Plug 'sheerun/vim-polyglot'
