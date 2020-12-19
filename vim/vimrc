@@ -31,6 +31,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'slim-template/vim-slim'
 " Plug 'tpope/vim-bundler'
 " Plug 'tpope/vim-rails'
+Plug 'kchmck/vim-coffee-script'
 
 " Javascript & React
 Plug 'prettier/vim-prettier', {
