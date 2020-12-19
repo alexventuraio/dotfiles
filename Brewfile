@@ -30,7 +30,6 @@ cask "postico"
 # ——————— http://gcollazo.github.io/mongodbapp/ ———————
 cask "gcollazo-mongodb"
 cask "redis"
-#brew "redis"
 
 ######################################################################
 # Shell: iTerm2, zsh, oh-my-zsh plugins and themes                   #
@@ -41,7 +40,6 @@ brew "cmake"
 brew "fzf"
 brew "jq"
 brew "tree"
-#brew "zsh"
 brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
@@ -73,7 +71,6 @@ cask "appcleaner"
 cask "bartender"
 cask "bitbar"
 cask "dropbox"
-#cask "flash"
 cask "hyperswitch"
 #cask 'insomnia'
 cask "macpass"
@@ -85,11 +82,9 @@ cask "skype"
 cask "slack"
 cask "sourcetree"
 cask "spotify"
-#cask "tableplus"
 cask "teamviewer"
 #cask "time-out"
 #cask "the-unarchiver"		    # don't know which one ...
-#cask "typora"
 cask "zoomus"
 # ——————— Other less common utilities ———————
 #brew "qt55"
