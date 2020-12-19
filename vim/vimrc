@@ -95,6 +95,10 @@ set splitright
 set splitbelow
 " }}}
 
+" Create the `tags` file (may need to install ctags first)
+" command! MakeTags !ctags -R .
+command! MakeTags !ctags -R --exclude=.git --exclude=log *
+set tags=./tags;                       " tell Vim where to look for the tags file.
 
 " Backup and swap files
 set backupdir^=~/.vim/_backup//        " where to put backup files.
