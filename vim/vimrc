@@ -159,9 +159,6 @@ set tm=500
 " -- Strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
 
-" -- Shorcut to execute :ClearCtrlPCache
-nnoremap <Silent> <Leader>T :ClearCtrlPCache<cr>\|:CtrlP<cr>
-
 " Easymotion-shortcuts config
 nmap <Leader>s <Plug>(easymotion-s2)
 
@@ -187,6 +184,10 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+" Shorcut to execute :ClearCtrlPCache
+nmap <Leader>C :CtrlPClearCache<cr>             " Refresh just CtrlP
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>:CtrlPClearCache<cr> " Refresh CtrlP & NERDTree
+
 
 " fugitive.vim mappings {{{
 nmap <leader>gb :Gblame<CR>
