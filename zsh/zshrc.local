@@ -13,6 +13,7 @@ alias rsp='rs -p 5000'
 alias codi=vscodium
 alias v=vim
 alias m=mvim
+alias cred='EDITOR="vim" bin/rails credentials:edit'
 
 # To open a Gem source code
 ogem () {
