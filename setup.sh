@@ -132,13 +132,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 # - Generate SSH keys
 fancy_echo "Generating a new SSH key..."
-ssh-keygen -t rsa -b 4096 -C "soyalexventura@gmail.com"
+ssh-keygen -t ed25519 -C "soyalexventura@gmail.com"
 fancy_echo "Start the ssh-agent in the background..."
 eval "$(ssh-agent -s)"
 fancy_echo "Add your SSH private key to the ssh-agent and store your passphrase in the keychain..."
-ssh-add -K ~/.ssh/id_rsa
+ssh-add -K ~/.ssh/id_ed25519
 fancy_echo "Copying the SSH key to your clipboard...."
-pbcopy < ~/.ssh/id_rsa.pub
+pbcopy < ~/.ssh/id_ed25519.pub
 fancy_echo "Opening Github.com user settings for SSH and GPG keys..."
 open https://github.com/settings/keys
 fancy_echo "Now click 'New SSH key', set a tittle for the new key, and finally paste the content of your 'id_rsa.pub' and save."
