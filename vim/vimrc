@@ -154,7 +154,7 @@ set ttyfast                            " Indicates fast terminal connection
 " set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀,eol:↲
 set list listchars=tab:▸─,nbsp:␣,trail:·,extends:»,precedes:«,eol:¬
 highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=white guibg=#ff005f
+" highlight SpecialKey guifg=white guibg=#ff005f
 " }}}
 
 " No sound on errors {{{
@@ -230,7 +230,7 @@ if has("autocmd")
     au BufNewFile,BufRead .gitconfig,.git/* set noet
     au BufNewFile,BufRead Dockerfile* setf dockerfile
   augroup END
-  endif
+endif
 " }}}
 
 " Prettier auto-format without "@format" or "@prettier" tag {{{
