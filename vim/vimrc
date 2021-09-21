@@ -143,6 +143,23 @@ if has('mac') && has('gui_running')
 endif
 " }}
 
+" ============================================================ Vim-Airline config {{
+" For molokai colorscheme wse custom theme to change filename color on inactive windows
+" let g:airline_theme='dark_alex'
+" Enable smarter tab line to be colored
+let g:airline#extensions#tabline#enabled = 1
+" Fancy arrow symbols, requires a patched font(https://github.com/vim-airline/vim-airline/issues/2338)
+let g:airline_powerline_fonts = 1
+" Branch extension for airline
+let g:airline#extensions#branch#displayed_head_limit = 10
+" Powerline symbols to be correctly rendered in MacVim
+if has("gui_running")  
+  " let g:airline_left_sep = '>'
+  let g:airline_left_alt_sep = '〉'
+  " let g:airline_right_sep = '<'
+  let g:airline_right_alt_sep = '〈'
+endif
+" ============================================================ }}
 
 " -- Change cursor shape between insert and normal mode in iTerm2.app
 if $TERM_PROGRAM =~ "iTerm"
