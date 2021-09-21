@@ -238,6 +238,10 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 " }}}
 
+" Maps for YouCompleteMe
+" nnoremap <Silent> <Leader>gd :YcmCompleter GoTo<CR>
+" nnoremap <Silent> <Leader>gf :YcmCompleter FixIt<CR>
+
 " Copy to system clipboard from Vim terminal
 if !has("gui_macvim") && !has("gui_running")
   " vmap <C-c> "+y
