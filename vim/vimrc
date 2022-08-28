@@ -241,7 +241,7 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.so$\|\.dat$|\.DS_Store$|\tags$'
   \ }
 " Shorcut to execute :ClearCtrlPCache
-nmap <Leader>C :CtrlPClearCache<cr>             " Refresh just CtrlP
+nmap <Leader>C :CtrlPClearCache<cr>              " Refresh just CtrlP
 nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>:CtrlPClearCache<cr> " Refresh CtrlP & NERDTree
 
 
@@ -252,6 +252,7 @@ nmap <leader>gd :Git diff<CR>
 nmap <leader>gl :Git log<CR>
 nmap <leader>gc :Git commit<CR>
 nmap <leader>gp :Git push<CR>
+autocmd FileType fugitiveblame nmap <buffer> q gq
 " }}}
 
 " -- Clear highlights on hitting 'ESC' twice
