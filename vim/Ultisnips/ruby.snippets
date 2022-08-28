@@ -4,7 +4,15 @@ pp(${1:variable_to_print_out})
 endsnippet
 
 snippet ppi "Just to print out any variable with random emojis" bA
-a = ["💭", "✅", "❤️", "🚀", "😎", "👻", "👍", "😸"]
+a = ["💭", "✅", "❤️", "🚀", "😎", "👻", "👍", "😸", "⭐️", "🚨", "🦋", "🤷🏻‍♂️", "🦄", "🏁", "🐷", "🤷🏻‍♂️", "1️⃣", "☑️"]
 puts a.sample * 50
 pp(${1:variable_to_print_out})
+endsnippet
+
+snippet bry "Create a break point for Ruby file" bA
+binding.pry
+endsnippet
+
+snippet bbg "Create a break point for Ruby file" bA
+byebug
 endsnippet
