@@ -61,16 +61,16 @@ fancy_echo "Verifying 'Postgres.app' CLI config..."
 which psql
 
 # — Install RVM
-fancy_echo "Configuring RVM as version manager for Ruby..."
-\curl -L https://get.rvm.io | bash -s stable
-source ~/.rvm/scripts/rvm
-rvm | head -n 1
+# fancy_echo "Configuring RVM as version manager for Ruby..."
+# \curl -L https://get.rvm.io | bash -s stable
+# source ~/.rvm/scripts/rvm
+# rvm | head -n 1
 
 # — Install latest stable Ruby
-fancy_echo "Installing latest stable Ruby..."
+# fancy_echo "Installing latest stable Ruby..."
 #rvm use ruby --install --default
-rvm use ruby --install --latest
-ruby -vs
+# rvm use ruby --install --latest
+# ruby -vs
 
 # — Install and config Git
 fancy_echo "Configuring git..."
@@ -81,9 +81,9 @@ git config --global color.ui true
 git config --global core.editor "vim"
 
 # — Install Rails
-fancy_echo "Installing Rails..."
-gem install rails --no-document
-rails --version
+# fancy_echo "Installing Rails..."
+# gem install rails --no-document
+# rails --version
 
 # - Manually install Node Version Manager 'zsh-nvm' as Zsh plugin for installing, updating and loading NVM
 fancy_echo "Installing ZSH-NVM plugin for oh-my-zsh..."
