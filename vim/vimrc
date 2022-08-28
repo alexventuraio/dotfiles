@@ -276,5 +276,9 @@ nnoremap J :m .+1<CR>==
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
+" Emmet trigger key
+let g:user_emmet_mode='n'                        " only enable normal mode functions.
+let g:user_emmet_leader_key=';'                  " leader key for emmet (;,)
+
 " Auto-resize splits when Vim gets resized.
 autocmd VimResized * wincmd =
