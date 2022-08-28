@@ -54,6 +54,10 @@ brew update
 fancy_echo "Installing dependencies from Brewfile..."
 brew bundle install --verbose
 
+# - Install cTags (updated)
+# fancy_echo "Installing Universal-ctags..."
+# brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
 # — Postinstall configuration for Postgres.app to use CLI Tools
 fancy_echo "Setting up CLI Tools from 'Postgres.app'..."
 sudo mkdir -p /etc/paths.d && echo /Applications/Postgres.app/Contents/Versions/latest/bin | sudo tee /etc/paths.d/postgresapp
