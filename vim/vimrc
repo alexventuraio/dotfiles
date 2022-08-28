@@ -109,6 +109,10 @@ set splitright
 set splitbelow
 " }}}
 
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
 " Create the `tags` file (may need to install ctags first)
 " command! MakeTags !ctags -R .
 command! MakeTags !ctags -R --exclude=.git --exclude=log *
