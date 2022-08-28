@@ -57,8 +57,9 @@ call plug#end()
 syntax on                              " Turn on syntax highlighting allowing local overrides
 syntax enable                          " Turn on syntax highlighting allowing local overrides
 
+filetype on
 filetype plugin on
-filetype plugin indent on              " Turn on filetype plugins (:help filetype-plugin)
+filetype indent on                     " Turn on filetype plugins (:help filetype-plugin)
 
 set t_Co=256
 set guioptions-=T
@@ -71,7 +72,7 @@ set cursorline                         " Mostrar linea en la posicion actual del
 set cursorcolumn                       " Show the column for the current cursor position
 set number                             " Show line-number
 set numberwidth=5                      " Ancho de la columna para line-number
-set relativenumber                     " Show line number relatively to cursor position
+"set relativenumber                     " Show line number relatively to cursor position
 "set clipboard=unnamed                  " Copiar todo al clipboard del sistema
 set showmatch                          " Show matching brackets
 set showcmd                            " Mostrar los comandos que se estan ejecutando
@@ -79,7 +80,11 @@ set ruler                              " Show cursor actual line and column numb
 set laststatus=2                       " Display status bar in 2 lines
 set noshowmode                         " Do not show current VIM mode
 set wildmenu                           " Command line autocomplete menus
+set complete+=kspell
+set completeopt=menuone,longest
 set updatetime=100                     " Git diff markers refresh time
+set scrolloff=8                        " Start scrolling text before reaching the bottom
+set ignorecase                         " case insensitive matching
 
 set nowrap                             " Do not wrap lines
 " Indentation {{{
