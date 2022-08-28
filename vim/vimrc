@@ -133,17 +133,20 @@ nnoremap <C-l> <C-w>l
 if (has("termguicolors"))
   set termguicolors
 endif
-" colorscheme gruvbox
-" colorscheme monokai_pro
-" colorscheme monokai_pro_machine
+"colorscheme gruvbox
+"colorscheme monokai_pro
+"colorscheme monokai_pro_machine
+"colorscheme dracula
+"colorscheme cobalt2
 " -------------------------------
-" colorscheme molokai
-" set transparency=15                    " To set a transparency on the app
+"colorscheme molokai
+"set transparency=15                    " To set a transparency on the app
 " *** Required to show molokai with light-grey background ***
-" let g:molokai_original = 1
-" set background=dark
+"let g:molokai_original = 1
+"set background=dark
 " -------------------------------
-colorscheme vim-material
+colorscheme alex-material
+"colorscheme vim-material
 let g:airline_theme='material'
 " ============================================================ }}}
 
@@ -155,8 +158,8 @@ endif
 " }}
 
 " ============================================================ Vim-Airline config {{
-" For molokai colorscheme wse custom theme to change filename color on inactive windows
-" let g:airline_theme='dark_alex'
+" For molokai colorscheme use custom theme to change filename color on inactive windows
+"let g:airline_theme='dark_alex'
 " Enable smarter tab line to be colored
 let g:airline#extensions#tabline#enabled = 1
 " Fancy arrow symbols, requires a patched font(https://github.com/vim-airline/vim-airline/issues/2338)
