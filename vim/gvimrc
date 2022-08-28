@@ -5,4 +5,7 @@ if has("gui_macvim") && has("gui_running")
   macmenu &File.New\ Tab key=<D-S-t>
   nmap <D-t> :CtrlP<CR>
   imap <D-t> <ESC>:CtrlP<CR>
+
+  " Enable smarter tab line to be colored
+  let g:airline#extensions#tabline#enabled = 0
 endif
