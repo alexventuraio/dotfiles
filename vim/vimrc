@@ -1,6 +1,7 @@
+" PERFORMANCE: https://github.com/joshukraine/dotfiles/blob/master/vim-performance.md
 set nocompatible
 
-" Specify a directory for plugins
+" Specify a directory for plugins (https://github.com/junegunn/vim-plug)
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
@@ -10,11 +11,13 @@ call plug#begin('~/.vim/plugged')
 " Plug 'morhetz/gruvbox'
 Plug 'tomasr/molokai'
 Plug 'hzchirs/vim-material'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'Kruhlmann/cobalt2-vim-theme'
 " Plug 'phanviet/vim-monokai-pro'
 " Plug 'Erichain/vim-monokai-pro'
 
 " IDE
-" Plug 'sheerun/vim-polyglot'
+Plug 'sheerun/vim-polyglot'
 Plug 'easymotion/vim-easymotion'
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
@@ -27,23 +30,26 @@ Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ycm-core/YouCompleteMe'
+" Plug 'ycm-core/YouCompleteMe'
+Plug 'vim-scripts/AutoComplPop'
 Plug 'SirVer/ultisnips'
 
 " Ruby & Rails
 Plug 'slim-template/vim-slim'
-" Plug 'tpope/vim-bundler'
-" Plug 'tpope/vim-rails'
 Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-rails'
+Plug 'vim-ruby/vim-ruby'
+" Plug 'tpope/vim-endwise'
 
 " Javascript & React
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
-" Plug 'mattn/emmet-vim'
-" Plug 'maxmellon/vim-jsx-pretty'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
+Plug 'mattn/emmet-vim'
+Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'pangloss/vim-javascript'
+" Plug 'mxw/vim-jsx'
 
 " Initialize plugin system
 call plug#end()
