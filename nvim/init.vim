@@ -26,3 +26,5 @@ call plug#end()
 
 """"" Material Theme:
 colorscheme material
+" This command toggles the style
+nnoremap <leader>mm :lua require('material.functions').toggle_style()<CR>
