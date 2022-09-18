@@ -26,6 +26,9 @@ call plug#end()
 
 
 
+""""" Mappings code goes here.
+let mapleader=" "
+
 """"" Material Theme:
 colorscheme material
 " This command toggles the style
