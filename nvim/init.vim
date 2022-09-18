@@ -33,5 +33,10 @@ nnoremap <leader>mm :lua require('material.functions').toggle_style()<CR>
 
 """"" LSP Config
 lua << END
-require('lualine').setup()
+require('lualine').setup({
+  options = {
+    icons_enabled = true,
+    theme = 'ayu_mirage',
+  }
+})
 END
