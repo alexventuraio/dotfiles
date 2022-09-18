@@ -17,6 +17,8 @@ set scrolloff=8              " Start scrolling text before reaching the bottom
 call plug#begin('~/.config/nvim/plugged')
   """"" THEMES
   Plug 'marko-cerovac/material.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
+  Plug 'kyazdani42/nvim-web-devicons'      " To have icons in your statusline
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -28,3 +30,8 @@ call plug#end()
 colorscheme material
 " This command toggles the style
 nnoremap <leader>mm :lua require('material.functions').toggle_style()<CR>
+
+""""" LSP Config
+lua << END
+require('lualine').setup()
+END
