@@ -11,3 +11,11 @@ set softtabstop=2            " see multiple spaces as tabstops so <BS> does the 
 set shiftwidth=2             " width for autoindents (set sw=2)
 set nowrap                   " Do not wrap lines
 set scrolloff=8              " Start scrolling text before reaching the bottom
+
+
+
+call plug#begin('~/.config/nvim/plugged')
+
+" Initialize plugin system
+" - Automatically executes `filetype plugin indent on` and `syntax enable`.
+call plug#end()
