@@ -15,6 +15,9 @@ set scrolloff=8              " Start scrolling text before reaching the bottom
 
 
 call plug#begin('~/.config/nvim/plugged')
+  """"" LSP
+  Plug 'neovim/nvim-lspconfig'
+
   """"" THEMES
   Plug 'marko-cerovac/material.nvim'
   Plug 'nvim-lualine/lualine.nvim'
