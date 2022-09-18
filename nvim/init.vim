@@ -15,7 +15,14 @@ set scrolloff=8              " Start scrolling text before reaching the bottom
 
 
 call plug#begin('~/.config/nvim/plugged')
+  """"" THEMES
+  Plug 'marko-cerovac/material.nvim'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
+
+
+
+""""" Material Theme:
+colorscheme material
