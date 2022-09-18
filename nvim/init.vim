@@ -40,11 +40,11 @@ call plug#end()
 
 
 """"" Mappings code goes here.
-let mapleader=" "
+let mapleader=' '
 
 """"" Material Theme:
 colorscheme material
-" This command toggles the style
+""""" This command toggles the style
 nnoremap <leader>mm :lua require('material.functions').toggle_style()<CR>
 
 """"" LSP Config
