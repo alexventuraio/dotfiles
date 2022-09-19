@@ -311,4 +311,13 @@ if exists("g:neovide")                           " Put anything you want to happ
   """"" Save file with Cmd+s
   nmap <D-s> :w<CR>
   imap <D-s> <ESC>:w<CR>
+
+  """"" Copy-Paste with Cmd-v Cmd-c Cmd-x
+  vnoremap <special> <D-x> "+x
+
+  vnoremap <special> <D-c> "+y
+  cnoremap <special> <D-c> <C-Y>
+
+  nnoremap <special> <D-v> "+gP
+  cnoremap <special> <D-v> <C-R>+
 endif
