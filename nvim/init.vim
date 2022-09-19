@@ -86,6 +86,8 @@ nnoremap <leader>mm :lua require('material.functions').toggle_style()<CR>
 
 """"" LSP Config
 lua << EOF
+vim.g.mapleader = ' '
+
 require('lualine').setup({
   options = {
     icons_enabled = true,
@@ -181,8 +183,6 @@ EOF
 " MAPPINGS --------------------------------------------------------------- {{{
 
 """"" Mappings code goes here.
-let mapleader=' '
-
 
 """"" Move between splitted windows by holding CTRL + hjkl
 nnoremap <C-h> <C-w>h
