@@ -292,3 +292,13 @@ let g:ctrlp_custom_ignore = {
 set noerrorbells
 set visualbell t_vb=
 set tm=500
+
+
+
+if exists("g:neovide")                           " Put anything you want to happen only in Neovide here
+  """"" TAB in normal mode it will move to next buffer | SHIFT-TAB will go back
+  nnoremap <silent> <TAB> :bnext<CR>
+  nnoremap <silent> <S-TAB> :bprevious<CR>
+  nnoremap <silent> <S-D-[> :tabprevious<CR>
+  nnoremap <silent> <S-D-]> :tabnext<CR>
+endif
