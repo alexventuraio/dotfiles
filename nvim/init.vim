@@ -81,8 +81,6 @@ call plug#end()
 
 """"" Material Theme:
 colorscheme material
-""""" This command toggles the style
-nnoremap <leader>mm :lua require('material.functions').toggle_style()<CR>
 
 """"" LSP Config
 lua << EOF
@@ -239,6 +237,9 @@ nmap <leader>fa :Ag<CR>
 nmap <leader>fs :FZF<CR>
 nmap <leader>rg :Rg<CR>
 nmap <leader>fm :Commits<CR>
+
+""""" This command toggles the material theme style
+nnoremap <leader>f :lua require('material.functions').toggle_style()<CR>
 
 " }}}
 
