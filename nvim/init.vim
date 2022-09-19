@@ -301,4 +301,8 @@ if exists("g:neovide")                           " Put anything you want to happ
   nnoremap <silent> <S-TAB> :bprevious<CR>
   nnoremap <silent> <S-D-[> :tabprevious<CR>
   nnoremap <silent> <S-D-]> :tabnext<CR>
+
+  """"" Open NERDTree finder with Cmd+t
+  nmap <D-t> :CtrlP<CR>
+  imap <D-t> <ESC>:CtrlP<CR>
 endif
