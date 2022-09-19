@@ -18,9 +18,23 @@ call plug#begin('~/.config/nvim/plugged')
   """"" LSP
   Plug 'neovim/nvim-lspconfig'             " Collection of configurations for built-in LSP client
 
+  """"" IDE
+  Plug 'preservim/nerdtree'
+  Plug 'preservim/nerdcommenter'
+  Plug 'wakatime/vim-wakatime'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'jlanzarotta/bufexplorer'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-rhubarb'                 " required by fugitive to :Gbrowse
+  Plug 'airblade/vim-gitgutter'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'SirVer/ultisnips'
+  Plug 'nvim-lualine/lualine.nvim'
+
   """"" THEMES
   Plug 'marko-cerovac/material.nvim'
-  Plug 'nvim-lualine/lualine.nvim'
   Plug 'kyazdani42/nvim-web-devicons'      " To have icons in your statusline
 
   """"" AUTOCOMPLETE
@@ -30,8 +44,18 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/nvim-cmp'                  " Autocompletion plugin
   " For ultisnips users.
-  Plug 'SirVer/ultisnips'
   Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
+  """"" Ruby & Rails
+  " Plug 'slim-template/vim-slim'
+  " Plug 'kchmck/vim-coffee-script'
+  Plug 'tpope/vim-bundler'
+  " Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-rails'
+  Plug 'vim-ruby/vim-ruby'
+
+  """"" HTML & Javascript & React
+  Plug 'mattn/emmet-vim'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -39,8 +63,8 @@ call plug#end()
 
 
 
-""""" Mappings code goes here.
-let mapleader=' '
+""""" AUTOCOMPLETE Config
+"set completeopt=menu,menuone,noselect
 
 """"" Material Theme:
 colorscheme material
@@ -133,3 +157,138 @@ cmp.setup.cmdline(':', {
   })
 })
 EOF
+
+" MAPPINGS --------------------------------------------------------------- {{{
+
+""""" Mappings code goes here.
+let mapleader=' '
+
+
+""""" Move between splitted windows by holding CTRL + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+""""" Move 1 more lines up or down in normal and visual selection modes.
+nnoremap K :m .-2<CR>==
+nnoremap J :m .+1<CR>==
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
+
+""""" Shorcut to execute :ClearCtrlPCache
+nmap <Leader>C :CtrlPClearCache<cr>              " Refresh just CtrlP
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>:CtrlPClearCache<cr> " Refresh CtrlP & NERDTree
+
+""""" fugitive.vim mappings GIT
+nmap <leader>gb :Git blame<CR>
+nmap <leader>gs :Git<CR>
+nmap <leader>gd :Git diff<CR>
+nmap <leader>gl :Git log<CR>
+nmap <leader>gc :Git commit<CR>
+nmap <leader>gp :Git push<CR>
+autocmd FileType fugitiveblame nmap <buffer> q gq
+
+""""" Clear highlights on hitting 'ESC' twice
+nnoremap <esc><esc> :noh<return>
+
+""""" Emmet trigger key
+let g:user_emmet_mode='n'                        " only enable normal mode functions.
+let g:user_emmet_leader_key=';'                  " leader key for emmet (;,)
+
+""""" Fix indentation in file
+map <Leader>i mmgg=G`m<CR>
+
+""""" Copy to clipboard
+vnoremap <leader>y "+y
+nnoremap <leader>Y "+yg_
+nnoremap <leader>y "+y
+
+""""" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
+" }}}
+
+
+" VIMSCRIPT -------------------------------------------------------------- {{{
+
+""""" This will enable code folding.
+""""" Use the marker method of folding.
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+
+""""" Strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+""""" Auto-resize splits when Vim gets resized.
+autocmd VimResized * wincmd =
+
+" }}}
+
+
+" STATUS LINE ------------------------------------------------------------ {{{
+
+
+" }}}
+
+
+" THEMING ---------------------------------------------------------------- {{{
+
+""""" Theme config for: material.nvim
+let g:material_style = "darker"
+colorscheme material
+
+
+
+""""" Show and highlight special characteres (https://stackoverflow.com/a/69805673/4111295)
+"set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀,eol:¶
+set list listchars=tab:▸─,nbsp:␣,trail:·,extends:»,precedes:«,eol:¬
+highlight NonText guifg=#4a4a59                    " applies to: eol, extends and precedes
+highlight SpecialKey guifg=white guibg=#ff005f     " applies to: nbsp, tab and trail
+call matchadd('SpecialKey', '\%u00a0')             " match both non-breaking spaces...
+call matchadd('SpecialKey', '[[:blank:]]\+$')      " ... and trailing white-space
+
+" }}}
+
+
+
+
+
+
+
+""""" FIX: E319: No 'python3' provider found. Run ':checkhealth provider'
+" https://github.com/neoclide/coc-snippets/issues/196#issuecomment-781231190
+" https://www.reddit.com/r/neovim/comments/pdzxzp/e319_no_python3_provider_found_run_checkhealth/
+"let g:python3_host_prog = '/opt/homebrew/bin/python3'
+
+""""" UltiSnips config
+" Define a directory where my snippets were to be located: https://stackoverflow.com/a/37514464/4111295
+let g:UltiSnipsSnippetDirectories=["~/Dropbox/Code/dotfiles/vim/UltiSnips"]
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger='<Leader><Leader>'
+let g:UltiSnipsExpandTrigger='<tab>'
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit='vertical'
+
+""""" NERDTree config
+autocmd StdinReadPre * let s:std_in=1  " This trick also prevents NERDTree from hiding when first selecting a file.
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+let NERDTreeShowHidden=1               " Show hidden files by default
+nmap <Leader>n :NERDTreeFind<CR>       " Find the current file in the file explorer
+nmap <Leader>m :NERDTreeToggle<CR>     " Open/close file explorer
+
+""""" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$|\tags$'
+  \ }
+
+""""" No sound on errors
+set noerrorbells
+set visualbell t_vb=
+set tm=500
