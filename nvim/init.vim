@@ -308,6 +308,15 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.so$\|\.dat$|\.DS_Store$|\tags$'
   \ }
 
+""""" To be agle to use gf with Vue imports with @ symbol https://stackoverflow.com/q/70574914/4111295
+setlocal isfname+=@-@
+setlocal includeexpr=substitute(v:fname,'^@\/','app/frontend/src/','')
+set suffixesadd=.js,.vue,.scss,.json
+
+
+
+
+
 
 
 if exists("g:neovide")                           " Put anything you want to happen only in Neovide here
