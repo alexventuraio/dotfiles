@@ -13,6 +13,10 @@ set nowrap                   " do not wrap lines
 set scrolloff=8              " start scrolling text before reaching the bottom
 set splitbelow               " put the new split below the current one
 set splitright               " put the new split to the right of the current one
+""""" No sound on errors
+set noerrorbells
+set visualbell t_vb=
+set tm=500
 
 
 
@@ -293,11 +297,6 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$|\tags$'
   \ }
-
-""""" No sound on errors
-set noerrorbells
-set visualbell t_vb=
-set tm=500
 
 
 
