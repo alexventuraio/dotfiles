@@ -24,6 +24,9 @@ call plug#begin('~/.config/nvim/plugged')
   """"" LSP
   Plug 'neovim/nvim-lspconfig'             " Collection of configurations for built-in LSP client
 
+  """"" For better languages syntax highlighting
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
   """"" IDE
   Plug 'preservim/nerdtree'
   Plug 'preservim/nerdcommenter'
@@ -86,6 +89,13 @@ require('lualine').setup({
   }
 })
 
+require'nvim-treesitter.configs'.setup({
+  ensure_installed = { 'javascript', 'ruby', 'vue' },
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    disable = { 'c', 'rust' },  -- list of language that will be disabled
+  },
+})
 
 
 --
