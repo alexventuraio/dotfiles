@@ -13,6 +13,8 @@ set nowrap                   " do not wrap lines
 set scrolloff=8              " start scrolling text before reaching the bottom
 set splitbelow               " put the new split below the current one
 set splitright               " put the new split to the right of the current one
+set cursorline               " highlight cursor line underneath the cursor horizontally.
+set cursorcolumn             " highlight cursor line underneath the cursor vertically.
 """"" No sound on errors
 set noerrorbells
 set visualbell t_vb=
