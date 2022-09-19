@@ -27,6 +27,10 @@ call plug#begin('~/.config/nvim/plugged')
   """"" For better languages syntax highlighting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+  """"" Adding FzF
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+
   """"" IDE
   Plug 'preservim/nerdtree'
   Plug 'preservim/nerdcommenter'
@@ -229,6 +233,12 @@ vnoremap <leader>P "+P
 """"" Override beginning and end of line navigation
 nnoremap H 0
 nnoremap L $
+
+""""" FzF search commands
+nmap <leader>fa :Ag<CR>
+nmap <leader>fs :FZF<CR>
+nmap <leader>rg :Rg<CR>
+nmap <leader>fm :Commits<CR>
 
 " }}}
 
