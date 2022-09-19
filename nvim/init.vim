@@ -212,6 +212,10 @@ nnoremap <leader>P "+P
 vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
+""""" Override beginning and end of line navigation
+nnoremap H 0
+nnoremap L $
+
 " }}}
 
 
