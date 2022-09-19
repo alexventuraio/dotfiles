@@ -330,6 +330,8 @@ set suffixesadd=.js,.vue,.scss,.json
 
 
 if exists("g:neovide")                           " Put anything you want to happen only in Neovide here
+  set guifont=Operator\ Mono\ Lig\ Book:h16
+
   """"" TAB in normal mode it will move to next buffer | SHIFT-TAB will go back
   nnoremap <silent> <TAB> :bnext<CR>
   nnoremap <silent> <S-TAB> :bprevious<CR>
