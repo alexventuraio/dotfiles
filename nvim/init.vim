@@ -305,4 +305,8 @@ if exists("g:neovide")                           " Put anything you want to happ
   """"" Open NERDTree finder with Cmd+t
   nmap <D-t> :CtrlP<CR>
   imap <D-t> <ESC>:CtrlP<CR>
+
+  """"" Save file with Cmd+s
+  nmap <D-s> :w<CR>
+  imap <D-s> <ESC>:w<CR>
 endif
