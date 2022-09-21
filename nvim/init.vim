@@ -15,6 +15,7 @@ set splitbelow               " put the new split below the current one
 set splitright               " put the new split to the right of the current one
 set cursorline               " highlight cursor line underneath the cursor horizontally.
 set cursorcolumn             " highlight cursor line underneath the cursor vertically.
+set updatetime=100           " git diff markers refresh time
 """"" No sound on errors
 set noerrorbells
 set visualbell t_vb=
