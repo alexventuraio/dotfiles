@@ -7,6 +7,7 @@ set mouse=a                  " enable mouse inside terminal NVIM
 set showcmd                  " Show partial command you type in the last line of the screen.
 set showmatch                " show matching brackets.
 set tabstop=2                " number of columns occupied by a tab character
+set expandtab                " convert tabs to white space
 set softtabstop=2            " see multiple spaces as tabstops so <BS> does the right thing
 set shiftwidth=2             " width for autoindents (set sw=2)
 set nowrap                   " do not wrap lines
