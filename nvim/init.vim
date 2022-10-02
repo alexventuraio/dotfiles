@@ -281,3 +281,6 @@ if exists("g:neovide")                           " Put anything you want to happ
   let g:neovide_cursor_animation_length=0
   "let g:neovide_cursor_vfx_mode = "railgun"
 endif
+
+let g:fzf_preview_window = ['right,50%', 'ctrl-/']
+let $FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*,tmp/*}"'
