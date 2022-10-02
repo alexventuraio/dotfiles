@@ -32,9 +32,6 @@ call plug#begin('~/.config/nvim/plugged')
   """"" For better languages syntax highlighting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-  """"" Adding FzF
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
 
   """"" IDE
   Plug 'preservim/nerdtree'
@@ -82,7 +79,7 @@ call plug#end()
 
 
 """"" AUTOCOMPLETE Config
-"set completeopt=menu,menuone,noselect
+"  set completeopt=menu,menuone,noselect
 
 """"" Material Theme:
 colorscheme material
@@ -148,11 +145,6 @@ vnoremap <leader>P "+P
 nnoremap H 0
 nnoremap L $
 
-""""" FzF search commands
-nmap <leader>fa :Ag<CR>
-nmap <leader>fs :FZF<CR>
-nmap <leader>rg :Rg<CR>
-nmap <leader>fm :Commits<CR>
 
 """"" This command toggles the material theme style
 nnoremap <leader>tt :lua require('material.functions').toggle_style()<CR>
@@ -281,6 +273,3 @@ if exists("g:neovide")                           " Put anything you want to happ
   let g:neovide_cursor_animation_length=0
   "let g:neovide_cursor_vfx_mode = "railgun"
 endif
-
-let g:fzf_preview_window = ['right,50%', 'ctrl-/']
-let $FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*,tmp/*}"'
