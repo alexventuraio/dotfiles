@@ -1,22 +1,11 @@
 vim.g.mapleader = ' '
 
-require('lualine').setup({
-  options = {
-    icons_enabled = true,
-    theme = 'ayu_mirage',
-  }
-})
-
-require'nvim-treesitter.configs'.setup({
-  ensure_installed = { 'javascript', 'ruby', 'vue' },
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    disable = { 'c', 'rust' },  -- list of language that will be disabled
-  },
-})
 
 
--- AUTOCOMPLETION WITH NVIM-CMP
+
+--
+-- LSP CONFIG
+--
 
 -- Add additional capabilities supported by nvim-cmp
 local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -32,6 +21,18 @@ for _, lsp in ipairs(servers) do
     capabilities = capabilities,
   }
 end
+
+--
+-- LSP CONFIG
+--
+
+
+
+
+
+--
+-- AUTOCOMPLETION WITH NVIM-CMP
+--
 
 -- Set up nvim-cmp.
 local cmp = require 'cmp'
@@ -92,4 +93,33 @@ cmp.setup.cmdline(':', {
   })
 })
 
+--
 -- AUTOCOMPLETION WITH NVIM-CMP
+--
+
+
+
+
+
+--
+-- GENERAL PLUGINS CONFIG
+--
+
+require('lualine').setup({
+    options = {
+      icons_enabled = true,
+      theme = 'ayu_mirage',
+    }
+  })
+  
+  require'nvim-treesitter.configs'.setup({
+    ensure_installed = { 'javascript', 'ruby', 'vue' },
+    highlight = {
+      enable = true,              -- false will disable the whole extension
+      disable = { 'c', 'rust' },  -- list of language that will be disabled
+    },
+  })
+
+--
+-- GENERAL PLUGINS CONFIG
+--

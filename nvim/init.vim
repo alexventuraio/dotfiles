@@ -89,7 +89,9 @@ colorscheme material
 
 """"" LSP Config
 lua << EOF
+
 require('lsp')
+
 EOF
 
 " MAPPINGS --------------------------------------------------------------- {{{
