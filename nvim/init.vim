@@ -32,6 +32,9 @@ call plug#begin('~/.config/nvim/plugged')
   """"" For better languages syntax highlighting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
+  """"" Telescope
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
   """"" IDE
   Plug 'preservim/nerdtree'
