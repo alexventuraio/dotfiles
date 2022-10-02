@@ -244,7 +244,7 @@ nmap <leader>rg :Rg<CR>
 nmap <leader>fm :Commits<CR>
 
 """"" This command toggles the material theme style
-nnoremap <leader>f :lua require('material.functions').toggle_style()<CR>
+nnoremap <leader>tt :lua require('material.functions').toggle_style()<CR>
 
 " }}}
 
