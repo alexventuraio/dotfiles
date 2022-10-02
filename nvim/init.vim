@@ -84,12 +84,8 @@ call plug#end()
 """"" Material Theme:
 colorscheme material
 
-""""" LSP Config
-lua << EOF
-
-require('lsp')
-
-EOF
+""""" My LUA namespace Custom Config
+lua require('alex')
 
 " MAPPINGS --------------------------------------------------------------- {{{
 
