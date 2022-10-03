@@ -83,8 +83,6 @@ call plug#end()
 """"" AUTOCOMPLETE Config
 "  set completeopt=menu,menuone,noselect
 
-""""" Material Theme:
-colorscheme material
 
 """"" My LUA namespace Custom Config
 lua require('alex')
