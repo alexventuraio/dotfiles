@@ -2,6 +2,10 @@
 -- GENERAL PLUGINS CONFIG
 --
 
+require('Comment').setup()
+-- gcc/gbc -> NORMAL mode
+-- gc/gb -> VISUAL mode
+
 require('lualine').setup({
   options = {
     icons_enabled = true,

@@ -38,6 +38,8 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
   """"" IDE
+  Plug 'numToStr/Comment.nvim'
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'preservim/nerdtree'
   Plug 'wakatime/vim-wakatime'
   Plug 'jiangmiao/auto-pairs'
@@ -48,7 +50,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'SirVer/ultisnips'
-  Plug 'nvim-lualine/lualine.nvim'
 
   """"" THEMES
   Plug 'marko-cerovac/material.nvim'
