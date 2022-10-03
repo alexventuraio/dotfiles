@@ -47,7 +47,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-rhubarb'                 " required by fugitive to :Gbrowse
   Plug 'airblade/vim-gitgutter'
-  Plug 'ctrlpvim/ctrlp.vim'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'SirVer/ultisnips'
   Plug 'nvim-lualine/lualine.nvim'
@@ -108,8 +107,7 @@ vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
 
 """"" Shorcut to execute :ClearCtrlPCache
-nmap <Leader>C :CtrlPClearCache<cr>              " Refresh just CtrlP
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>:CtrlPClearCache<cr> " Refresh CtrlP & NERDTree
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p> " Refresh NERDTree
 
 """"" fugitive.vim mappings GIT
 nmap <leader>gb :Git blame<CR>
@@ -221,12 +219,6 @@ let NERDTreeShowHidden=1               " Show hidden files by default
 nmap <Leader>n :NERDTreeFind<CR>       " Find the current file in the file explorer
 nmap <Leader>m :NERDTreeToggle<CR>     " Open/close file explorer
 
-""""" Ignore some folders and files for CtrlP indexing
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$|\tags$'
-  \ }
-
 """"" To be agle to use gf with Vue imports with @ symbol https://stackoverflow.com/q/70574914/4111295
 setlocal isfname+=@-@
 setlocal includeexpr=substitute(v:fname,'^@\/','app/frontend/src/','')
@@ -246,10 +238,6 @@ if exists("g:neovide")                           " Put anything you want to happ
   nnoremap <silent> <S-TAB> :bprevious<CR>
   nnoremap <silent> <S-D-[> :tabprevious<CR>
   nnoremap <silent> <S-D-]> :tabnext<CR>
-
-  """"" Open NERDTree finder with Cmd+t
-  nmap <D-t> :CtrlP<CR>
-  imap <D-t> <ESC>:CtrlP<CR>
 
   """"" Save file with Cmd+s
   nmap <D-s> :w<CR>
