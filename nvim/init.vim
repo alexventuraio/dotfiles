@@ -39,7 +39,6 @@ call plug#begin('~/.config/nvim/plugged')
 
   """"" IDE
   Plug 'preservim/nerdtree'
-  Plug 'preservim/nerdcommenter'
   Plug 'wakatime/vim-wakatime'
   Plug 'jiangmiao/auto-pairs'
   Plug 'jlanzarotta/bufexplorer'
