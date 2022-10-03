@@ -2,6 +2,7 @@ syntax enable
 
 set encoding=utf-8
 set autoread
+set noswapfile
 set number                   " add line numbers
 "  set relativenumber           " show line numbers relative to the current cursor line
 set mouse=a                  " enable mouse inside terminal NVIM
