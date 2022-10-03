@@ -41,6 +41,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'numToStr/Comment.nvim'
   Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
   Plug 'nvim-lualine/lualine.nvim'
+  Plug 'norcalli/nvim-colorizer.lua'
   Plug 'preservim/nerdtree'
   Plug 'wakatime/vim-wakatime'
   Plug 'jlanzarotta/bufexplorer'

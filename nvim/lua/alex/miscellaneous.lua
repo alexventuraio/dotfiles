@@ -2,6 +2,8 @@
 -- GENERAL PLUGINS CONFIG
 --
 
+require('colorizer').setup()
+
 require('Comment').setup()
 -- gcc/gbc -> NORMAL mode
 -- gc/gb -> VISUAL mode
