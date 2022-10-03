@@ -6,7 +6,7 @@ require('Comment').setup()
 -- gcc/gbc -> NORMAL mode
 -- gc/gb -> VISUAL mode
 
-require("bufferline").setup{}
+require('bufferline').setup{}
 
 require('lualine').setup({
   options = {
@@ -16,7 +16,7 @@ require('lualine').setup({
   }
 })
   
-require'nvim-treesitter.configs'.setup({
+require('nvim-treesitter.configs').setup({
   ensure_installed = { 'javascript', 'ruby', 'vue' },
   highlight = {
     enable = true,              -- false will disable the whole extension
