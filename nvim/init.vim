@@ -42,7 +42,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'preservim/nerdtree'
   Plug 'wakatime/vim-wakatime'
-  Plug 'jiangmiao/auto-pairs'
   Plug 'jlanzarotta/bufexplorer'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
