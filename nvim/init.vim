@@ -39,6 +39,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   """"" IDE
   Plug 'numToStr/Comment.nvim'
+  Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'preservim/nerdtree'
   Plug 'wakatime/vim-wakatime'

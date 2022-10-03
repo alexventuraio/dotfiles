@@ -6,6 +6,8 @@ require('Comment').setup()
 -- gcc/gbc -> NORMAL mode
 -- gc/gb -> VISUAL mode
 
+require("bufferline").setup{}
+
 require('lualine').setup({
   options = {
     icons_enabled = true,
