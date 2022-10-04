@@ -28,8 +28,10 @@ require('bufferline').setup({
 require('lualine').setup({
   options = {
     icons_enabled = true,
-    theme = 'ayu_mirage',
-    disabled_filetypes = {'NvimTree'}
+    theme = 'powerline',
+    disabled_filetypes = {'NvimTree'},
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
   }
 })
   
