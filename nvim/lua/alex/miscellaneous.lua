@@ -16,6 +16,7 @@ require('bufferline').setup({
     },
     offsets = {
       {
+        filetype = "NvimTree",
         text = "פּ",
         text_align = "center",
         separator = true,
