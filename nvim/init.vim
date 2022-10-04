@@ -42,6 +42,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'kyazdani42/nvim-tree.lua'
   Plug 'wakatime/vim-wakatime'
   Plug 'jlanzarotta/bufexplorer'
   Plug 'tpope/vim-fugitive'
@@ -53,7 +54,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   """"" THEMES
   Plug 'marko-cerovac/material.nvim'
-  Plug 'kyazdani42/nvim-web-devicons'      " To have icons in your statusline
+  Plug 'kyazdani42/nvim-web-devicons'      " To have icons in your statusline and files
 
   """"" AUTOCOMPLETE
   Plug 'hrsh7th/cmp-nvim-lsp'              " LSP source for nvim-cmp
