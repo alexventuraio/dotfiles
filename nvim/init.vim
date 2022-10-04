@@ -42,7 +42,6 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'preservim/nerdtree'
   Plug 'wakatime/vim-wakatime'
   Plug 'jlanzarotta/bufexplorer'
   Plug 'tpope/vim-fugitive'
@@ -104,9 +103,6 @@ nnoremap K :m .-2<CR>==
 nnoremap J :m .+1<CR>==
 vnoremap K :m '<-2<CR>gv=gv
 vnoremap J :m '>+1<CR>gv=gv
-
-""""" Shorcut to execute :ClearCtrlPCache
-nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p> " Refresh NERDTree
 
 """"" fugitive.vim mappings GIT
 nmap <leader>gb :Git blame<CR>
@@ -210,13 +206,6 @@ let g:UltiSnipsSnippetDirectories=["~/Dropbox/Code/dotfiles/vim/UltiSnips"]
 let g:UltiSnipsExpandTrigger='<tab>'
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit='vertical'
-
-""""" NERDTree config
-autocmd StdinReadPre * let s:std_in=1  " This trick also prevents NERDTree from hiding when first selecting a file.
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-let NERDTreeShowHidden=1               " Show hidden files by default
-nmap <Leader>n :NERDTreeFind<CR>       " Find the current file in the file explorer
-nmap <Leader>m :NERDTreeToggle<CR>     " Open/close file explorer
 
 """"" To be agle to use gf with Vue imports with @ symbol https://stackoverflow.com/q/70574914/4111295
 setlocal isfname+=@-@

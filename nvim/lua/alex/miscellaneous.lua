@@ -16,7 +16,6 @@ require('bufferline').setup({
     },
     offsets = {
       {
-        filetype = "nerdtree",
         text = "פּ",
         text_align = "center",
         separator = true,
