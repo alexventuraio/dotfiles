@@ -8,7 +8,22 @@ require('Comment').setup()
 -- gcc/gbc -> NORMAL mode
 -- gc/gb -> VISUAL mode
 
-require('bufferline').setup{}
+require('bufferline').setup({
+  options = {
+    mode = 'tabs',
+    indicator = {
+      style = 'underline',
+    },
+    offsets = {
+      {
+        filetype = "nerdtree",
+        text = "פּ",
+        text_align = "center",
+        separator = true,
+      }
+    },
+  }
+})
 
 require('lualine').setup({
   options = {
