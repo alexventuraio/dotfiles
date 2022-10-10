@@ -1,31 +1,3 @@
-syntax enable
-
-set encoding=utf-8
-set autoread
-set noswapfile
-set number                   " add line numbers
-"  set relativenumber           " show line numbers relative to the current cursor line
-set mouse=a                  " enable mouse inside terminal NVIM
-set showcmd                  " Show partial command you type in the last line of the screen.
-set showmatch                " show matching brackets.
-set tabstop=2                " number of columns occupied by a tab character
-set expandtab                " convert tabs to white space
-set softtabstop=2            " see multiple spaces as tabstops so <BS> does the right thing
-set shiftwidth=2             " width for autoindents (set sw=2)
-set nowrap                   " do not wrap lines
-set scrolloff=8              " start scrolling text before reaching the bottom
-set splitbelow               " put the new split below the current one
-set splitright               " put the new split to the right of the current one
-set cursorline               " highlight cursor line underneath the cursor horizontally.
-set cursorcolumn             " highlight cursor line underneath the cursor vertically.
-set updatetime=100           " git diff markers refresh time
-""""" No sound on errors
-set noerrorbells
-set visualbell t_vb=
-set tm=500
-
-
-
 call plug#begin('~/.config/nvim/plugged')
   """"" LSP
   Plug 'neovim/nvim-lspconfig'             " Collection of configurations for built-in LSP client
