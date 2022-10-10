@@ -1,5 +1,5 @@
 require('alex.options')
-require('alex.mappings')
+require('alex.keymaps')
 require('alex.lsp')
 require('alex.nvimtree')
 require('alex.telescope')
