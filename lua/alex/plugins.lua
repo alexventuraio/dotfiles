@@ -34,6 +34,15 @@ function(use)
   -- use 'foo2/bar2.nvim'
 
 
+  -- CMP
+  use 'hrsh7th/cmp-nvim-lsp'     -- LSP source for nvim-cmp
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'      -- Autocompletion plugin
+  use 'hrsh7th/nvim-cmp'
+  -- For ultisnips users.
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
+
   -- Colorschemes
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'folke/tokyonight.nvim'
