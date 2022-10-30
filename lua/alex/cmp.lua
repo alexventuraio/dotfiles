@@ -1,48 +1,50 @@
 -- Set up nvim-cmp.
 local cmp = require('cmp')
 
+--   פּ ﯟ   some other good icons
 local kind_icons = {
-  Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "ﴯ",
-  Interface = "",
-  Module = "",
-  Property = "ﰠ",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = ""
+  Text = '',         -- Text = '',          Text = '',
+  Method = '',       -- Method = '',        Method = 'm',
+  Function = '',     -- Function = '',      Function = '',
+  Constructor = '',  -- Constructor = '',   Constructor = '',
+  Field = '',        -- Field = '',         Field = '',
+  Variable = '',     -- Variable = '',      Variable = '',
+  Class = 'ﴯ',        -- Class = '',         Class = '',
+  Interface = '',    -- Interface = '',     Interface = '',
+  Module = '',       -- Module = '',        Module = '',
+  Property = 'ﰠ',     -- Property = '',      Property = '',
+  Unit = '',         -- Unit = '',          Unit = '',
+  Value = '',        -- Value = '',         Value = '',
+  Enum = '',         -- Enum = '',          Enum = '',
+  Keyword = '',      -- Keyword = '',       Keyword = '',
+  Snippet = '',      -- Snippet = '',       Snippet = '',
+  Color = '',        -- Color = '',         Color = '',
+  File = '',         -- File = '',          File = '',
+  Reference = '',    -- Reference = '',     Reference = '',
+  Folder = '',       -- Folder = '',        Folder = '',
+  EnumMember = '',   -- EnumMember = '',    EnumMember = '',
+  Constant = '',     -- Constant = '',      Constant = '',
+  Struct = '',       -- Struct = '',        Struct = '',
+  Event = '',        -- Event = '',         Event = '',
+  Operator = '',     -- Operator = '',      Operator = '',
+  TypeParameter = '' -- TypeParameter = '', TypeParameter = '',
 }
+-- find more here: https://www.nerdfonts.com/cheat-sheet
 
 cmp.setup({
   formatting = {
-    fields = { "kind", "abbr", "menu" },
+    fields = { 'kind', 'abbr', 'menu' },
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      vim_item.kind = string.format('%s', kind_icons[vim_item.kind])
       -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       -- Source
       vim_item.menu = ({
-        nvim_lsp = "[LSP]",
-        nvim_lua = "[NVIM_LUA]",
-        luasnip = "[Snippet]",
-        buffer = "[Buffer]",
-        path = "[Path]",
+        nvim_lsp = '[LSP]',
+        nvim_lua = '[NVIM_LUA]',
+        luasnip = '[Snippet]',
+        buffer = '[Buffer]',
+        path = '[Path]',
       })[entry.source.name]
       return vim_item
     end,
@@ -50,7 +52,7 @@ cmp.setup({
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      vim.fn['UltiSnips#Anon'](args.body) -- For `ultisnips` users.
     end,
   },
   window = {
