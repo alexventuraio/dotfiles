@@ -33,6 +33,12 @@ function(use)
   -- use 'foo1/bar1.nvim'
   -- use 'foo2/bar2.nvim'
 
+
+  -- Colorschemes
+  use 'christianchiarulli/nvcode-color-schemes.vim'
+  use 'folke/tokyonight.nvim'
+
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
