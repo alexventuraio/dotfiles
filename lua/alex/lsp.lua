@@ -40,6 +40,10 @@ local lsp_flags = {
 
 
 
+-- Add additional capabilities supported by nvim-cmp
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
@@ -47,7 +51,7 @@ local servers = { 'solargraph', 'tsserver' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
-    -- capabilities = capabilities,
+    capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
   }
