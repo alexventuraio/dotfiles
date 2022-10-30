@@ -34,6 +34,9 @@ function(use)
   -- use 'foo2/bar2.nvim'
 
 
+  -- LSP
+  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
+
   -- CMP
   use 'hrsh7th/cmp-nvim-lsp'     -- LSP source for nvim-cmp
   use 'hrsh7th/cmp-buffer'
