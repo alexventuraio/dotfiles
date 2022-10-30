@@ -43,7 +43,7 @@ function(use)
   -- For ultisnips users.
   use 'quangnguyen30192/cmp-nvim-ultisnips'
 
-  -- Colorschemes
+  -- COLORSCHEMES
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'folke/tokyonight.nvim'
 
