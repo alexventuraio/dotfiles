@@ -61,6 +61,24 @@ function(use)
   use 'nvim-tree/nvim-tree.lua'
   use {'akinsho/bufferline.nvim', tag = "v3.*" }
   use 'nvim-lualine/lualine.nvim'
+  use 'norcalli/nvim-colorizer.lua'
+  use 'wakatime/vim-wakatime'
+  use 'jlanzarotta/bufexplorer'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-surround'
+  use 'tpope/vim-rhubarb' -- required by fugitive to :Gbrowse
+  use 'airblade/vim-gitgutter'
+  use 'terryma/vim-multiple-cursors'
+  use 'SirVer/ultisnips'
+
+  -- RUBY & RAILS
+  use 'tpope/vim-bundler'
+  use 'tpope/vim-rails'
+  use 'vim-ruby/vim-ruby'
+  -- use 'tpope/vim-endwise'
+
+  -- WEB DEV
+  use 'mattn/emmet-vim'
 
   -- COLORSCHEMES
   use 'nvim-tree/nvim-web-devicons' -- To have icons in your statusline and files
