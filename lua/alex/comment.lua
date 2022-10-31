@@ -3,6 +3,9 @@ if not status_ok then
   return
 end
 
+-- gcc/gbc -> NORMAL mode
+-- gc/gb -> VISUAL mode
+
 comment.setup({
   pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
   --pre_hook = function(ctx)
