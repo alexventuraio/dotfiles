@@ -46,6 +46,10 @@ function(use)
   -- For ultisnips users.
   use 'quangnguyen30192/cmp-nvim-ultisnips'
 
+  -- TELESCOPE
+  use 'nvim-lua/plenary.nvim' -- Useful lua functions used ny lots of plugins
+  use 'nvim-telescope/telescope.nvim'
+
   -- COLORSCHEMES
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'folke/tokyonight.nvim'
