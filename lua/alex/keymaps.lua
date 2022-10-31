@@ -42,6 +42,9 @@ keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', opts)
 keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
 
+-- Bufferline Mappings
+keymap('n', '<leader>bb', ':BufferLinePick<CR>', opts)
+
 
 
 -- INSERT --

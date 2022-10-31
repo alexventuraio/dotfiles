@@ -59,6 +59,7 @@ function(use)
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'nvim-tree/nvim-tree.lua'
+  use {'akinsho/bufferline.nvim', tag = "v3.*" }
 
   -- COLORSCHEMES
   use 'christianchiarulli/nvcode-color-schemes.vim'
