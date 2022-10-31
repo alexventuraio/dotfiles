@@ -25,8 +25,6 @@ keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
-keymap('n', '<leader>e', ':Lex 30<cr>', opts)
-
 -- Resize with arrows
 keymap('n', '<C-A-Up>', ':resize +2<CR>', opts)
 keymap('n', '<C-A-Down>', ':resize -2<CR>', opts)
@@ -37,6 +35,20 @@ keymap('n', '<C-A-Right>', ':vertical resize +2<CR>', opts)
 keymap('n', '<S-l>', ':bnext<CR>', opts)
 keymap('n', '<S-h>', ':bprevious<CR>', opts)
 
+-- Fugitive.vim mappings for GIT
+keymap('n', '<leader>gb', ':Git blame<CR>', opts)
+keymap('n', '<leader>gs', ':Git<CR>', opts)
+keymap('n', '<leader>gd', ':Git diff<CR>', opts)
+keymap('n', '<leader>gl', ':Git log<CR>', opts)
+keymap('n', '<leader>gc', ':Git commit<CR>', opts)
+keymap('n', '<leader>gp', ':Git push<CR>', opts)
+
+-- Clear highlights on hitting 'ESC' twice
+keymap('n', '<esc><esc>', ':noh<return>', opts)
+
+-- This command toggles the material theme style
+keymap('n', '<leader>tt', ':lua require("material.functions").toggle_style()<CR>', opts)
+
 -- NvimTree Mappings
 keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', opts)
@@ -44,12 +56,6 @@ keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
 
 -- Bufferline Mappings
 keymap('n', '<leader>bb', ':BufferLinePick<CR>', opts)
-
-
-
--- INSERT --
--- Press jk fast to enter
-keymap('i', 'jk', '<ESC>', opts)
 
 
 
@@ -66,6 +72,9 @@ keymap("v", "p", '"_dP', opts)
 
 
 -- VISUAL BLOCK --
+-- Replace double quotes with single quotes
+keymap("x", "<leader>f", ":s/\"/'/g<CR>", opts)
+
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
