@@ -37,9 +37,18 @@ keymap('n', '<C-A-Right>', ':vertical resize +2<CR>', opts)
 keymap('n', '<S-l>', ':bnext<CR>', opts)
 keymap('n', '<S-h>', ':bprevious<CR>', opts)
 
+-- NvimTree Mappings
+keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', opts)
+keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
+
+
+
 -- INSERT --
 -- Press jk fast to enter
 keymap('i', 'jk', '<ESC>', opts)
+
+
 
 -- VISUAL --
 -- Stay in indent mode
@@ -51,12 +60,16 @@ keymap('v', '<A-j>', ':m .+1<CR>==', opts)
 keymap('v', '<A-k>', ':m .-2<CR>==', opts)
 keymap("v", "p", '"_dP', opts)
 
+
+
 -- VISUAL BLOCK --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+
 
 -- TERMINAL --
 -- Better terminal navigation

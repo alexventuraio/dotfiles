@@ -58,10 +58,12 @@ function(use)
   use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'nvim-tree/nvim-tree.lua'
 
   -- COLORSCHEMES
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'folke/tokyonight.nvim'
+  use 'nvim-tree/nvim-web-devicons' -- To have icons in your statusline and files
 
 
   -- Automatically set up your configuration after cloning packer.nvim
