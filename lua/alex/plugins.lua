@@ -54,6 +54,9 @@ function(use)
   use 'nvim-lua/plenary.nvim' -- Useful lua functions used ny lots of plugins
   use 'nvim-telescope/telescope.nvim'
 
+  -- IDE
+  use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter
+
   -- COLORSCHEMES
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'folke/tokyonight.nvim'
