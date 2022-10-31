@@ -37,7 +37,7 @@ function(use)
   -- LSP
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
 
-  -- CMP
+  -- CMP - AUTOCOMPLETE
   use 'hrsh7th/cmp-nvim-lsp'     -- LSP source for nvim-cmp
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -60,11 +60,12 @@ function(use)
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'nvim-tree/nvim-tree.lua'
   use {'akinsho/bufferline.nvim', tag = "v3.*" }
+  use 'nvim-lualine/lualine.nvim'
 
   -- COLORSCHEMES
+  use 'nvim-tree/nvim-web-devicons' -- To have icons in your statusline and files
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'folke/tokyonight.nvim'
-  use 'nvim-tree/nvim-web-devicons' -- To have icons in your statusline and files
 
 
   -- Automatically set up your configuration after cloning packer.nvim
