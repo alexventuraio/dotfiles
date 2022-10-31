@@ -48,6 +48,7 @@ function(use)
 
   -- For better languages syntax highlighting
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'p00f/nvim-ts-rainbow'
 
   -- TELESCOPE
   use 'nvim-lua/plenary.nvim' -- Useful lua functions used ny lots of plugins
