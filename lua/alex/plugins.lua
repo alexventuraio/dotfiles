@@ -46,6 +46,9 @@ function(use)
   -- For ultisnips users.
   use 'quangnguyen30192/cmp-nvim-ultisnips'
 
+  -- For better languages syntax highlighting
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
   -- TELESCOPE
   use 'nvim-lua/plenary.nvim' -- Useful lua functions used ny lots of plugins
   use 'nvim-telescope/telescope.nvim'
