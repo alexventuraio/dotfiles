@@ -56,6 +56,8 @@ function(use)
 
   -- IDE
   use 'windwp/nvim-autopairs' -- Autopairs, integrates with both cmp and treesitter
+  use 'numToStr/Comment.nvim'
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- COLORSCHEMES
   use 'christianchiarulli/nvcode-color-schemes.vim'
