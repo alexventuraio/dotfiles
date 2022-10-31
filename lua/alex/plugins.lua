@@ -82,6 +82,7 @@ function(use)
 
   -- COLORSCHEMES
   use 'nvim-tree/nvim-web-devicons' -- To have icons in your statusline and files
+  use 'marko-cerovac/material.nvim'
   use 'christianchiarulli/nvcode-color-schemes.vim'
   use 'folke/tokyonight.nvim'
 
