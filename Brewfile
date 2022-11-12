@@ -21,6 +21,7 @@ tap "homebrew/cask"
 # ——————— Heroku Toolbet ———————
 tap "heroku/brew"
 brew "heroku"
+cask "tempbox"
 
 ######################################################################
 # Databases                                                          #
@@ -40,6 +41,7 @@ brew "axel"
 brew "cmake"
 brew "fzf"
 brew "jq"
+brew "bat"
 brew "ripgrep"
 brew "tree"
 brew "zsh-autosuggestions"
