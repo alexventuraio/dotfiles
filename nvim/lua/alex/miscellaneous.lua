@@ -50,6 +50,15 @@ require('nvim-treesitter.configs').setup({
     enable = true,              -- false will disable the whole extension
     -- disable = { 'c', 'rust' },  -- list of language that will be disabled
   },
+
+  -- Indentation based on treesitter for the = operator. NOTE: This is an experimental feature.
+  indent = {
+    enable = true
+  }
+
+  refactor = {
+    highlight_definitions = { enable = true },
+  }
 })
 
 require('nvim-web-devicons').setup({
