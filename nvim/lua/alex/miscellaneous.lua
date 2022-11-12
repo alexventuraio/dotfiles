@@ -36,10 +36,17 @@ require('lualine').setup({
 })
   
 require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'javascript', 'ruby', 'vue' },
+  -- Automatically install missing parsers when entering buffer
+  auto_install = true,
+
+  -- A list of parser names, or "all"
+  ensure_installed = {
+    'html', 'javascript', 'ruby', 'vue', 'css', 'scss', 'markdown', 'lua', 'json', 'gitignore', 'dockerfile', 'bash', 'vim', 'typescript'
+  },
+
   highlight = {
     enable = true,              -- false will disable the whole extension
-    disable = { 'c', 'rust' },  -- list of language that will be disabled
+    -- disable = { 'c', 'rust' },  -- list of language that will be disabled
   },
 })
 
