@@ -55,6 +55,7 @@ cask "neovide"
 cask "sublime-text"
 cask "vscodium"
 # cask "visual-studio-code"
+cask "lapce"
 
 ######################################################################
 # Browser                                                            #
