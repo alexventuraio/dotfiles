@@ -56,8 +56,6 @@ set suffixesadd=.js,.vue,.scss,.json
 
 
 if exists("g:neovide")                           " Put anything you want to happen only in Neovide here
-  set guifont=Operator\ Mono\ Lig\ Book:h16
-
   """"" To interprets Alt + whatever as <M-whatever>
   let g:neovide_input_macos_alt_is_meta = v:true
 

@@ -1,6 +1,7 @@
 vim.opt.syntax = 'on'
 
---vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
+-- vim.opt.guifont = 'Operator Mono Lig Book:h16'     -- the font used in graphical neovim applications (ligther)
+vim.opt.guifont = 'OperatorMonoLig Nerd Font:h16'  -- the font used in graphical neovim applications (bolder)
 vim.opt.colorcolumn = '120'                       -- set a line length marker
 vim.opt.fileencoding = 'utf-8'                  -- the encoding written to a file
 vim.opt.autoread = true
