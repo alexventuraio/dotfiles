@@ -13,6 +13,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'numToStr/Comment.nvim'
   Plug 'akinsho/bufferline.nvim', { 'tag': 'v2.*' }
   Plug 'nvim-lualine/lualine.nvim'
+  Plug 'windwp/nvim-autopairs'
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'kyazdani42/nvim-tree.lua'
   Plug 'wakatime/vim-wakatime'
