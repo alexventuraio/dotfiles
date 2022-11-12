@@ -61,6 +61,11 @@ keymap('n', '<leader>bb', ':BufferLinePick<CR>', opts)
 
 -- GUI Neovide Mappings
 if vim.g.neovide == true then
+  -- To increase font-size on the fly | https://neovide.dev/faq.html#how-can-i-dynamically-change-the-scale-at-runtime
+  keymap('n', '<D-=>', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>', opts)
+  keymap('n', '<D-->', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>', opts)
+  keymap('n', '<D-0>', ':lua vim.g.neovide_scale_factor = 1<CR>', opts)
+
   -- TAB in normal mode it will move to next buffer | SHIFT-TAB will go back
   keymap('n', '<TAB>', ':bnext<CR>', opts)
   keymap('n', '<S-TAB>', ':bprevious<CR>', opts)
