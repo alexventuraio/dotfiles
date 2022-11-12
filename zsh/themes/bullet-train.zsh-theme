@@ -370,7 +370,8 @@ context() {
 }
 
 prompt_context() {
-  local _context="$(context)"
+  # local _context="$(context)"
+  local _context=""
   [[ -n "$_context" ]] && prompt_segment $BULLETTRAIN_CONTEXT_BG $BULLETTRAIN_CONTEXT_FG "$_context"
 }
 
