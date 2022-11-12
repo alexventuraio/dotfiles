@@ -45,3 +45,9 @@ vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
 -- NVIM-TREE disable netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- FIX: E319: No 'python3' provider found (for UltiSnips). Run ':checkhealth provider'
+-- Must install: python3 -m pip install pynvim
+-- https://github.com/neoclide/coc-snippets/issues/196#issuecomment-781231190
+-- https://www.reddit.com/r/neovim/comments/pdzxzp/e319_no_python3_provider_found_run_checkhealth/
+vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
