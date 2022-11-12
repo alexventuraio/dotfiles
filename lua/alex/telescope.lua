@@ -5,7 +5,7 @@ require('telescope').setup({
 
     prompt_prefix = " ",
     selection_caret = " ",
-    path_display = { "smart" },
+    -- path_display = { "smart" },  -- remove as much from the path as possible (causes some slowlyness)
     file_ignore_patterns = { 'node_modules' },
     
     mappings = {
