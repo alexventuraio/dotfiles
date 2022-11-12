@@ -18,6 +18,8 @@ vim.g.maplocalleader = ' '
 --   term_mode = 't',
 --   command_mode = 'c',
 
+
+
 -- NORMAL --
 -- Better window navigation
 keymap('n', '<C-h>', '<C-w>h', opts)
@@ -56,6 +58,15 @@ keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
 
 -- Bufferline Mappings
 keymap('n', '<leader>bb', ':BufferLinePick<CR>', opts)
+
+-- GUI Neovide Mappings
+if vim.g.neovide == true then
+  -- TAB in normal mode it will move to next buffer | SHIFT-TAB will go back
+  keymap('n', '<TAB>', ':bnext<CR>', opts)
+  keymap('n', '<S-TAB>', ':bprevious<CR>', opts)
+  keymap('n', '<D-[>', ':tabprevious<CR>', opts)
+  keymap('n', '<D-]>', ':tabnext<CR>', opts)
+end
 
 
 

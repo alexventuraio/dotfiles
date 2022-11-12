@@ -61,12 +61,6 @@ if exists("g:neovide")                           " Put anything you want to happ
   """"" To interprets Alt + whatever as <M-whatever>
   let g:neovide_input_macos_alt_is_meta = v:true
 
-  """"" TAB in normal mode it will move to next buffer | SHIFT-TAB will go back
-  nnoremap <silent> <TAB> :bnext<CR>
-  nnoremap <silent> <S-TAB> :bprevious<CR>
-  nnoremap <silent> <S-D-[> :tabprevious<CR>
-  nnoremap <silent> <S-D-]> :tabnext<CR>
-
   """"" Save file with Cmd+s
   nmap <D-s> :w<CR>
   imap <D-s> <ESC>:w<CR>
