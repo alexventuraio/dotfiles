@@ -65,6 +65,8 @@ tap "homebrew/cask-versions"
 cask "google-chrome"
 # cask "opera"
 cask "brave-browser"
+cask "orion"
+cask "min"
 
 ######################################################################
 # Utilities                                                          #
