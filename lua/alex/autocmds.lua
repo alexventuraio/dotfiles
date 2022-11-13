@@ -13,3 +13,8 @@ cmd [[
 cmd [[
   autocmd FocusGained * checktime
 ]]
+
+-- Auto-resize splits when Vim gets resized.
+cmd [[
+  autocmd VimResized * wincmd =
+]]

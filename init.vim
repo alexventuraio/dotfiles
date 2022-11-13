@@ -17,9 +17,6 @@ augroup END
 
 """"" Strip trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
-
-""""" Auto-resize splits when Vim gets resized.
-autocmd VimResized * wincmd =
 " }}}
 
 
