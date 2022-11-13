@@ -18,3 +18,8 @@ cmd [[
 cmd [[
   autocmd VimResized * wincmd =
 ]]
+
+-- Strip trailing whitespace on save
+cmd [[
+  autocmd BufWritePre * :%s/\s\+$//e
+]]
