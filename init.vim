@@ -76,8 +76,4 @@ if exists("g:neovide")                           " Put anything you want to happ
 
   """"" Open a new tab with Cmd
   noremap <S-D-t> <Esc>:tabnew<CR>
-
-  """"" Disable cursor animation
-  let g:neovide_cursor_animation_length=0
-  "let g:neovide_cursor_vfx_mode = "railgun"
 endif
