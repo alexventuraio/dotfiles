@@ -2,16 +2,6 @@
 lua require('alex')
 
 
-" VIMSCRIPT -------------------------------------------------------------- {{{
-""""" This will enable code folding.
-""""" Use the marker method of folding.
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
-" }}}
-
-
 """"" Show and highlight special characteres (https://stackoverflow.com/a/69805673/4111295)
 "set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀,eol:¶
 set list listchars=tab:▸─,nbsp:␣,trail:·,extends:»,precedes:«,eol:¬
