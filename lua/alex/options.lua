@@ -52,3 +52,7 @@ vim.g.loaded_netrwPlugin = 1
 -- https://github.com/neoclide/coc-snippets/issues/196#issuecomment-781231190
 -- https://www.reddit.com/r/neovim/comments/pdzxzp/e319_no_python3_provider_found_run_checkhealth/
 vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
+
+-- Emmet trigger key
+-- vim.g.user_emmet_mode = 'n'                        -- only enable normal mode functions.
+vim.g.user_emmet_leader_key = ','                  -- leader key for emmet (;,)
