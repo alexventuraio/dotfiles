@@ -73,7 +73,4 @@ if exists("g:neovide")                           " Put anything you want to happ
   cnoremap <special> <D-v> <C-R>+
   execute 'vnoremap <script> <special> <D-v>' paste#paste_cmd['v']
   execute 'inoremap <script> <special> <D-v>' paste#paste_cmd['i']
-
-  """"" Open a new tab with Cmd
-  noremap <S-D-t> <Esc>:tabnew<CR>
 endif
