@@ -59,10 +59,6 @@ if exists("g:neovide")                           " Put anything you want to happ
   """"" To interprets Alt + whatever as <M-whatever>
   let g:neovide_input_macos_alt_is_meta = v:true
 
-  """"" Save file with Cmd+s
-  nmap <D-s> :w<CR>
-  imap <D-s> <ESC>:w<CR>
-
   """"" Copy-Paste with Cmd-v Cmd-c Cmd-x
   vnoremap <special> <D-x> "+x
 
