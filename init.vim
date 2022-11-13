@@ -1,11 +1,6 @@
 """"" My LUA namespace Custom Config
 lua require('alex')
 
-" MAPPINGS --------------------------------------------------------------- {{{
-""""" Mappings code goes here.
-autocmd FileType fugitiveblame nmap <buffer> q gq
-" }}}
-
 
 " VIMSCRIPT -------------------------------------------------------------- {{{
 """"" This will enable code folding.

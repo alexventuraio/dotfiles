@@ -23,3 +23,8 @@ cmd [[
 cmd [[
   autocmd BufWritePre * :%s/\s\+$//e
 ]]
+
+-- To close the Git Blame window from Fugitive with q
+cmd [[
+  autocmd FileType fugitiveblame nmap <buffer> q gq
+]]
