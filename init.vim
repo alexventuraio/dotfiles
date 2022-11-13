@@ -11,16 +11,6 @@ call matchadd('SpecialKey', '\%u00a0')             " match both non-breaking spa
 call matchadd('SpecialKey', '[[:blank:]]\+$')      " ... and trailing white-space
 
 
-""""" UltiSnips config
-" Define a directory where my snippets were to be located: https://stackoverflow.com/a/37514464/4111295
-let g:UltiSnipsSnippetDirectories=["~/Dropbox/Code/dotfiles/vim/UltiSnips"]
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-"let g:UltiSnipsExpandTrigger='<Leader><Leader>'
-let g:UltiSnipsExpandTrigger='<tab>'
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit='vertical'
-
-
 """"" To be agle to use gf with Vue imports with @ symbol https://stackoverflow.com/q/70574914/4111295
 setlocal isfname+=@-@
 setlocal includeexpr=substitute(v:fname,'^@\/','app/frontend/src/','')

@@ -56,3 +56,9 @@ vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
 -- Emmet trigger key
 -- vim.g.user_emmet_mode = 'n'                        -- only enable normal mode functions.
 vim.g.user_emmet_leader_key = ','                  -- leader key for emmet (;,)
+
+-- UltiSnips Config
+-- Define a directory where my snippets were to be located: https://stackoverflow.com/a/37514464/4111295
+vim.g.UltiSnipsSnippetDirectories = '~/Dropbox/Code/dotfiles/vim/UltiSnips'
+-- If you want :UltiSnipsEdit to split your window.
+vim.g.UltiSnipsEditSplit = 'vertical'
