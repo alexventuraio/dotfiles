@@ -59,7 +59,7 @@ function(use)
   use 'numToStr/Comment.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'nvim-tree/nvim-tree.lua'
-  use {'akinsho/bufferline.nvim', tag = "v3.*" }
+  use { 'akinsho/bufferline.nvim', tag = "v3.*" }
   use 'nvim-lualine/lualine.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use 'wakatime/vim-wakatime'
