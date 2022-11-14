@@ -11,12 +11,6 @@ call matchadd('SpecialKey', '\%u00a0')             " match both non-breaking spa
 call matchadd('SpecialKey', '[[:blank:]]\+$')      " ... and trailing white-space
 
 
-""""" To be agle to use gf with Vue imports with @ symbol https://stackoverflow.com/q/70574914/4111295
-setlocal isfname+=@-@
-setlocal includeexpr=substitute(v:fname,'^@\/','app/frontend/src/','')
-set suffixesadd=.js,.vue,.scss,.json
-
-
 
 
 
