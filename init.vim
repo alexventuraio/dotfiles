@@ -12,6 +12,15 @@ call matchadd('SpecialKey', '[[:blank:]]\+$')      " ... and trailing white-spac
 
 
 
+""""" UltiSnips config
+" Define a directory where my snippets were to be located: https://stackoverflow.com/a/37514464/4111295
+let g:UltiSnipsSnippetDirectories=["~/Dropbox/Code/dotfiles/vim/UltiSnips"]
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger='<Leader><Leader>'
+let g:UltiSnipsExpandTrigger='<tab>'
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit='vertical'
+
 
 
 if exists("g:neovide")                           " Put anything you want to happen only in Neovide here
