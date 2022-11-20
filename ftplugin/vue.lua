@@ -5,6 +5,7 @@ print('From File Type Plugins for Vue file')
 -- set suffixesadd=.js,.vue,.scss,.json
 
 
+-- https://github.com/sam4llis/nvim-lua-gf/blob/main/after/ftplugin/lua.lua
 -- vim.opt_local.include = [[\v<((do|load)file|require)[^''"]*[''"]\zs[^''"]+]]
 vim.opt_local.isfname:append('@-@')
 -- vim.opt_local.isfname = vim.opt_local.isfname + '@-@'
