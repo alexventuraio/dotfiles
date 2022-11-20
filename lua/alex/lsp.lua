@@ -49,10 +49,10 @@ local lspconfig = require('lspconfig')
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'solargraph', 'tsserver' }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig[lsp].setup({
     -- on_attach = my_custom_on_attach,
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
-  }
+  })
 end
