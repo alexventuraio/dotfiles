@@ -12,6 +12,7 @@ lualine.setup({
     section_separators = { left = '', right = '' },
   },
   sections = {
+    lualine_b = { 'filesize', 'diff', 'diagnostics' },
     lualine_c = {
       {
         'filename',
