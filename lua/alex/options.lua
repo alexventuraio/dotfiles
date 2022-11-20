@@ -56,3 +56,8 @@ vim.g.python3_host_prog = '/opt/homebrew/bin/python3'
 -- Emmet trigger key
 -- vim.g.user_emmet_mode = 'n'                        -- only enable normal mode functions.
 vim.g.user_emmet_leader_key = ','                  -- leader key for emmet (;,)
+
+-- https://vi.stackexchange.com/a/37971/31190
+-- vim.opt.listchars = { space = '_', tab = '▶‒', nbsp = '·', trail = '∙', extends = '▶', precedes = '◀', eol = '¶' }
+vim.opt.listchars = { tab = '▸─', nbsp = '␣', trail = '•', extends = '»', precedes = '«', eol = '¬' }
+vim.opt.list = true

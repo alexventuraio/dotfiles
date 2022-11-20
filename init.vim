@@ -1,10 +1,9 @@
 """"" My LUA namespace Custom Config
 lua require('alex')
 
+"Folding in Lua: https://github.com/whatsthatsmell/dots/blob/master/public%20dots/vim-nvim/after/ftplugin/json.lua
 
 """"" Show and highlight special characteres (https://stackoverflow.com/a/69805673/4111295)
-"set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀,eol:¶
-set list listchars=tab:▸─,nbsp:␣,trail:·,extends:»,precedes:«,eol:¬
 highlight NonText guifg=#4a4a59                    " applies to: eol, extends and precedes
 highlight SpecialKey guifg=white guibg=#ff005f     " applies to: nbsp, tab and trail
 call matchadd('SpecialKey', '\%u00a0')             " match both non-breaking spaces...
