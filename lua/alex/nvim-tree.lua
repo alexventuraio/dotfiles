@@ -1,7 +1,7 @@
 require('nvim-tree').setup({
   -- auto_close = true,
   open_on_setup = false,
-  open_on_setup_file = true,  -- If set to true with hijack_directories to false, will create a new buffer on startup
+  open_on_setup_file = false,  -- If set to true with hijack_directories to false, will create a new buffer on startup
   open_on_tab = true,         -- Seems like it keeps the explorer in every tab
   -- focus_empty_on_setup = true, -- DEPRECATED: see https://bit.ly/3yJch2T
   reload_on_bufenter = true,
