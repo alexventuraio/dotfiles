@@ -8,7 +8,7 @@ lualine.setup({
     icons_enabled = true,
     theme = 'powerline',
     disabled_filetypes = { 'NvimTree' },
-    component_separators = { left = '', right = ''},
-    section_separators = { left = '', right = ''},
-  }
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+  },
 })
