@@ -13,6 +13,14 @@ require('telescope').setup({
         ["<C-s>"] = require('telescope.actions').file_split,
       },
     },
+
+    layout_strategy = 'horizontal',
+    layout_config = {
+      horizontal = { height = 0.6 },
+      prompt_position = 'bottom',
+      mirror = false,
+      -- other layout configuration here
+    },
   },
 })
 
