@@ -20,7 +20,10 @@ lualine.setup({
   },
   sections = {
     lualine_b = {
-      get_branch,
+      {
+        'branch',
+        fmt = get_branch,
+      },
       {
         'diff',
         colored = true, -- Displays a colored diff status if set to true
