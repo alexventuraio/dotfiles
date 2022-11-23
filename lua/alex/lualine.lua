@@ -6,7 +6,8 @@ end
 local function get_branch()
   require('lualine.components.branch.git_branch').init()
   local branch = require('lualine.components.branch.git_branch').get_branch()
-  return ('%s…'):format(branch:sub(1, 20))
+  local strw = vim.api.nvim_strwidth(branch)
+  return ('…%s'):format(branch:sub(strw - 19, strw))
 end
 
 lualine.setup({
