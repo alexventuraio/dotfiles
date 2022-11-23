@@ -3,6 +3,12 @@ if not status_ok then
   return
 end
 
+local function get_branch()
+  require('lualine.components.branch.git_branch').init()
+  local branch = require('lualine.components.branch.git_branch').get_branch()
+  return ('%s…'):format(branch:sub(1, 20))
+end
+
 lualine.setup({
   options = {
     icons_enabled = true,
@@ -13,18 +19,7 @@ lualine.setup({
   },
   sections = {
     lualine_b = {
-      {
-        'branch',
-        fmt = function(str)
-          local strw = vim.api.nvim_strwidth(str)
-
-          if strw > 19 then
-            return ('…%s'):format(str:sub(strw - 19, strw))
-          end
-      
-          return str
-        end,
-      },
+      get_branch,
       {
         'diff',
         colored = true, -- Displays a colored diff status if set to true
