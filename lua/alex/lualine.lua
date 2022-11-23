@@ -16,8 +16,10 @@ lualine.setup({
       {
         'branch',
         fmt = function(str)
-          if vim.api.nvim_strwidth(str) > 20 then
-            return ('%s…'):format(str:sub(1, 19))
+          local strw = vim.api.nvim_strwidth(str)
+
+          if strw > 19 then
+            return ('…%s'):format(str:sub(strw - 19, strw))
           end
       
           return str
