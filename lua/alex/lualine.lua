@@ -12,7 +12,20 @@ lualine.setup({
     section_separators = { left = '', right = '' },
   },
   sections = {
-    lualine_b = { 'filesize', 'diff', 'diagnostics' },
+    lualine_b = {
+      {
+        'branch',
+        fmt = function(str)
+          if vim.api.nvim_strwidth(str) > 20 then
+            return ('%s…'):format(str:sub(1, 19))
+          end
+      
+          return str
+        end,
+      },
+      'diff',
+      'diagnostics'
+    },
     lualine_c = {
       {
         'filename',
