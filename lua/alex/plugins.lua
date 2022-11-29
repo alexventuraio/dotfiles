@@ -16,7 +16,7 @@ local ensure_packer = function()
     fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 
     print('Installing packer close and reopen Neovim...')
-    
+
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -63,7 +63,6 @@ function(use)
   use 'nvim-lualine/lualine.nvim'
   use 'norcalli/nvim-colorizer.lua'
   use 'wakatime/vim-wakatime'
-  use 'jlanzarotta/bufexplorer'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-surround'
   use 'tpope/vim-rhubarb' -- required by fugitive to :Gbrowse
