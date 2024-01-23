@@ -39,6 +39,16 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
   },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+      "MunifTanjim/nui.nvim",
+      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+    }
+  },
 }
 local opts = {}
 
@@ -51,6 +61,8 @@ vim.keymap.set('n', 'ff', builtin.find_files, {})
 vim.keymap.set('n', 'fg', builtin.live_grep, {})
 vim.keymap.set('n', 'fb', builtin.buffers, {})
 vim.keymap.set('n', 'fh', builtin.help_tags, {})
+
+vim.keymap.set('n', '<leader>m', ':Neotree filesystem reveal left<CR>', {})
 
 local configs = require("nvim-treesitter.configs")
 
