@@ -34,6 +34,9 @@ local plugins = {
     -- or                              , branch = '0.1.x',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+  {
+    "nvim-treesitter/nvim-treesitter", build = ":TSUpdate",
+  },
 }
 local opts = {}
 
@@ -46,3 +49,14 @@ vim.keymap.set('n', 'ff', builtin.find_files, {})
 vim.keymap.set('n', 'fg', builtin.live_grep, {})
 vim.keymap.set('n', 'fb', builtin.buffers, {})
 vim.keymap.set('n', 'fh', builtin.help_tags, {})
+
+local configs = require("nvim-treesitter.configs")
+
+configs.setup({
+  ensure_installed = {
+    'html', 'javascript', 'ruby', 'vue', 'css', 'scss', 'markdown', 'json', 'gitignore', 'dockerfile', 'bash', 'typescript', 'lua', 'vim', 'vimdoc', 'query', 'c'
+  },
+  sync_install = false,
+  highlight = { enable = true },
+  indent = { enable = true },
+})
