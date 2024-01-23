@@ -1,11 +1,14 @@
 return {
   {
+    'hrsh7th/cmp-nvim-lsp'
+  },
+  {
     -- For luasnip users.
     'L3MON4D3/LuaSnip',
     dependencies = {
       'saadparwaiz1/cmp_luasnip',
       'rafamadriz/friendly-snippets',
-    }
+    },
   },
   {
     'hrsh7th/nvim-cmp',
@@ -36,15 +39,15 @@ return {
           ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         }),
         sources = cmp.config.sources({
-          -- { name = 'nvim_lsp' },
+          { name = 'nvim_lsp' },
           -- { name = 'vsnip' }, -- For vsnip users.
           { name = 'luasnip' }, -- For luasnip users.
           -- { name = 'ultisnips' }, -- For ultisnips users.
           -- { name = 'snippy' }, -- For snippy users.
         }, {
-            { name = 'buffer' },
-          })
+          { name = 'buffer' },
+        }),
       })
     end
-  }
+  },
 }
