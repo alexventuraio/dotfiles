@@ -23,3 +23,6 @@ vim.wo.number = true
 -- Disable Netrw at the very start of your init.lua (strongly advised)
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.opt.wrap = false                               -- do not wrap lines
+vim.opt.guifont = 'Operator Mono Lig:h16'          -- the font used in graphical neovim applications (bolder)
