@@ -37,3 +37,17 @@ vim.keymap.set('v', '>', '>gv', opts)
 vim.keymap.set('v', '<A-j>', ':m .+1<CR>==', opts)
 vim.keymap.set('v', '<A-k>', ':m .-2<CR>==', opts)
 vim.keymap.set('v', 'p', '"_dP', opts)
+
+
+
+
+-- VISUAL BLOCK --
+
+-- Replace double quotes with single quotes
+vim.keymap.set('x', "<leader>'", ":s/\"/'/g<CR>", opts)
+
+-- Move text up and down
+vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv", opts)
+vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv", opts)
+vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv-gv", opts)
+vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv-gv", opts)
