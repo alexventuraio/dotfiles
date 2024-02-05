@@ -7,7 +7,7 @@ if vim.g.neovide then
   vim.keymap.set('i', '<D-s>', '<Esc>:w<CR>', options)
 
   -- Open a new tab with Cmd
-  vim.keymap.set('', '<D-t>', '<Esc>:tabnew<CR>', options)
+  vim.keymap.set('', '<D-T>', '<Esc>:tabnew<CR>', options)
 
   -- To interprets Alt + whatever as <M-whatever>
   vim.g.neovide_input_macos_alt_is_meta = true
