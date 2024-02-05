@@ -22,16 +22,10 @@ if vim.g.neovide then
   vim.g.neovide_remember_window_size = true
 
   -- Dynamically Change The Scale At Runtime | https://neovide.dev/faq.html#how-can-i-dynamically-change-the-scale-at-runtime
-  vim.g.neovide_scale_factor = 1.0
-  local change_scale_factor = function(delta)
-    vim.g.neovide_scale_factor = vim.g.neovide_scale_factor * delta
-  end
-  vim.keymap.set("n", "<C-=>", function()
-    change_scale_factor(1.25)
-  end)
-  vim.keymap.set("n", "<C-->", function()
-    change_scale_factor(1/1.25)
-  end)
+  -- To increase font-size on the fly | https://neovide.dev/faq.html#how-can-i-dynamically-change-the-scale-at-runtime
+  vim.keymap.set('n', '<D-=>', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>', options)
+  vim.keymap.set('n', '<D-->', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>', options)
+  vim.keymap.set('n', '<D-0>', ':lua vim.g.neovide_scale_factor = 1<CR>', options)
 
 
   -- Use cmd-c/cmd-v to copy and paste? | https://neovide.dev/faq.html#how-can-i-use-cmd-ccmd-v-to-copy-and-paste
