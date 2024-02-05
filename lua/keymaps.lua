@@ -23,3 +23,17 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 
 -- Clear highlights on hitting 'ESC' twice
 vim.keymap.set('n', '<esc><esc>', ':noh<return>', opts)
+
+
+
+
+-- VISUAL --
+
+-- Stay in indent mode
+vim.keymap.set('v', '<', '<gv', opts)
+vim.keymap.set('v', '>', '>gv', opts)
+
+-- Move text up and down
+vim.keymap.set('v', '<A-j>', ':m .+1<CR>==', opts)
+vim.keymap.set('v', '<A-k>', ':m .-2<CR>==', opts)
+vim.keymap.set('v', 'p', '"_dP', opts)
