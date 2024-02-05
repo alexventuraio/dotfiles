@@ -9,6 +9,12 @@ if vim.g.neovide then
   -- Open a new tab with Cmd
   vim.keymap.set('', '<D-T>', '<Esc>:tabnew<CR>', options)
 
+  -- TAB in normal mode it will move to next buffer | SHIFT-TAB will go back
+  vim.keymap.set('n', '<TAB>', ':bnext<CR>', opts)
+  vim.keymap.set('n', '<S-TAB>', ':bprevious<CR>', opts)
+  vim.keymap.set('n', '<D-{>', ':tabprevious<CR>', opts)
+  vim.keymap.set('n', '<D-}>', ':tabnext<CR>', opts)
+
   -- To interprets Alt + whatever as <M-whatever>
   vim.g.neovide_input_macos_alt_is_meta = true
 
