@@ -17,3 +17,16 @@ require("autocmds")
 require("neovide")
 
 require("lazy").setup("plugins")
+
+vim.cmd([[
+  """"" Copy-Paste with Cmd-v Cmd-c Cmd-x
+  vnoremap <special> <D-x> "+x
+
+  vnoremap <special> <D-c> "+y
+  cnoremap <special> <D-c> <C-Y>
+
+  nnoremap <special> <D-v> "+gP
+  cnoremap <special> <D-v> <C-R>+
+  execute 'vnoremap <script> <special> <D-v>' paste#paste_cmd['v']
+  execute 'inoremap <script> <special> <D-v>' paste#paste_cmd['i']
+]])
