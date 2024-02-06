@@ -18,6 +18,8 @@ require("neovide")
 
 require("lazy").setup("plugins")
 
+require("listchars")
+
 vim.cmd([[
   """"" Copy-Paste with Cmd-v Cmd-c Cmd-x
   vnoremap <special> <D-x> "+x
