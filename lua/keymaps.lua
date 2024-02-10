@@ -56,3 +56,10 @@ vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv", opts)
 vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv-gv", opts)
+
+
+
+
+-- Move to the first/last char of the current line
+vim.keymap.set({ 'n', 'o', 'x' }, '<S-h>', '^', opts)
+vim.keymap.set({ 'n', 'o', 'x' }, '<S-l>', 'g_', opts)
