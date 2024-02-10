@@ -36,6 +36,8 @@ vim.keymap.set('v', '>', '>gv', opts)
 -- Move text up and down
 vim.keymap.set('v', '<A-j>', ':m .+1<CR>==', opts)
 vim.keymap.set('v', '<A-k>', ':m .-2<CR>==', opts)
+
+-- When yank a word and then select other word and paste, keep the original yanked work in the register
 vim.keymap.set('v', 'p', '"_dP', opts)
 
 
