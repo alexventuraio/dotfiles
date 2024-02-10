@@ -47,3 +47,11 @@ vim.opt.iskeyword:append('-')                      -- to take words with '-' as 
 vim.opt.isfname:append("@-@")
 vim.opt.fileencoding = 'utf-8'                     -- the encoding written to a file
 vim.opt.whichwrap:append('<,>,h,l,[,]')            -- to move to the previous/next line using these keys when on the first/last character
+
+-- Stops automatically commenting the next line when pressing Enter on a commented line
+-- Automatically insert the current comment leader after hitting <Enter> in Insert mode.
+-- https://neovim.discourse.group/t/options-formatoptions-not-working-when-put-in-init-lua/3746/5
+-- https://superuser.com/a/271024
+-- vim.opt.formatoptions:remove('c')
+-- vim.opt.formatoptions:remove('r')
+-- vim.opt.formatoptions:remove('o')
