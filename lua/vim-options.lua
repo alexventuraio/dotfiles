@@ -4,6 +4,12 @@ vim.opt.syntax = 'on'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+-- File editing
+vim.opt.backup = false                             -- creates a backup file
+vim.opt.swapfile = false                           -- creates a swapfile
+vim.opt.undofile = true                            -- enable persistent undo
+vim.opt.undodir = vim.fn.stdpath('config') .. 'nvim/undodir'
+
 -- Tab / Indentation
 vim.opt.tabstop = 2                                -- insert 2 spaces for a tab
 vim.opt.shiftwidth = 2                             -- the number of spaces inserted for each indentation
