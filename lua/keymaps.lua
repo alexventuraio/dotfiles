@@ -24,6 +24,9 @@ vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
 -- Clear highlights on hitting 'ESC' twice
 vim.keymap.set('n', '<esc><esc>', ':noh<return>', opts)
 
+-- Toggle wrap lines on/off
+vim.keymap.set('n', '<leader>w', ':lua vim.wo.wrap = not vim.wo.wrap<CR>', opts)
+
 
 
 
