@@ -40,3 +40,11 @@ vim.opt.splitbelow = true                          -- force all horizontal split
 vim.opt.iskeyword:append('-')                      -- to take words with '-' as one word for delete or search
 vim.opt.isfname:append("@-@")
 vim.opt.fileencoding = 'utf-8'                     -- the encoding written to a file
+vim.opt.whichwrap:append {                         -- to move to the previous/next line using these keys when on the first/last character
+  ['<'] = true,
+  ['>'] = true,
+  ['['] = true,
+  [']'] = true,
+  h = true,
+  l = true,
+}
