@@ -4,6 +4,8 @@ vim.opt.syntax = 'on'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.neovide_input_macos_alt_is_meta = false      -- https://neovide.dev/configuration.html#macos-alt-is-meta
+
 -- File editing
 vim.opt.backup = false                             -- creates a backup file
 vim.opt.swapfile = false                           -- creates a swapfile
