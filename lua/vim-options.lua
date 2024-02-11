@@ -49,6 +49,7 @@ vim.opt.iskeyword:append('-')                      -- to take words with '-' as 
 vim.opt.isfname:append("@-@")
 vim.opt.fileencoding = 'utf-8'                     -- the encoding written to a file
 vim.opt.whichwrap:append('<,>,h,l,[,]')            -- to move to the previous/next line using these keys when on the first/last character
+vim.opt.mouse:append('a')                          -- allow the mouse to be used in neovim
 
 -- Stops automatically commenting the next line when pressing Enter on a commented line
 -- Automatically insert the current comment leader after hitting <Enter> in Insert mode.
