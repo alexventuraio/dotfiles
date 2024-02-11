@@ -7,6 +7,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.g.neovide_input_macos_alt_is_meta = false      -- https://neovide.dev/configuration.html#macos-alt-is-meta
 
 -- File editing
+vim.opt.fileencoding = 'utf-8'                     -- the encoding written to a file
 vim.opt.backup = false                             -- creates a backup file
 vim.opt.swapfile = false                           -- creates a swapfile
 vim.opt.undofile = true                            -- enable persistent undo
@@ -47,7 +48,6 @@ vim.opt.splitright = true                          -- force all vertical splits 
 vim.opt.splitbelow = true                          -- force all horizontal splits to go below current window
 vim.opt.iskeyword:append('-')                      -- to take words with '-' as one word for delete or search
 vim.opt.isfname:append("@-@")
-vim.opt.fileencoding = 'utf-8'                     -- the encoding written to a file
 vim.opt.whichwrap:append('<,>,h,l,[,]')            -- to move to the previous/next line using these keys when on the first/last character
 vim.opt.mouse:append('a')                          -- allow the mouse to be used in neovim
 
