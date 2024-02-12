@@ -59,7 +59,7 @@ vim.keymap.set('v', 'p', '"_dP', opts)
 vim.keymap.set('x', "<leader>'", ":s/\"/'/g<CR>", opts)
 
 -- Move text up and down
-vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv", opts)
-vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv", opts)
-vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv-gv", opts)
-vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv-gv", opts)
+vim.keymap.set('x', 'J', ":move '>+1<CR>gv=gv", opts)
+vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", opts)
+vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv=gv", opts)
+vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv=gv", opts)
