@@ -8,7 +8,7 @@ vim.g.maplocalleader = ' '
 
 
 
--- NORMAL --
+---------------------------------- NORMAL ----------------------------------------
 
 -- Better window navigation
 -- vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
@@ -33,7 +33,8 @@ vim.keymap.set({ 'n', 'o', 'x' }, '<S-l>', 'g_', opts)
 
 
 
--- VISUAL --
+
+---------------------------------- VISUAL ----------------------------------------
 
 -- Stay in indent mode
 vim.keymap.set('v', '<', '<gv', opts)
@@ -49,7 +50,7 @@ vim.keymap.set('v', 'p', '"_dP', opts)
 
 
 
--- VISUAL BLOCK --
+---------------------------------- VISUAL BLOCK ----------------------------------
 
 -- Replace double quotes with single quotes
 vim.keymap.set('x', "<leader>'", ":s/\"/'/g<CR>", opts)
