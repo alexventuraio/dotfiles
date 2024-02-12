@@ -27,6 +27,9 @@ vim.keymap.set('n', '<esc><esc>', ':noh<return>', opts)
 -- Toggle wrap lines on/off
 vim.keymap.set('n', '<leader>w', ':lua vim.wo.wrap = not vim.wo.wrap<CR>', opts)
 
+-- Move to the first/last char of the current line
+vim.keymap.set({ 'n', 'o', 'x' }, '<S-h>', '^', opts)
+vim.keymap.set({ 'n', 'o', 'x' }, '<S-l>', 'g_', opts)
 
 
 
@@ -56,10 +59,3 @@ vim.keymap.set('x', 'J', ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set('x', 'K', ":move '<-2<CR>gv-gv", opts)
 vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv-gv", opts)
 vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv-gv", opts)
-
-
-
-
--- Move to the first/last char of the current line
-vim.keymap.set({ 'n', 'o', 'x' }, '<S-h>', '^', opts)
-vim.keymap.set({ 'n', 'o', 'x' }, '<S-l>', 'g_', opts)
