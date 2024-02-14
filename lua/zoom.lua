@@ -7,14 +7,18 @@ end
 
 local function zoomWindowToggle()
   if vim.g.window_is_zoomed == 1 then
-    print('IF - ' .. vim.g.window_is_zoomed)
     vim.cmd(t('normal <C-w>='))
+
     vim.g.window_is_zoomed = 0
+
+    print('ZoomOut')
   else
-    print('ELSE - ' .. vim.g.window_is_zoomed)
     vim.cmd(t('normal <C-w>|'))
     vim.cmd(t('normal <C-w>_'))
+
     vim.g.window_is_zoomed = 1
+
+    print('ZoomIn')
   end
 end
 
