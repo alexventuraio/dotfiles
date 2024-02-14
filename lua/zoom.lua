@@ -1,20 +1,23 @@
-vim.g.window_is_zoomed = 0
+-- These funtions are meant to provide with a shortcut to zoom in and out
+-- on a panel without closing any of them
+
+vim.g.window_is_zoomed = 0   -- custom flag global variable
 
 -- FROM: https://stackoverflow.com/a/69142336
 local function t(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
-local function zoomWindowToggle()
+local function toggleSplitZoom()
   if vim.g.window_is_zoomed == 1 then
-    vim.cmd(t('normal <C-w>='))
+    vim.cmd.normal(t('<C-w>='))
 
     vim.g.window_is_zoomed = 0
 
     print('ZoomOut')
   else
-    vim.cmd(t('normal <C-w>|'))
-    vim.cmd(t('normal <C-w>_'))
+    vim.cmd.normal(t('<C-w>|'))
+    vim.cmd.normal(t('<C-w>_'))
 
     vim.g.window_is_zoomed = 1
 
@@ -22,4 +25,4 @@ local function zoomWindowToggle()
   end
 end
 
-vim.keymap.set('n', '<leader>d', zoomWindowToggle, {noremap=true})
+vim.keymap.set('n', '<leader>d', toggleSplitZoom, { noremap=true })
