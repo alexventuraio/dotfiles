@@ -15,6 +15,7 @@ require("vim-options")
 require("keymaps")
 require("autocmds")
 require("neovide")
+require("zoom")
 
 require("lazy").setup("plugins")
 
