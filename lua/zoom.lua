@@ -1,7 +1,7 @@
 -- These funtions are meant to provide with a shortcut to zoom in and out
--- on a panel without closing any of them
+-- on a panel without closing any of the existing splits
 
-vim.g.window_is_zoomed = 0   -- custom flag global variable
+vim.g.window_is_zoomed = 0   -- custom global flag variable
 
 -- FROM: https://stackoverflow.com/a/69142336
 local function t(str)
@@ -25,4 +25,4 @@ local function toggleSplitZoom()
   end
 end
 
-vim.keymap.set('n', '<leader>d', toggleSplitZoom, { noremap=true })
+vim.keymap.set('n', '<leader>z', toggleSplitZoom, { noremap=true })
