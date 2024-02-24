@@ -15,7 +15,7 @@ call plug#begin('~/.config/nvim/plugged')
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'norcalli/nvim-colorizer.lua'
-  Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'nvim-tree/nvim-tree.lua'
   Plug 'wakatime/vim-wakatime'
   Plug 'jlanzarotta/bufexplorer'
   Plug 'tpope/vim-fugitive'
@@ -27,7 +27,7 @@ call plug#begin('~/.config/nvim/plugged')
 
   """"" THEMES
   Plug 'marko-cerovac/material.nvim'
-  Plug 'kyazdani42/nvim-web-devicons'      " To have icons in your statusline and files
+  Plug 'nvim-tree/nvim-web-devicons'      " To have icons in your statusline and files
 
   """"" AUTOCOMPLETE
   Plug 'hrsh7th/cmp-nvim-lsp'              " LSP source for nvim-cmp
@@ -194,6 +194,9 @@ set suffixesadd=.js,.vue,.scss,.json
 
 if exists("g:neovide")                           " Put anything you want to happen only in Neovide here
   set guifont=Operator\ Mono\ Lig\ Book:h16
+
+  """"" To interprets Alt + whatever as <M-whatever>
+  let g:neovide_input_macos_alt_is_meta = v:true
 
   """"" TAB in normal mode it will move to next buffer | SHIFT-TAB will go back
   nnoremap <silent> <TAB> :bnext<CR>

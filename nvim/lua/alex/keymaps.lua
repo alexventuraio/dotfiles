@@ -18,7 +18,7 @@ vim.g.maplocalleader = ' '
 --   term_mode = 't',
 --   command_mode = 'c',
 
--- Normal --
+-- NORMAL --
 -- Better window navigation
 keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
@@ -38,12 +38,12 @@ keymap('n', '<S-l>', ':bnext<CR>', opts)
 keymap('n', '<S-h>', ':bprevious<CR>', opts)
 
 -- Fugitive.vim mappings for GIT
-keymap('n', '<leader>gb', ':Git blame<CR>', { nmap = true, silent = true })
-keymap('n', '<leader>gs', ':Git<CR>', { nmap = true, silent = true })
-keymap('n', '<leader>gd', ':Git diff<CR>', { nmap = true, silent = true })
-keymap('n', '<leader>gl', ':Git log<CR>', { nmap = true, silent = true })
-keymap('n', '<leader>gc', ':Git commit<CR>', { nmap = true, silent = true })
-keymap('n', '<leader>gp', ':Git push<CR>', { nmap = true, silent = true })
+keymap('n', '<leader>gb', ':Git blame<CR>', opts)
+keymap('n', '<leader>gs', ':Git<CR>', opts)
+keymap('n', '<leader>gd', ':Git diff<CR>', opts)
+keymap('n', '<leader>gl', ':Git log<CR>', opts)
+keymap('n', '<leader>gc', ':Git commit<CR>', opts)
+keymap('n', '<leader>gp', ':Git push<CR>', opts)
 
 -- Clear highlights on hitting 'ESC' twice
 keymap('n', '<esc><esc>', ':noh<return>', opts)
@@ -51,7 +51,17 @@ keymap('n', '<esc><esc>', ':noh<return>', opts)
 -- This command toggles the material theme style
 keymap('n', '<leader>tt', ':lua require("material.functions").toggle_style()<CR>', opts)
 
--- Visual --
+-- NvimTree Mappings
+keymap('n', '<leader>m', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<leader>n', ':NvimTreeFindFile<CR>', opts)
+keymap('n', '<leader>r', ':NvimTreeRefresh<CR>', opts)
+
+-- Bufferline Mappings
+keymap('n', '<leader>bb', ':BufferLinePick<CR>', opts)
+
+
+
+-- VISUAL --
 -- Stay in indent mode
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
@@ -61,14 +71,19 @@ keymap('v', '<A-j>', ':m .+1<CR>==', opts)
 keymap('v', '<A-k>', ':m .-2<CR>==', opts)
 keymap("v", "p", '"_dP', opts)
 
--- Visual Block --
+
+
+-- VISUAL BLOCK --
+-- Replace double quotes with single quotes
+keymap("x", "<leader>f", ":s/\"/'/g<CR>", opts)
+
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
+-- TERMINAL --
 -- Better terminal navigation
 keymap('t', '<C-h>', '<C-\\><C-N><C-w>h', term_opts)
 keymap('t', '<C-j>', '<C-\\><C-N><C-w>j', term_opts)

@@ -16,6 +16,7 @@ require('bufferline').setup({
     indicator = {
       style = 'underline',
     },
+    diagnostics = 'nvim_lsp',
     offsets = {
       {
         filetype = "NvimTree",
@@ -24,6 +25,8 @@ require('bufferline').setup({
         separator = true,
       }
     },
+    show_tab_indicators = true,
+    separator_style = 'slant',
   }
 })
 
@@ -48,13 +51,12 @@ require('nvim-treesitter.configs').setup({
 
   highlight = {
     enable = true,              -- false will disable the whole extension
-    -- disable = { 'c', 'rust' },  -- list of language that will be disabled
   },
 
   -- Indentation based on treesitter for the = operator. NOTE: This is an experimental feature.
   indent = {
     enable = true
-  }
+  },
 
   refactor = {
     highlight_definitions = { enable = true },

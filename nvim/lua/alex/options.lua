@@ -1,5 +1,6 @@
 vim.opt.syntax = 'on'
 
+vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 --vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.fileencoding = 'utf-8'                  -- the encoding written to a file
 vim.opt.autoread = true
