@@ -25,13 +25,11 @@ keymap('n', '<C-j>', '<C-w>j', opts)
 keymap('n', '<C-k>', '<C-w>k', opts)
 keymap('n', '<C-l>', '<C-w>l', opts)
 
-keymap('n', '<leader>e', ':Lex 30<cr>', opts)
-
 -- Resize with arrows
-keymap('n', '<C-Up>', ':resize +2<CR>', opts)
-keymap('n', '<C-Down>', ':resize -2<CR>', opts)
-keymap('n', '<C-Left>', ':vertical resize -2<CR>', opts)
-keymap('n', '<C-Right>', ':vertical resize +2<CR>', opts)
+keymap('n', '<C-A-Up>', ':resize +2<CR>', opts)
+keymap('n', '<C-A-Down>', ':resize -2<CR>', opts)
+keymap('n', '<C-A-Left>', ':vertical resize -2<CR>', opts)
+keymap('n', '<C-A-Right>', ':vertical resize +2<CR>', opts)
 
 -- Navigate buffers
 keymap('n', '<S-l>', ':bnext<CR>', opts)
@@ -82,6 +80,8 @@ keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+
+
 
 -- TERMINAL --
 -- Better terminal navigation
