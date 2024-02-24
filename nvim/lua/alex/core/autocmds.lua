@@ -24,11 +24,6 @@ cmd [[
   autocmd VimResized * wincmd =
 ]]
 
--- To close the Git Blame window from Fugitive with q
-cmd [[
-  autocmd FileType fugitiveblame nmap <buffer> q gq
-]]
-
 -- Stops automatically commenting the next line when pressing Enter on a commented line.
 -- Automatically insert the current comment leader after hitting <Enter> in Insert mode.
 -- https://neovim.discourse.group/t/options-formatoptions-not-working-when-put-in-init-lua/3746/5
