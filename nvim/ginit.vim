@@ -8,6 +8,7 @@ if exists(':GuiFont')
   "set guifont=Operator\ Mono\ Lig\ Book:h16
 endif
 
+
 """"" Disable GUI Tabline
 if exists(':GuiTabline')
     GuiTabline 0
