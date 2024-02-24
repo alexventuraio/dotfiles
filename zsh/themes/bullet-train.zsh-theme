@@ -35,6 +35,7 @@ if [ ! -n "${BULLETTRAIN_PROMPT_ORDER+1}" ]; then
     git
     hg
     cmd_exec_time
+    vagrant
   )
 fi
 
@@ -622,6 +623,16 @@ prompt_time() {
     prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%r}
   else
     prompt_segment $BULLETTRAIN_TIME_BG $BULLETTRAIN_TIME_FG %D{%T}
+  fi
+}
+
+prompt_vagrant() {
+#prompt_segment $BULLETTRAIN_AWS_BG $BULLETTRAIN_AWS_FG $BULLETTRAIN_AWS_PREFIX $vagrant_prompt
+  if [[ -d .vagrant && -f Vagrantfile ]]; then
+    # local vagrant_prompt="$(vagrant_prompt_info)"
+    # vagrant_prompt=${vagrant_prompt}
+    # prompt_segment $BULLETTRAIN_CUSTOM_BG $BULLETTRAIN_CUSTOM_FG $vagrant_prompt
+    prompt_segment $BULLETTRAIN_CUSTOM_BG $BULLETTRAIN_CUSTOM_FG $(vagrant_prompt_info)
   fi
 }
 
