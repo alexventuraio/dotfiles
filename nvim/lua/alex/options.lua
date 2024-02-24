@@ -1,6 +1,5 @@
 vim.opt.syntax = 'on'
 
-vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 --vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 vim.opt.fileencoding = 'utf-8'                  -- the encoding written to a file
 vim.opt.autoread = true
@@ -26,6 +25,7 @@ vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.cursorcolumn = true                     -- highlight cursor line underneath the cursor vertically.
 vim.opt.updatetime = 100                        -- faster completion (4000ms default) -- git diff markers refresh time
 vim.opt.completeopt = { 'menuone', 'noselect' } -- mostly just for cmp
+vim.opt.termguicolors = true                    -- set term gui colors (most terminals support this)
 --vim.opt.completeopt='menuone,noinsert,noselect'
 vim.opt.hlsearch = true                         -- highlight all matches on previous search pattern
 vim.opt.incsearch = true                        -- highlight next match on searching

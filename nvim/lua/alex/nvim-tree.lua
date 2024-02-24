@@ -6,7 +6,7 @@ require('nvim-tree').setup({
   focus_empty_on_setup = true,
   reload_on_bufenter = true,
   view = {
-	  -- 	auto_resize = true,
+    -- 	auto_resize = true,
     mappings = {
       list = {
         -- user mappings go here
@@ -28,7 +28,7 @@ require('nvim-tree').setup({
         { key = 'v',  action = 'system_open' },
       },
     },
-	},
+  },
   renderer = {
     indent_markers = {
       enable = true,          -- Show lines in the tree
@@ -39,9 +39,9 @@ require('nvim-tree').setup({
     enable = false,           -- Keep it to false and 'open_on_setup_file' to false to hide explorer on startup
   },
   diagnostics = {
-		enable = true,
+    enable = true,
     show_on_dirs = true,
-	},
+  },
   filters = {
     dotfiles = false,         -- True to hide dotfiles
     custom = { 'node_modules', 'tmp' },
@@ -67,9 +67,9 @@ require('nvim-tree').setup({
 local modifiedBufs = function(bufs)
   local t = 0
   for k,v in pairs(bufs) do
-      if v.name:match("NvimTree_") == nil then
-          t = t + 1
-      end
+    if v.name:match("NvimTree_") == nil then
+      t = t + 1
+    end
   end
   return t
 end
@@ -77,10 +77,10 @@ end
 vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
   callback = function()
-      if #vim.api.nvim_list_wins() == 1 and
+    if #vim.api.nvim_list_wins() == 1 and
       vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil and
       modifiedBufs(vim.fn.getbufinfo({bufmodified = 1})) == 0 then
-          vim.cmd "quit"
-      end
+      vim.cmd "quit"
+    end
   end
 })

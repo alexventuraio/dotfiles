@@ -5,9 +5,7 @@ set mouse=a
 if exists(':GuiFont')
   " Use GuiFont! to ignore font errors
   GuiFont OperatorMonoLig Nerd Font:h16
-  "set guifont=Operator\ Mono\ Lig\ Book:h16
 endif
-
 
 """"" Disable GUI Tabline
 if exists(':GuiTabline')

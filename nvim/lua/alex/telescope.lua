@@ -1,10 +1,17 @@
 require('telescope').setup({
   defaults = {
+    -- Default configuration for telescope goes here:
+    -- config_key = value,
+
+    prompt_prefix = " ",
+    selection_caret = " ",
+    -- path_display = { "smart" },  -- remove as much from the path as possible (causes some slowlyness)
     file_ignore_patterns = { 'node_modules' },
-  },
-  mappings = {
-    i = {
-      ["<C-s>"] = require('telescope.actions').file_split,
+    
+    mappings = {
+      i = {
+        ["<C-s>"] = require('telescope.actions').file_split,
+      },
     },
   },
 })
@@ -13,7 +20,7 @@ local builtin = require('telescope.builtin')
 
 -- find
 vim.keymap.set('n', 'ff', builtin.find_files, {})
-vim.keymap.set('n', 'fa', "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>")
+vim.keymap.set('n', 'fa', "<cmd> Telescope find_files follow=true hidden=true <CR>") --  no_ignore=true will include node_modules in results
 vim.keymap.set('n', 'fg', builtin.live_grep, {})
 vim.keymap.set('n', 'fw', builtin.grep_string, {})  -- Searches for the string under your cursor in your current working directory
 vim.keymap.set('n', 'fb', builtin.buffers, {})

@@ -1,7 +1,3 @@
---
--- LSP CONFIG
---
-
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
@@ -45,93 +41,55 @@ local lsp_flags = {
 
 
 -- Add additional capabilities supported by nvim-cmp
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
 local servers = { 'solargraph', 'tsserver' }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  lspconfig[lsp].setup({
     -- on_attach = my_custom_on_attach,
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
-  }
+  })
 end
 
---
--- LSP CONFIG
---
-
-
-
-
-
---
--- AUTOCOMPLETION WITH NVIM-CMP
---
-
--- Set up nvim-cmp.
-local cmp = require 'cmp'
-
-cmp.setup({
-  snippet = {
-    -- REQUIRED - you must specify a snippet engine
-    expand = function(args)
-      vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-    end,
-  },
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({
-      behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
-    }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'ultisnips' }, -- For ultisnips users.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-  }, {
-    { name = 'buffer' },
-  })
-})
-
--- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = {
-    { name = 'buffer' }
+lspconfig.volar.setup{
+  init_options = {
+    typescript = {
+      -- tsdk = '/path/to/.npm/lib/node_modules/typescript/lib'
+      tsdk = '/Users/alex/.nvm/versions/node/v16.13.2/lib/node_modules/typescript/lib'
+      -- Alternative location if installed as root:
+      -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+    }
   }
-})
+}
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
+-- local util = require 'lspconfig.util'
+-- local function get_typescript_server_path(root_dir)
 
---
--- AUTOCOMPLETION WITH NVIM-CMP
---
+--   local global_ts = '/Users/alex/.nvm/versions/node/v16.13.2/lib/node_modules/typescript/lib'
+--   -- Alternative location if installed as root:
+--   -- local global_ts = '/usr/local/lib/node_modules/typescript/lib'
+--   local found_ts = ''
+--   local function check_dir(path)
+--     found_ts =  util.path.join(path, 'node_modules', 'typescript', 'lib')
+--     if util.path.exists(found_ts) then
+--       return path
+--     end
+--   end
+--   if util.search_ancestors(root_dir, check_dir) then
+--     return found_ts
+--   else
+--     return global_ts
+--   end
+-- end
+
+-- lspconfig.volar.setup{
+--   on_new_config = function(new_config, new_root_dir)
+--     new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
+--   end,
+-- }
