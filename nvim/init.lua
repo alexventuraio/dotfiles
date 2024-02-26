@@ -1,11 +1,7 @@
 require('alex.core')
-require('alex.utils')
+-- require('alex.utils')
 require('alex.lazy')
 require('alex.core.listchars')
-
--- print(alex.utils.funky.my_func_a(4,5,6)) -- prints 3,4,5
--- print(alex.utils.funky.my_func_b(1,2,3))
-
 
 vim.cmd([[
   """"" Copy-Paste with Cmd-v Cmd-c Cmd-x
