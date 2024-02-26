@@ -1,0 +1,11 @@
+" Note: These two lines must be added to .gvimrc else the first line will fail.
+" The second line is case sensitive, so <D-T> (Cmd-Shift-t) is not the same as
+" <D-t> (Cmd-t)!
+if has("gui_macvim") && has("gui_running")
+  macmenu &File.New\ Tab key=<D-S-t>
+  nmap <D-t> :CtrlP<CR>
+  imap <D-t> <ESC>:CtrlP<CR>
+
+  " Enable smarter tab line to be colored
+  let g:airline#extensions#tabline#enabled = 0
+endif

@@ -1,0 +1,183 @@
+" PERFORMANCE: https://github.com/joshukraine/dotfiles/blob/master/vim-performance.md
+set nocompatible
+
+" Specify a directory for plugins (https://github.com/junegunn/vim-plug)
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+" Make sure you use single quotes
+
+" IDE
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Initialize plugin system
+call plug#end()
+
+set t_Co=256
+set guioptions-=T
+set encoding=utf-8
+set background=dark
+set title                              " Display title
+set sw=2                               " Indentacion a dos espacios
+set mouse=a                            " Enable mouse inside terminal VIM
+set cursorline                         " Mostrar linea en la posicion actual del cursor
+set cursorcolumn                       " Show the column for the current cursor position
+set number                             " Show line-number
+set numberwidth=5                      " Ancho de la columna para line-number
+set showmatch                          " Show matching brackets
+set showcmd                            " Mostrar los comandos que se estan ejecutando
+set ruler                              " Show cursor actual line and column number
+set laststatus=2                       " Display status bar in 2 lines
+set noshowmode                         " Do not show current VIM mode
+set wildmenu                           " Command line autocomplete menus
+set complete+=kspell
+set completeopt=menuone,longest
+set updatetime=100                     " Git diff markers refresh time
+set scrolloff=8                        " Start scrolling text before reaching the bottom
+set ignorecase                         " case insensitive matching
+
+set nowrap                             " Do not wrap lines
+" Indentation {{{
+set tabstop=2 softtabstop=2            " a tab is two spaces
+set shiftwidth=2                       " an autoindent (with <<) is two spaces
+set shiftround                         " Round indent to multiple of 'shiftwidth'
+set expandtab                          " use spaces, not tabs
+set smarttab
+set autoindent
+set smartindent
+set cindent
+" }}}
+
+set list                               " Show invisible characters
+set backspace=indent,eol,start         " Backspace through everything in insert mode
+
+set hlsearch                           " Highlight search things
+set incsearch                          " Highlight next match on searching
+
+" Tab Split {{{
+set splitright
+set splitbelow
+" }}}
+
+" Search down into subfolders
+" Provides tab-completion for all file-related tasks
+set path+=**
+
+" Backup and swap files
+" set backupdir^=~/.vim/_backup//        " where to put backup files.
+" set directory^=~/.vim/_temp//          " where to put swap files.
+set noswapfile
+set noundofile
+set nobackup
+
+
+let mapleader=" "
+
+
+" Move between splitted windows by holding CTRL + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+
+" ============================================================ GUI colorschems {{
+" Enable 24bit true color if you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+  set termguicolors
+endif
+" -------------------------------
+"colorscheme molokai
+"set transparency=15                    " To set a transparency on the app
+" *** Required to show molokai with light-grey background ***
+"let g:molokai_original = 1
+"set background=dark
+" -------------------------------
+colorscheme alex-material
+" -------------------------------
+" colorscheme cobalt2
+" ============================================================ }}}
+
+
+" ============================================================ GUI fonts {{
+if has('mac') && has('gui_running')
+  set macligatures                       " Show ligatures with supported fonts (MacVim GUI)
+  set guifont='OperatorMonoLig Nerd Font Mono:h16:Regular'
+endif
+" ============================================================ }}
+
+
+" ============================================================ Vim-Airline config {{
+let g:airline_theme='dark_alex'
+" For molokai colorscheme use custom theme to change filename color on inactive windows
+"let g:airline_theme='dark_alex'
+" Enable smarter tab line to be colored
+let g:airline#extensions#tabline#enabled = 1
+" Fancy arrow symbols, requires a patched font(https://github.com/vim-airline/vim-airline/issues/2338)
+let g:airline_powerline_fonts = 1
+" Branch extension for airline
+let g:airline#extensions#branch#displayed_head_limit = 10
+" Powerline symbols to be correctly rendered in MacVim
+if has("gui_running")
+  " let g:airline_left_sep = '>'
+  let g:airline_left_alt_sep = '〉'
+  " let g:airline_right_sep = '<'
+  let g:airline_right_alt_sep = '〈'
+endif
+" ============================================================ }}
+
+
+" -- Change cursor shape between insert and normal mode in iTerm2.app
+if $TERM_PROGRAM =~ "iTerm"
+  let &t_SI = "\<Esc>]50;CursorShape=1\x7" " Vertical bar in insert mode
+  let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+  let &t_EI = "\<Esc>]50;CursorShape=0\x7" " Block in normal mode
+endif
+" -- (Hopefully) removes the delay when hitting ESC in insert mode
+set ttimeout                           " Time out on key codes
+set ttimeoutlen=1                      " Used for key code delays
+set ttyfast                            " Indicates fast terminal connection
+
+" List chars {{{
+" set list listchars=tab:▶‒,nbsp:∙,trail:∙,extends:▶,precedes:◀,eol:↲
+set list listchars=tab:▸─,nbsp:␣,trail:·,extends:»,precedes:«,eol:¬
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=white guibg=#ff005f
+" }}}
+
+" -- Strip trailing whitespace on save
+autocmd BufWritePre * :%s/\s\+$//e
+
+
+
+" NERDTree config
+autocmd StdinReadPre * let s:std_in=1  " This trick also prevents NERDTree from hiding when first selecting a file.
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+let NERDTreeShowHidden=1               " Show hidden files by default
+nmap <Leader>n :NERDTreeFind<CR>       " Find the current file in the file explorer
+nmap <Leader>m :NERDTreeToggle<CR>     " Open/close file explorer
+
+" CtrlP mappings/configuration
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+" Ignore some folders and files for CtrlP indexing
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp$',
+  \ 'file': '\.so$\|\.dat$|\.DS_Store$|\tags$'
+  \ }
+" Shorcut to execute :ClearCtrlPCache
+nmap <Leader>C :CtrlPClearCache<cr>              " Refresh just CtrlP
+nmap <Leader>r :NERDTreeFocus<cr>R<c-w><c-p>:CtrlPClearCache<cr> " Refresh CtrlP & NERDTree
+
+
+
+" -- Set a line length marker
+set colorcolumn=100
+
+" Fix indentation in file
+map <Leader>i mmgg=G`m<CR>
+
+" Auto-resize splits when Vim gets resized.
+autocmd VimResized * wincmd =
