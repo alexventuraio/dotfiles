@@ -45,3 +45,12 @@ vim.api.nvim_create_user_command(
     desc = 'Open Github in the web browser pointing to the current file.',
   }
 )
+
+-- FROM: https://www.reddit.com/r/neovim/comments/o53wlw/starting_neovim_with_a_folder_argument_makes/
+-- FOLLOW UP: https://github.com/nvim-tree/nvim-tree.lua/discussions/2062#discussioncomment-8598767
+vim.api.nvim_create_autocmd('VimEnter', {
+  desc = 'Open Nvim-Tree on the given directory from command line',
+  group = vim.api.nvim_create_augroup('NvimTreeSetGivenDirectory', { clear = true }),
+  pattern = '*',
+  command = "if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | wincmd p | enew | execute 'cd '.argv()[0] | endif",
+})
