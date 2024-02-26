@@ -24,11 +24,11 @@ return {
   --   lazy = false,
   --   priority = 1000,
   --   config = function()
-  --     vim.cmd.colorscheme('tokyonight')
+  --     -- vim.cmd.colorscheme('tokyonight')
   --     -- There are also colorschemes for the different styles.
-  --     vim.cmd.colorscheme('tokyonight-night')
-  --     vim.cmd.colorscheme('tokyonight-storm')
-  --     vim.cmd.colorscheme('tokyonight-day')
+  --     -- vim.cmd.colorscheme('tokyonight-night')
+  --     -- vim.cmd.colorscheme('tokyonight-storm')
+  --     -- vim.cmd.colorscheme('tokyonight-day')
   --     vim.cmd.colorscheme('tokyonight-moon')
   --   end,
   -- },
@@ -37,6 +37,14 @@ return {
   --   priority = 1000,
   --   config = function()
   --     vim.cmd.colorscheme('nightfox')
+  --   end,
+  -- },
+  -- {
+  --   'maxmx03/dracula.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme('dracula')
   --   end,
   -- },
 }
