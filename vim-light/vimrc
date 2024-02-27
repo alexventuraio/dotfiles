@@ -106,7 +106,7 @@ colorscheme alex-material
 " ============================================================ GUI fonts {{
 if has('mac') && has('gui_running')
   set macligatures                       " Show ligatures with supported fonts (MacVim GUI)
-  set guifont='OperatorMonoLig Nerd Font Mono:h16:Regular'
+  set guifont=OperatorMonoLig\ Nerd\ Font\ Mono:h16
 endif
 " ============================================================ }}
 
