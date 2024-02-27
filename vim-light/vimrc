@@ -12,6 +12,7 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
 call plug#end()
