@@ -1,6 +1,6 @@
 return {
   'nvim-tree/nvim-tree.lua',
-  version = "*",
+  version = '*',
   -- lazy = false,
   dependencies = {
     'nvim-tree/nvim-web-devicons',
@@ -14,6 +14,10 @@ return {
   opts = {
     view = {},
     renderer = {
+      highlight_git = 'all',
+      highlight_diagnostics = 'all',
+      highlight_opened_files = 'all',
+      highlight_modified = 'all',
       indent_markers = {
         enable = true,          -- Show lines in the tree
       },
@@ -36,10 +40,10 @@ return {
       enable = true,
       show_on_dirs = true,
       icons = {
-        hint = "",
-        info = "",
-        warning = "",
-        error = "",
+        hint = '',
+        info = '',
+        warning = '',
+        error = '',
       },
     },
     filters = {
@@ -75,9 +79,7 @@ return {
     -- https://github.com/nvim-tree/nvim-tree.lua?tab=readme-ov-file#custom-mappings
     -- https://github.com/nvim-tree/nvim-tree.lua/wiki/Archived#example
     local function my_on_attach(bufnr)
-      local api = require('nvim-tree.api')
-
-      local function opts(desc)
+      local function my_opts(desc)
         return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
       end
 
@@ -85,11 +87,11 @@ return {
       api.config.mappings.default_on_attach(bufnr)
 
       -- custom mappings
-      -- vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        opts('Up'))
-      vim.keymap.set('n', '?', api.tree.toggle_help,     opts('Help'))
-      vim.keymap.set('n', 's', api.node.open.vertical,   opts('Open: Vertical Split'))
-      vim.keymap.set('n', 'i', api.node.open.horizontal, opts('Open: Horizontal Split'))
-      vim.keymap.set('n', 't', api.node.open.tab,        opts('Open: New Tab'))
+      -- vim.keymap.set('n', '<C-t>', api.tree.change_root_to_parent,        my_opts('Up'))
+      vim.keymap.set('n', '?', api.tree.toggle_help,     my_opts('Help'))
+      vim.keymap.set('n', 's', api.node.open.vertical,   my_opts('Open: Vertical Split'))
+      vim.keymap.set('n', 'i', api.node.open.horizontal, my_opts('Open: Horizontal Split'))
+      vim.keymap.set('n', 't', api.node.open.tab,        my_opts('Open: New Tab'))
     end
     -- pass to setup along with your other options
     opts.on_attach = my_on_attach
