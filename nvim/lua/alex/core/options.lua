@@ -63,3 +63,13 @@ vim.opt.completeopt = { 'menuone', 'noselect' }    -- set completeopt to have a 
 -- vim.opt.formatoptions:remove('c')
 -- vim.opt.formatoptions:remove('r')
 -- vim.opt.formatoptions:remove('o')
+
+-- Set blinking cursor
+-- FROM: https://neovim.io/doc/user/options.html#'guicursor'
+vim.opt.guicursor='n-v-c:block-Cursor/lCursor,' ..
+                  'i-ci:ver25-Cursor/lCursor,' ..
+                  've:ver35-Cursor,' ..
+                  'r-cr:hor20-Cursor/lCursor,' ..
+                  'o:hor50-Cursor,' ..
+                  'sm:block-Cursor-blinkwait175-blinkoff150-blinkon175,' ..
+                  'a:blinkwait200-blinkoff500-blinkon500-Cursor/lCursor'
