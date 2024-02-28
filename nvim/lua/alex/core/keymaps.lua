@@ -40,10 +40,6 @@ vim.keymap.set({ 'n', 'o', 'x' }, '<S-l>', 'g_', opts)
 -- Global Substitution of the current word
 vim.keymap.set('n', '<leader>su', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
--- Zoom in/out on a panel without closing any split
-vim.keymap.set('n', '<leader>zz', [[<C-w>_ | <C-w>|]], opts) -- the | acts as a command separator
-vim.keymap.set('n', '<leader>za', [[<C-w>=]], opts)
-
 
 
 
