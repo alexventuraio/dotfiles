@@ -30,6 +30,9 @@ vim.keymap.set('n', '<C-l>', ':wincmd l<CR>')
 -- Clear highlights on hitting 'ESC' twice
 vim.keymap.set('n', '<esc><esc>', ':noh<return>', opts)
 
+-- Quit all windows and tabs at a time
+vim.keymap.set('n', '<leader>qa', ':qa<Return>', opts)
+
 -- Toggle wrap lines on/off
 vim.keymap.set('n', '<leader>w', ':lua vim.wo.wrap = not vim.wo.wrap<CR>', opts)
 
