@@ -30,7 +30,7 @@ return {
         'tailwindcss',
         'lua_ls',
         'emmet_ls',
-        'vuels',
+        'volar',
         'stimulus_ls',
         -- 'ruby_ls',
         'yamlls',
