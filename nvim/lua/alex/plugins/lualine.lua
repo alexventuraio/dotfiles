@@ -16,7 +16,7 @@ return {
     --   watermelon = '#ff5874',
     -- }
 
-    local colors = {
+    local my_nightfly_colors = {
       blue = '#65D1FF',
       green = '#3EFFDC',
       violet = '#FF61EF',
@@ -27,36 +27,36 @@ return {
       inactive_bg = '#2c3043',
     }
 
-    local my_lualine_theme = {
+    local my_nightfly_lualine_theme = {
       normal = {
-        a = { bg = colors.blue, fg = colors.bg, gui = 'bold' },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
+        a = { bg = my_nightfly_colors.blue, fg = my_nightfly_colors.bg, gui = 'bold' },
+        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
+        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
       },
       insert = {
-        a = { bg = colors.green, fg = colors.bg, gui = 'bold' },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
+        a = { bg = my_nightfly_colors.green, fg = my_nightfly_colors.bg, gui = 'bold' },
+        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
+        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
       },
       visual = {
-        a = { bg = colors.violet, fg = colors.bg, gui = 'bold' },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
+        a = { bg = my_nightfly_colors.violet, fg = my_nightfly_colors.bg, gui = 'bold' },
+        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
+        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
       },
       command = {
-        a = { bg = colors.yellow, fg = colors.bg, gui = 'bold' },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
+        a = { bg = my_nightfly_colors.yellow, fg = my_nightfly_colors.bg, gui = 'bold' },
+        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
+        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
       },
       replace = {
-        a = { bg = colors.red, fg = colors.bg, gui = 'bold' },
-        b = { bg = colors.bg, fg = colors.fg },
-        c = { bg = colors.bg, fg = colors.fg },
+        a = { bg = my_nightfly_colors.red, fg = my_nightfly_colors.bg, gui = 'bold' },
+        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
+        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
       },
       inactive = {
-        a = { bg = colors.inactive_bg, fg = colors.semilightgray, gui = 'bold' },
-        b = { bg = colors.inactive_bg, fg = colors.semilightgray },
-        c = { bg = colors.inactive_bg, fg = colors.semilightgray },
+        a = { bg = my_nightfly_colors.inactive_bg, fg = my_nightfly_colors.semilightgray, gui = 'bold' },
+        b = { bg = my_nightfly_colors.inactive_bg, fg = my_nightfly_colors.semilightgray },
+        c = { bg = my_nightfly_colors.inactive_bg, fg = my_nightfly_colors.semilightgray },
       },
     }
 
@@ -82,7 +82,7 @@ return {
 
     return {
       options = {
-        theme = my_lualine_theme,
+        theme = my_nightfly_lualine_theme,
         disabled_filetypes = { 'NvimTree', 'neo-tree' },
         -- component_separators = { left = '', right = ''},
         -- section_separators = { left = '', right = ''},
