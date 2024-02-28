@@ -16,6 +16,10 @@ vim.keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
 vim.keymap.set('n', '<leader>se', '<C-w>=') -- make split windows equal width & height
 vim.keymap.set('n', '<leader>sx', ':close<CR>') -- close current split window
 
+-- Increment/decrement
+vim.keymap.set('n', '+', '<C-a>')
+vim.keymap.set('n', '-', '<C-x>')
+
 -- Better window navigation
 -- vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 -- vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
