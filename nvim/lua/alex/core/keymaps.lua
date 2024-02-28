@@ -20,6 +20,12 @@ vim.keymap.set('n', '<leader>sx', ':close<CR>') -- close current split window
 vim.keymap.set('n', '+', '<C-a>')
 vim.keymap.set('n', '-', '<C-x>')
 
+-- Resize window
+vim.keymap.set('n', '<C-S-h>', '<C-w><')
+vim.keymap.set('n', '<C-S-l>', '<C-w>>')
+vim.keymap.set('n', '<C-S-k>', '<C-w>+')
+vim.keymap.set('n', '<C-S-j>', '<C-w>-')
+
 -- Better window navigation
 -- vim.keymap.set('n', '<C-h>', '<C-w>h', opts)
 -- vim.keymap.set('n', '<C-j>', '<C-w>j', opts)
