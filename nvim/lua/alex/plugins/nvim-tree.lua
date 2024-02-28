@@ -36,6 +36,10 @@ return {
       -- https://github.com/nvim-tree/nvim-tree.lua/issues/659#issuecomment-950156327
       enable = false,           -- Keep it to false and 'open_on_setup_file' to false to hide explorer on startup
     },
+    update_focused_file = {
+      enable = true,            -- Focus the current buffer file in NvimTree
+      update_root = false,      -- To update the root dir if the file is out of the current one
+    },
     diagnostics = {
       enable = true,
       show_on_dirs = true,
