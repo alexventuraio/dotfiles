@@ -26,7 +26,7 @@ return {
         },
         lualine_c = {
           {
-            lualine_utils.custom_fname,
+            lualine_utils.custom_filename(),
             newfile_status = true,   -- Display new file status (new file means no write after created)
             path = 1,                -- 1: Relative path
             symbols = {
@@ -51,7 +51,7 @@ return {
       inactive_sections = {
         lualine_c = {
           {
-            lualine_utils.custom_fname,
+            lualine_utils.custom_filename(),
             newfile_status = true,   -- Display new file status (new file means no write after created)
             path = 1,                -- 1: Relative path
             symbols = {
