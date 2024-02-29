@@ -3,7 +3,7 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = function()
     local lazy_status = require('lazy.status') -- to configure lazy pending updates count
-    local lualine_utils = require('lua.alex.utils.lualine-utils')
+    local lualine_utils = require('alex.utils.lualine-utils')
 
     return {
       options = {

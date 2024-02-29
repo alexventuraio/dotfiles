@@ -1,6 +1,6 @@
 local M = {}
 
-local my_lualine = require('lua.alex.utils.lualine-custom-theme')
+local my_lualine = require('alex.utils.lualine-custom-theme')
 
 
 -- Truncating components in smaller window
