@@ -69,13 +69,13 @@ return {
     -- Here the servers with custom configs --
     ------------------------------------------
     --
-    -- configure emmet language server
+    -- Configure Emmet language server
     lspconfig['emmet_ls'].setup({
       capabilities = capabilities,
       filetypes = { 'html', 'javascriptreact', 'css', 'sass', 'scss', 'eruby', 'vue' },
     })
 
-    -- configure lua server (with special settings)
+    -- Configure Lua language server (with special settings)
     lspconfig['lua_ls'].setup({
       capabilities = capabilities,
       settings = { -- custom settings for lua
@@ -95,7 +95,7 @@ return {
       },
     })
 
-    -- configure Vuejs language server (with special settings)
+    -- Configure Vuejs language server (with special settings)
     -- FROM: https://github.com/neovim/neovim/issues/20010#issuecomment-1968312764
     lspconfig['volar'].setup({
       init_options = {
