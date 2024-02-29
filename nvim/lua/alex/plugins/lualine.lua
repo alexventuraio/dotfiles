@@ -3,7 +3,6 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = function()
     local lazy_status = require('lazy.status') -- to configure lazy pending updates count
-    local my_lualine = require('lua.alex.utils.lualine-custom-theme')
 
     --- https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#truncating-components-in-smaller-window
     --- @param trunc_width (number) trunctates component when screen width is less then trunc_width
@@ -27,7 +26,7 @@ return {
 
     return {
       options = {
-        theme = my_lualine.custom_theme,
+        theme = 'tokyonight',
         disabled_filetypes = { 'NvimTree', 'neo-tree' },
         -- component_separators = { left = '', right = ''},
         -- section_separators = { left = '', right = ''},
