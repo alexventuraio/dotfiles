@@ -110,6 +110,19 @@ return {
       }
     })
 
+    -- Configure Ruby language server (with special settings)
+    -- FROM: https://github.com/Shopify/ruby-lsp/issues/1248#issuecomment-1968226922
+    local ruby_lsp = require('alex.utils.ruby-lsp')
+    lspconfig['ruby_ls'].setup({
+      capabilities = capabilities,
+      cmd = { '/Users/alex/.rvm/gems/ruby-3.1.4@devpost-teams/bin/ruby-lsp' },
+      -- cmd = { '/Users/alex/.local/share/nvim/mason/packages/ruby-lsp/ruby-lsp' },
+      on_attach = function(client, buffer)
+        ruby_lsp.setup_diagnostics(client, buffer)
+        ruby_lsp.add_ruby_deps_command(client, buffer)
+      end,
+    })
+
 
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
