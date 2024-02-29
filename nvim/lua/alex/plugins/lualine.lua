@@ -3,62 +3,7 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = function()
     local lazy_status = require('lazy.status') -- to configure lazy pending updates count
-
-    -- local nightfly_theme_colors = {
-    --   white      = '#c3ccdc',
-    --   cadet_blue = '#a1aab8',
-    --   slate_blue = '#2c3043',
-    --   dark_blue  = '#092236',
-    --   blue       = '#82aaff',
-    --   emerald    = '#21c7a8',
-    --   purple     = '#ae81ff',
-    --   tan        = '#ecc48d',
-    --   watermelon = '#ff5874',
-    -- }
-
-    local my_nightfly_colors = {
-      blue = '#65D1FF',
-      green = '#3EFFDC',
-      violet = '#FF61EF',
-      yellow = '#FFDA7B',
-      red = '#FF4A4A',
-      fg = '#c3ccdc',
-      bg = '#112638',
-      inactive_bg = '#2c3043',
-    }
-
-    local my_nightfly_lualine_theme = {
-      normal = {
-        a = { bg = my_nightfly_colors.blue, fg = my_nightfly_colors.bg, gui = 'bold' },
-        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-      },
-      insert = {
-        a = { bg = my_nightfly_colors.green, fg = my_nightfly_colors.bg, gui = 'bold' },
-        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-      },
-      visual = {
-        a = { bg = my_nightfly_colors.violet, fg = my_nightfly_colors.bg, gui = 'bold' },
-        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-      },
-      command = {
-        a = { bg = my_nightfly_colors.yellow, fg = my_nightfly_colors.bg, gui = 'bold' },
-        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-      },
-      replace = {
-        a = { bg = my_nightfly_colors.red, fg = my_nightfly_colors.bg, gui = 'bold' },
-        b = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-        c = { bg = my_nightfly_colors.bg, fg = my_nightfly_colors.fg },
-      },
-      inactive = {
-        a = { bg = my_nightfly_colors.inactive_bg, fg = my_nightfly_colors.semilightgray, gui = 'bold' },
-        b = { bg = my_nightfly_colors.inactive_bg, fg = my_nightfly_colors.semilightgray },
-        c = { bg = my_nightfly_colors.inactive_bg, fg = my_nightfly_colors.semilightgray },
-      },
-    }
+    local my_lualine = require('lua.alex.utils.lualine-custom-theme')
 
     --- https://github.com/nvim-lualine/lualine.nvim/wiki/Component-snippets#truncating-components-in-smaller-window
     --- @param trunc_width (number) trunctates component when screen width is less then trunc_width
@@ -82,7 +27,7 @@ return {
 
     return {
       options = {
-        theme = my_nightfly_lualine_theme,
+        theme = my_lualine.custom_theme,
         disabled_filetypes = { 'NvimTree', 'neo-tree' },
         -- component_separators = { left = '', right = ''},
         -- section_separators = { left = '', right = ''},
