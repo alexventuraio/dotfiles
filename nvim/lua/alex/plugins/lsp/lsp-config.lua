@@ -95,6 +95,22 @@ return {
       },
     })
 
+    -- configure Vuejs language server (with special settings)
+    -- FROM: https://github.com/neovim/neovim/issues/20010#issuecomment-1968312764
+    lspconfig['volar'].setup({
+      init_options = {
+        typescript = {
+          -- tsdk = '/path/to/.npm/lib/node_modules/typescript/lib'
+          -- tsdk = '/Users/alex/.nvm/versions/node/v16.13.2/lib/node_modules/typescript/lib'
+          -- tsdk = '/Users/alex/.config/yarn/global/node_modules/typescript/lib'
+          tsdk = '/Users/alex/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
+          -- Alternative location if installed as root:
+          -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
+        }
+      }
+    })
+
+
     -- Use LspAttach autocommand to only map the following keys
     -- after the language server attaches to the current buffer
     -- FROM: https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#suggested-configuration
