@@ -10,7 +10,7 @@ local my_lualine = require('alex.utils.lualine-custom-theme')
 --- @param hide_in_width (number) hides component when window width is smaller then hide_in_width
 --- @param no_ellipsis (boolean) whether to disable adding '…' at end after truncation
 --- return function that can format the component accordingly
-function M:trunc(trunc_width, trunc_len, hide_in_width, no_ellipsis)
+function M.trunc(trunc_width, trunc_len, hide_in_width, no_ellipsis)
   return function(original_string)
     local win_width = vim.fn.winwidth(0)
 
