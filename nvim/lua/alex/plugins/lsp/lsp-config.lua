@@ -97,6 +97,7 @@ return {
 
     -- Configure Vuejs language server (with special settings)
     -- FROM: https://github.com/neovim/neovim/issues/20010#issuecomment-1968312764
+    -- FROM: https://www.reddit.com/r/neovim/comments/xy2xo8/vue_volar_error_request_initialize_failed/
     lspconfig['volar'].setup({
       init_options = {
         typescript = {
