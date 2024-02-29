@@ -55,15 +55,10 @@ return {
     -------------------------------------------
     --
     -- TODO: look at https://github.com/josean-dev/dev-environment-files/pull/43
-    local servers = {
-      'tsserver',
-      'html',
-      'cssls',
-      'tailwindcss',
-    }
+    local servers = { 'tsserver', 'html', 'cssls', 'tailwindcss', }
 
-    for _, lsp in ipairs(servers) do
-      lspconfig[lsp].setup({
+    for _, server in ipairs(servers) do
+      lspconfig[server].setup({
         capabilities = capabilities,
         -- on_attach = my_custom_on_attach,
       })
