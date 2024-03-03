@@ -14,10 +14,6 @@ return {
   opts = {
     view = {},
     renderer = {
-      highlight_git = 'all',
-      highlight_diagnostics = 'all',
-      highlight_opened_files = 'all',
-      highlight_modified = 'all',
       indent_markers = {
         enable = true,          -- Show lines in the tree
       },
@@ -28,6 +24,15 @@ return {
             -- arrow_open = '',   -- arrow when folder is open
             arrow_closed = '󰁕', -- arrow when folder is closed
             arrow_open = '󰁆',   -- arrow when folder is open
+          },
+          git = {
+            unstaged = '✗',
+            staged = '✓',
+            unmerged = '',
+            renamed = '➜',
+            untracked = '★',
+            deleted = '',
+            ignored = '◌',
           },
         },
       },
