@@ -51,7 +51,7 @@ return {
       },
     },
     filters = {
-      custom = { '.DS_Store' },
+      custom = { '.DS_Store', 'node_modules' },
     },
     git = {
       ignore = false,           -- False to show ignored folders like 'node_modules'
