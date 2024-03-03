@@ -6,6 +6,10 @@ if vim.g.neovide then
   vim.keymap.set('n', '<D-s>', ':w<CR>', opts)
   vim.keymap.set('i', '<D-s>', '<Esc>:w<CR>', opts)
 
+  -- Save All files with SHIFT+Cmd+s
+  vim.keymap.set('n', '<D-S>', ':wa<CR>', opts)
+  vim.keymap.set('i', '<D-S>', '<Esc>:wa<CR>', opts)
+
   -- Open a new tab with Cmd
   vim.keymap.set('', '<D-T>', '<Esc>:tabnew<CR>', opts)
 
