@@ -27,10 +27,12 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   command = [[%s/\s\+$//e]],
 })
 
--- Auto-resize splits when Vim gets resized.
-cmd [[
-  autocmd VimResized * wincmd =
-]]
+vim.api.nvim_create_autocmd('VimResized', {
+  desc = 'Auto-resize splits when Vim gets resized',
+  group = vim.api.nvim_create_augroup('ResizeWindowSplitsOnResized', {}),
+  pattern = '*',
+  command = [[ wincmd = ]],
+})
 
 -- Prevents from automatically inserting the current comment leader after hitting <Enter> in Insert mode.
 -- https://neovim.discourse.group/t/options-formatoptions-not-working-when-put-in-init-lua/3746/5
