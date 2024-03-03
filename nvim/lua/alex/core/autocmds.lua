@@ -59,8 +59,5 @@ vim.api.nvim_create_autocmd('VimEnter', {
 
     -- change to the directory
     vim.cmd.cd(data.file)
-
-    -- open the tree
-    require('nvim-tree.api').tree.open()
   end
 })
