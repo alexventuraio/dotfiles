@@ -46,11 +46,21 @@ vim.api.nvim_create_user_command(
   }
 )
 
--- FROM: https://www.reddit.com/r/neovim/comments/o53wlw/starting_neovim_with_a_folder_argument_makes/
--- FOLLOW UP: https://github.com/nvim-tree/nvim-tree.lua/discussions/2062#discussioncomment-8598767
+-- FROM: https://github.com/nvim-tree/nvim-tree.lua/wiki/Open-At-Startup#open-for-directories-and-change-neovims-directory
 vim.api.nvim_create_autocmd('VimEnter', {
   desc = 'Open Nvim-Tree on the given directory from command line',
-  group = vim.api.nvim_create_augroup('NvimTreeSetGivenDirectory', { clear = true }),
-  pattern = '*',
-  command = "if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | wincmd p | enew | execute 'cd '.argv()[0] | endif",
+  callback = function(data)
+    -- buffer is a directory
+    local directory = vim.fn.isdirectory(data.file) == 1
+
+    if not directory then
+      return
+    end
+
+    -- change to the directory
+    vim.cmd.cd(data.file)
+
+    -- open the tree
+    require('nvim-tree.api').tree.open()
+  end
 })
