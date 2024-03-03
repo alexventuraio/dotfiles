@@ -1,5 +1,13 @@
 local cmd = vim.cmd
 
+vim.api.nvim_create_autocmd('FileType', {
+  desc = 'To close the Help window from with q',
+  pattern = { 'help' },
+  callback = function()
+    vim.keymap.set('n', 'q', vim.cmd.quit)
+  end
+})
+
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight on yank',
   group = vim.api.nvim_create_augroup('HighlightOnYank', {}),
@@ -12,7 +20,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-vim.api.nvim_create_autocmd({'BufWritePre'}, {
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   desc = 'Strip trailing whitespace on file save',
   group = vim.api.nvim_create_augroup('StripTrailingWhitespacesOnSave', {}),
   pattern = '*',
