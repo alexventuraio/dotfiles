@@ -9,8 +9,8 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight on yank',
-  group = vim.api.nvim_create_augroup('HighlightOnYank', {}),
+  desc = 'Highlight on yank (copying) text',
+  group = vim.api.nvim_create_augroup('HighlightOnYank', { clear = true }),
   pattern = '*',
   callback = function()
     vim.highlight.on_yank({
