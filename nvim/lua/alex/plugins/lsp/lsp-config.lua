@@ -118,6 +118,7 @@ return {
       capabilities = capabilities,
       cmd = { '/Users/alex/.rvm/gems/ruby-3.1.4@devpost-teams/bin/ruby-lsp' },
       -- cmd = { '/Users/alex/.local/share/nvim/mason/packages/ruby-lsp/ruby-lsp' },
+      filetypes = { 'ruby', 'eruby' },
       on_attach = function(client, buffer)
         ruby_lsp.setup_diagnostics(client, buffer)
         ruby_lsp.add_ruby_deps_command(client, buffer)
