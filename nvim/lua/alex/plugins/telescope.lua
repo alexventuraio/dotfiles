@@ -24,7 +24,7 @@ return {
         prompt_prefix = ' ',
         selection_caret = ' ',
         -- path_display = { 'smart' },  -- remove as much from the path as possible (causes some slowlyness)
-        file_ignore_patterns = { 'node_modules' },
+        file_ignore_patterns = { "node%_modules/.*" },
 
         mappings = {
           i = {
