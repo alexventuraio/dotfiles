@@ -45,3 +45,27 @@ ls.add_snippets('ruby', {
     text('byebug')
   }),
 })
+
+ls.add_snippets(nil, {
+  eruby = {
+    snip({
+      trig = '%',
+      namr = 'ERB executable line',
+      dscr = 'Create a new executable Ruby line inside an ERB view file.',
+    }, {
+      text('<% '),
+      insert(1, 'statement_to_execute'),
+      text(' %>'),
+    }),
+
+    snip({
+      trig = '#',
+      namr = 'ERB comment',
+      dscr = 'Create a new commentable line in an ERB view file.',
+    }, {
+      text('<%# '),
+      insert(1, 'statement_to_print'),
+      text(' %>'),
+    }),
+  },
+})
