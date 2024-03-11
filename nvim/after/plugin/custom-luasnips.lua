@@ -1,3 +1,5 @@
+-- INFO: https://youtu.be/FmHhonPjvvA?si=ai4pJQBYgMocgbd4
+-- NOTE: https://sbulav.github.io/vim/neovim-setting-up-luasnip/
 local ls = require('luasnip')
 
 -- some shorthands...
