@@ -7,10 +7,13 @@ return {
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
     keywords = {
-      FROM = { icon = ' ', color = 'from' },
+      FROM = { icon = ' ', color = 'from' },
+      TEST = { color = 'test' },
     },
     colors = {
-      from = { '#ECF0F1' }
+      from = { '#DFFF00' },
+      white = { '#ECF0F1' },
+      test = { '#FF7F50' },
     },
   }
 }
