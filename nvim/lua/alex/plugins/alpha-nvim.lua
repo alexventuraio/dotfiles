@@ -33,8 +33,8 @@ return {
     -- Disable folding on alpha buffer
     vim.cmd([[ autocmd FileType alpha setlocal nofoldenable ]])
 
-    -- require'alpha'.setup(require'alpha.themes.startify'.config)
-    -- require'alpha'.setup(require'alpha.themes.dashboard'.config)
-    -- require'alpha'.setup(require'alpha.themes.theta'.config)
+    -- require('alpha').setup(require'alpha.themes.startify'.config)
+    -- require('alpha').setup(require'alpha.themes.dashboard'.config)
+    require('alpha').setup(require'alpha.themes.theta'.config)
   end,
 };
