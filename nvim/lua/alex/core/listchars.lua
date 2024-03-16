@@ -3,7 +3,7 @@
 --
 -- https://vi.stackexchange.com/a/37971/31190 | https://stackoverflow.com/a/73842509
 -- vim.opt.listchars = { lead = '·', space = '_', tab = '▶‒', nbsp = '·', trail = '∙', extends = '▶', precedes = '◀', eol = '¶' }
-vim.opt.listchars = { lead = '·', tab = '▸─', nbsp = '␣', trail = '•', extends = '»', precedes = '«', eol = '¬' }
+vim.opt.listchars = { tab = '▸─', nbsp = '␣', trail = '•', extends = '»', precedes = '«', eol = '¬' }
 vim.opt.list = true
 
 
