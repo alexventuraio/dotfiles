@@ -16,6 +16,9 @@ vim.cmd([[
   execute 'inoremap <script> <special> <D-v>' paste#paste_cmd['i']
 ]])
 
+-- Commands to run after installing Neovim
+-- -> pip3 install pynvim
+
 -- Debuggin options in Lua:
 -- :lua vim.print(vim.opt.whichwrap:get())  --> to see the output of the vim option in cmdline
 -- :verb set formatoptions --> to see the last file that modifies formatoptions setting
