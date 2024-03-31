@@ -10,6 +10,11 @@ vim.g.maplocalleader = ' '
 
 ---------------------------------- NORMAL ----------------------------------------
 
+-- To center hi-searches
+-- FROM: https://github.com/ThePrimeagen/init.lua
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
 -- Splits management
 vim.keymap.set('n', '<leader>sv', '<C-w>v') -- split window vertically
 vim.keymap.set('n', '<leader>sh', '<C-w>s') -- split window horizontally
