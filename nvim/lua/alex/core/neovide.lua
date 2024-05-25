@@ -20,7 +20,8 @@ if vim.g.neovide then
   vim.keymap.set('n', '<D-}>', ':tabnext<CR>', opts)
 
   -- To interprets Alt + whatever as <M-whatever>
-  vim.g.neovide_input_macos_alt_is_meta = true
+  -- FROM: https://neovide.dev/configuration.html#macos-option-key-is-meta
+  vim.g.neovide_input_macos_option_key_is_meta = 'both'
 
   -- Disable cursor animation
   vim.g.neovide_cursor_animation_length = 0             -- 'railgun'
