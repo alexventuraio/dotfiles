@@ -7,8 +7,6 @@ vim.g.loaded_netrwPlugin = 1
 -- vim.g.netrw_winsize = 30                           -- the tree will use only 30% of the columns available
 -- vim.g.netrw_liststyle = 3                          -- full tree style listing
 
-vim.g.neovide_input_macos_alt_is_meta = false      -- https://neovide.dev/configuration.html#macos-alt-is-meta
-
 -- File editing
 vim.opt.fileencoding = 'utf-8'                     -- the encoding written to a file
 vim.opt.backup = false                             -- creates a backup file
