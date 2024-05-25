@@ -115,7 +115,7 @@ return {
     -- Configure Ruby language server (with special settings)
     -- FROM: https://github.com/Shopify/ruby-lsp/issues/1248#issuecomment-1968226922
     local ruby_lsp = require('alex.utils.ruby-lsp')
-    lspconfig['ruby_ls'].setup({
+    lspconfig['ruby_lsp'].setup({
       capabilities = capabilities,
       cmd = { '/Users/alex/.rvm/gems/ruby-3.1.4@devpost-teams/bin/ruby-lsp' },
       -- cmd = { '/Users/alex/.local/share/nvim/mason/packages/ruby-lsp/ruby-lsp' },
