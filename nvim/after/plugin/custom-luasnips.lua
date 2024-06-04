@@ -46,6 +46,14 @@ ls.add_snippets('ruby', {
   }, {
     text('byebug')
   }),
+
+  snip({
+    trig = 'pshot',
+    name = 'Take a page screenshoot with Capybara',
+    dscr = 'This will take a screenshoot at the current state of the page and open it right away.'
+  }, {
+    text('page.save_and_open_screenshot(full: true)')
+  }),
 })
 
 ls.add_snippets(nil, {
