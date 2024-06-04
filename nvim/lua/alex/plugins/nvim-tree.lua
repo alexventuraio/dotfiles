@@ -56,10 +56,8 @@ return {
       },
     },
     filters = {
+      git_ignored = false,      -- False to show ignored folders like 'node_modules'
       custom = { '.DS_Store', 'node_modules' },
-    },
-    git = {
-      ignore = false,           -- False to show ignored folders like 'node_modules'
     },
     actions = {
       open_file = {
