@@ -55,7 +55,7 @@ return {
     -------------------------------------------
     --
     -- TODO: look at https://github.com/josean-dev/dev-environment-files/pull/43
-    local servers = { 'tsserver', 'html', 'cssls', 'tailwindcss', }
+    local servers = { 'ts_ls', 'html', 'cssls', 'tailwindcss', }
 
     for _, server in ipairs(servers) do
       lspconfig[server].setup({
