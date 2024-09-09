@@ -81,7 +81,7 @@ return {
 
     vim.keymap.set('n', 'ff', builtin.find_files, {})
     vim.keymap.set('n', 'fg', builtin.live_grep, {})   -- open explorer to live type and grep
-    vim.keymap.set('n', 'ft', builtin.grep_string, {}) -- grep for the string under your cursor or selection
+    vim.keymap.set('n', 'fw', builtin.grep_string, {}) -- grep for the string under your cursor or selection
     vim.keymap.set('n', 'fb', builtin.buffers, {})
     vim.keymap.set('n', 'fh', builtin.help_tags, {})
   end,
