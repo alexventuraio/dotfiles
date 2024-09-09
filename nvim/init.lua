@@ -2,6 +2,7 @@ require('alex.core')
 -- require('alex.utils')
 require('alex.lazy')
 require('alex.core.listchars')
+require('alex.utils.encourage').setup()
 
 vim.cmd([[
   """"" Copy-Paste with Cmd-v Cmd-c Cmd-x
