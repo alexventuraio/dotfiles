@@ -47,4 +47,16 @@ return {
   --     vim.cmd.colorscheme('dracula')
   --   end,
   -- },
+  -- {
+  --   '0xstepit/flow.nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   -- tag = 'v2.0.0',
+  --   -- opts = {
+  --   --   -- Your configuration options here.
+  --   -- },
+  --   config = function()
+  --     -- vim.cmd.colorscheme('flow')
+  --   end,
+  -- },
 }
