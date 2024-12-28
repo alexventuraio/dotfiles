@@ -7,6 +7,12 @@ vim.g.loaded_netrwPlugin = 1
 -- vim.g.netrw_winsize = 30                           -- the tree will use only 30% of the columns available
 -- vim.g.netrw_liststyle = 3                          -- full tree style listing
 
+-- Set the title of the window to the opened file relative path
+vim.opt.title = true                               -- when on, the title of the window will be set to the value of 'titlestring'
+-- vim.opt.titlelen = 0                               -- do not shorten title
+-- vim.opt.titlestring = '%t%( %M%)%( (%{expand("%:~:h")})%)%a - Nvim' -- Full file path (used by default when turning on 'title')
+-- vim.opt.titlestring = '%t%( %M%)%( (%{expand(\"%:~:.:h\")})%)%( %a%)' -- Short file path
+
 -- File editing
 vim.opt.fileencoding = 'utf-8'                     -- the encoding written to a file
 vim.opt.backup = false                             -- creates a backup file
