@@ -59,4 +59,14 @@ return {
   --     -- vim.cmd.colorscheme('flow')
   --   end,
   -- },
+  -- {
+  --   'neko-night/nvim',
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     -- Set the theme for lualine config: theme = 'nekonight'
+  --     vim.cmd.colorscheme('nekonight-storm')
+  --   end,
+  -- },
 }
