@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " IDE
+Plug 'tomasr/molokai'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
@@ -91,13 +92,13 @@ if (has("termguicolors"))
   set termguicolors
 endif
 " -------------------------------
-"colorscheme molokai
+colorscheme molokai
 "set transparency=15                    " To set a transparency on the app
 " *** Required to show molokai with light-grey background ***
 "let g:molokai_original = 1
 "set background=dark
 " -------------------------------
-colorscheme alex-material
+" colorscheme alex-material
 " -------------------------------
 " colorscheme cobalt2
 " ============================================================ }}}
