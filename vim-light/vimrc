@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 
 " IDE
 Plug 'tomasr/molokai'
+Plug 'sheerun/vim-polyglot'
 Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
