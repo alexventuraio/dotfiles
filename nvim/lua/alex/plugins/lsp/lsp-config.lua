@@ -100,7 +100,13 @@ return {
     -- FROM: https://www.reddit.com/r/neovim/comments/xy2xo8/vue_volar_error_request_initialize_failed/
     -- WARN: https://github.com/vuejs/language-tools/discussions/606#discussioncomment-8767785
     lspconfig['volar'].setup({
+      -- add filetypes for typescript, javascript and vue
+      filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
       init_options = {
+        vue = {
+          -- disable hybrid mode
+          hybridMode = false,
+        },
         typescript = {
           -- tsdk = '/path/to/.npm/lib/node_modules/typescript/lib'
           -- tsdk = '/Users/alex/.nvm/versions/node/v16.13.2/lib/node_modules/typescript/lib'
