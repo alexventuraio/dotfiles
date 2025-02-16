@@ -51,12 +51,14 @@ return {
   --   '0xstepit/flow.nvim',
   --   lazy = false,
   --   priority = 1000,
-  --   -- tag = 'v2.0.0',
+  --   -- tag = 'v2.0.2',
   --   -- opts = {
   --   --   -- Your configuration options here.
   --   -- },
-  --   config = function()
-  --     -- vim.cmd.colorscheme('flow')
+  --   config = function(_, opts)
+  --     require('flow').setup(opts)
+  --
+  --     vim.cmd.colorscheme('flow')
   --   end,
   -- },
   -- {
