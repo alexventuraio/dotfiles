@@ -114,7 +114,7 @@ endif
 
 
 " ============================================================ Vim-Airline config {{
-let g:airline_theme='dark_alex'
+"let g:airline_theme='dark_alex'
 " For molokai colorscheme use custom theme to change filename color on inactive windows
 "let g:airline_theme='dark_alex'
 " Enable smarter tab line to be colored
