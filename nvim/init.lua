@@ -19,6 +19,9 @@ vim.cmd([[
 
 -- Commands to run after installing Neovim
 -- -> pip3 install pynvim
+-- -> yarn global add neovim
+-- -> gem install neovim
+-- -> gem install ruby-lsp
 
 -- Debuggin options in Lua:
 -- :lua vim.print(vim.opt.whichwrap:get())  --> to see the output of the vim option in cmdline
