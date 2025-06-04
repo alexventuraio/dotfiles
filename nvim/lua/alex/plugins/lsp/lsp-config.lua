@@ -99,7 +99,7 @@ return {
     -- FROM: https://github.com/neovim/neovim/issues/20010#issuecomment-1968312764
     -- FROM: https://www.reddit.com/r/neovim/comments/xy2xo8/vue_volar_error_request_initialize_failed/
     -- WARN: https://github.com/vuejs/language-tools/discussions/606#discussioncomment-8767785
-    lspconfig['vue_ls'].setup({
+    lspconfig['volar'].setup({
       -- add filetypes for typescript, javascript and vue
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
       init_options = {
