@@ -6,9 +6,6 @@ return {
     { 'antosha417/nvim-lsp-file-operations', config = true },
   },
   config = function()
-    -- import lspconfig plugin
-    local lspconfig = require('lspconfig')
-
     -- import cmp-nvim-lsp plugin
     local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
@@ -58,10 +55,11 @@ return {
     local servers = { 'ts_ls', 'html', 'cssls', 'tailwindcss', }
 
     for _, server in ipairs(servers) do
-      lspconfig[server].setup({
+      vim.lsp.config(server, {
         capabilities = capabilities,
         -- on_attach = my_custom_on_attach,
       })
+      vim.lsp.enable(server)
     end
 
 
@@ -70,13 +68,14 @@ return {
     ------------------------------------------
     --
     -- Configure Emmet language server
-    lspconfig['emmet_ls'].setup({
+    vim.lsp.config('emmet_ls', {
       capabilities = capabilities,
       filetypes = { 'html', 'javascriptreact', 'css', 'sass', 'scss', 'eruby', 'vue' },
     })
+    vim.lsp.enable('emmet_ls')
 
     -- Configure Lua language server (with special settings)
-    lspconfig['lua_ls'].setup({
+    vim.lsp.config('lua_ls', {
       capabilities = capabilities,
       settings = { -- custom settings for lua
         Lua = {
@@ -94,12 +93,14 @@ return {
         },
       },
     })
+    vim.lsp.enable('lua_ls')
 
     -- Configure Vuejs language server (with special settings)
     -- FROM: https://github.com/neovim/neovim/issues/20010#issuecomment-1968312764
     -- FROM: https://www.reddit.com/r/neovim/comments/xy2xo8/vue_volar_error_request_initialize_failed/
     -- WARN: https://github.com/vuejs/language-tools/discussions/606#discussioncomment-8767785
-    lspconfig['volar'].setup({
+    vim.lsp.config('volar', {
+      capabilities = capabilities,
       -- add filetypes for typescript, javascript and vue
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
       init_options = {
@@ -117,11 +118,12 @@ return {
         }
       }
     })
+    vim.lsp.enable('volar')
 
     -- Configure Ruby language server (with special settings)
     -- FROM: https://github.com/Shopify/ruby-lsp/issues/1248#issuecomment-1968226922
     local ruby_lsp = require('alex.utils.ruby-lsp')
-    lspconfig['ruby_lsp'].setup({
+    vim.lsp.config('ruby_lsp', {
       capabilities = capabilities,
       cmd = { '/Users/alex/.rvm/gems/ruby-3.1.4@devpost-teams/bin/ruby-lsp' },
       -- cmd = { '/Users/alex/.local/share/nvim/mason/packages/ruby-lsp/ruby-lsp' },
@@ -131,6 +133,7 @@ return {
         ruby_lsp.add_ruby_deps_command(client, buffer)
       end,
     })
+    vim.lsp.enable('ruby_lsp')
 
 
     -- Use LspAttach autocommand to only map the following keys
