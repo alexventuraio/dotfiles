@@ -99,7 +99,7 @@ return {
     -- FROM: https://github.com/neovim/neovim/issues/20010#issuecomment-1968312764
     -- FROM: https://www.reddit.com/r/neovim/comments/xy2xo8/vue_volar_error_request_initialize_failed/
     -- WARN: https://github.com/vuejs/language-tools/discussions/606#discussioncomment-8767785
-    vim.lsp.config('volar', {
+    vim.lsp.config('vue_ls', {
       capabilities = capabilities,
       -- add filetypes for typescript, javascript and vue
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
@@ -118,7 +118,7 @@ return {
         }
       }
     })
-    vim.lsp.enable('volar')
+    vim.lsp.enable('vue_ls')
 
     -- Configure Ruby language server (with special settings)
     -- FROM: https://github.com/Shopify/ruby-lsp/issues/1248#issuecomment-1968226922
