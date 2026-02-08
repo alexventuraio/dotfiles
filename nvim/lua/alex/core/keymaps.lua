@@ -87,3 +87,22 @@ vim.keymap.set('x', 'J', ":move '>+1<CR>gv=gv", opts)
 vim.keymap.set('x', 'K', ":move '<-2<CR>gv=gv", opts)
 vim.keymap.set('x', '<A-j>', ":move '>+1<CR>gv=gv", opts)
 vim.keymap.set('x', '<A-k>', ":move '<-2<CR>gv=gv", opts)
+
+
+
+
+---------------------------------- MAPS FROM iTERM ----------------------------------
+-- INFO: First map the key combinations in iTerm config to send specific escape sequences, like `Command+Option+[` to
+-- send `Esc+[25~` (which is the escape sequence for F13) then in Neovim we map those escape sequences as follow:
+-- iTerm map `Command+Option+[` to send `Esc+[25~` sequence (the F13 key) to Neovim
+-- iTerm map `Command+Option+]` to send `Esc+[26~` sequence (the F14 key) to Neovim
+-- iTerm map `Command+Option+n` to send `Esc+[27~` sequence (the F15 key) to Neovim
+
+-- Map F13 to go to previous tab
+vim.keymap.set('n', '<F13>', ':tabprevious<CR>', { silent = true })
+
+-- Map F14 to go to next tab
+vim.keymap.set('n', '<F14>', ':tabnext<CR>', { silent = true })
+
+-- Map F15 to create a new tab
+vim.keymap.set('n', '<F15>', ':tabnew<CR>', { silent = true })
