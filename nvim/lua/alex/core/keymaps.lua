@@ -106,3 +106,10 @@ vim.keymap.set('n', '<F14>', ':tabnext<CR>', { silent = true })
 
 -- Map F15 to create a new tab
 vim.keymap.set('n', '<F15>', ':tabnew<CR>', { silent = true })
+
+
+
+
+---------------------------------- MAPS FROM TERMINAL MODE ----------------------------------
+-- FROM: https://neovim.io/doc/user/terminal.html#terminal-input
+vim.api.nvim_set_keymap('t', '<Esc>', '<C-\\><C-n>', { noremap = true, silent = true })
