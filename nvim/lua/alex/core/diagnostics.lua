@@ -27,6 +27,7 @@ vim.diagnostic.config({
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 -- FROM: https://github.com/neovim/nvim-lspconfig?tab=readme-ov-file#suggested-configuration
+-- FROM: https://github.com/folke/lazy.nvim/discussions/2017#discussioncomment-13743459
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end, { desc = 'diagnostic goto_prev' })
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end, { desc = 'diagnostic goto_next' })
