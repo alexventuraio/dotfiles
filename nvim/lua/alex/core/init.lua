@@ -1,4 +1,5 @@
 require('alex.core.options')
+require('alex.core.diagnostics')
 require('alex.core.keymaps')
 require('alex.core.autocmds')
 require('alex.core.neovide')
