@@ -4,29 +4,43 @@ return {
   -- },
   {
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master',
+    branch = 'main', -- Critical: use main, not master for Neovim 0.12+ compatibility
     build = ':TSUpdate',
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
-      local treesitter = require('nvim-treesitter.configs')
+      -- Enable parsers and features manually
+      local configs = require('nvim-treesitter.config')
 
-      treesitter.setup({
-        ensure_installed = {
-          'c', 'lua', 'vim', 'vimdoc', 'query', 'javascript', 'html', 'ruby', 'vue', 'css', 'scss', 'markdown', 'json', 'gitignore', 'dockerfile', 'bash', 'typescript'
-        },
-        auto_install = true,
-        sync_install = false,
-        highlight = { enable = true },
-        indent = { enable = true },
+      local ensure_installed_parsers = {
+        'c', 'lua', 'vim', 'vimdoc', 'query', 'javascript', 'html', 'ruby', 'vue', 'css', 'scss', 'markdown', 'json', 'gitignore', 'dockerfile', 'bash', 'typescript'
+      }
 
-        -- rainbow = {
-        --   enable = true,
-        --   -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
-        --   extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-        --   max_file_lines = nil, -- Do not enable for files with more than n lines, int
-        --   -- colors = {}, -- table of hex strings
-        --   -- termcolors = {} -- table of colour name strings
-        -- },
+      -- Only install if not already present
+      local installed = configs.get_installed()
+      local to_install = {}
+
+      for _, lang in ipairs(ensure_installed_parsers) do
+        if not vim.tbl_contains(installed, lang) then
+          table.insert(to_install, lang)
+        end
+      end
+
+      if #to_install > 0 then
+        require('nvim-treesitter').install(to_install)
+      end
+
+      -- Enable highlighting and indentation via FileType autocmd
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function(args)
+          local lang = vim.treesitter.language.get_lang(args.match)
+
+          if lang and vim.treesitter.get_parser(args.buf, lang, { error = false }) then
+            -- Enable treesitter highlighting
+            pcall(vim.treesitter.start, args.buf, lang)
+            -- Enable treesitter-based indentation
+            vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
       })
     end
   },
