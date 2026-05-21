@@ -20,8 +20,8 @@ local function show_floating_message(message)
   local width = #message
   local height = 1
   local buf = vim.api.nvim_create_buf(false, true)
-  local win_height = vim.api.nvim_get_option('lines')
-  local win_width = vim.api.nvim_get_option('columns')
+  local win_height = vim.api.nvim_get_option_value('lines', {})
+  local win_width = vim.api.nvim_get_option_value('columns', {})
 
   local opts = {
     style = 'minimal',
@@ -34,10 +34,10 @@ local function show_floating_message(message)
   }
 
   local win = vim.api.nvim_open_win(buf, false, opts)
-  vim.api.nvim_buf_set_lines(buf, 0, -1, false, {' ' .. message .. ' '})
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, { ' ' .. message .. ' ' })
 
   -- Use FloatBorder for the border color
-  vim.api.nvim_win_set_option(win, 'winhl', 'Normal:NormalFloat,FloatBorder:FloatBorder')
+  vim.api.nvim_set_option_value('winhl', 'Normal:NormalFloat,FloatBorder:FloatBorder', { win = win })
 
   -- Set a timer to close the window after 5 seconds
   vim.defer_fn(function()
@@ -68,8 +68,8 @@ function M.setup(opts)
   local encouragements = opts.messages or default_encouragements
   local plugin = vim.api.nvim_create_augroup('CustomWriteMessage', { clear = true })
   vim.api.nvim_create_autocmd('BufWritePost', {
-    group=plugin,
-    callback=function()
+    group = plugin,
+    callback = function()
       custom_write_message(encouragements)
     end
   })
