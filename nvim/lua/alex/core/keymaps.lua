@@ -58,6 +58,17 @@ vim.keymap.set({ 'n', 'o', 'x' }, '<S-l>', 'g_', opts)
 -- Global Substitution of the current word
 vim.keymap.set('n', '<leader>su', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Yank relative buffer path to system clipboard
+vim.keymap.set('n', '<leader>yf', function()
+  -- %:. → path relative to :pwd.
+  -- Use %:~:. if you want ~ expansion for paths outside cwd, or %:p for absolute.
+  -- '+' register → system clipboard (requires Neovim built with clipboard support; :checkhealth if unsure).
+  local path = vim.fn.expand('%:.')  -- path relative to cwd
+
+  vim.fn.setreg('+', path)           -- system clipboard
+  vim.notify('Copied: ' .. path)
+end, { desc = 'Yank relative buffer path' })
+
 
 
 
