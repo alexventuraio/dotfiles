@@ -69,6 +69,11 @@ vim.keymap.set('n', '<leader>yf', function()
   vim.notify('Copied: ' .. path)
 end, { desc = 'Yank relative buffer path' })
 
+-- Open Markdown Viewer in Brave incognito
+vim.keymap.set('n', '<leader>md', function()
+  vim.fn.jobstart({ 'open', '-na', 'Brave Browser', '--args', '--incognito', 'https://markdownviewer.pages.dev/' })
+end, { desc = 'Open Markdown Viewer in Brave incognito' })
+
 
 
 
