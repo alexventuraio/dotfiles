@@ -29,7 +29,7 @@ return {
       -- vim.cmd.colorscheme('tokyonight-night')
       -- vim.cmd.colorscheme('tokyonight-storm')
       -- vim.cmd.colorscheme('tokyonight-day')
-      vim.cmd.colorscheme('tokyonight-moon')
+      -- vim.cmd.colorscheme('tokyonight-moon')
     end,
   },
   -- {
@@ -71,4 +71,15 @@ return {
   --     vim.cmd.colorscheme('nekonight-storm')
   --   end,
   -- },
+  {
+    'navarasu/onedark.nvim',
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function()
+      require('onedark').setup {
+        style = 'darker'
+      }
+
+      require('onedark').load()
+    end
+  }
 }

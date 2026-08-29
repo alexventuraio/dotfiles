@@ -19,7 +19,7 @@ require('lazy').setup(
   {
     install = {
       -- try to load one of these colorschemes when starting an installation during startup
-      colorscheme = { 'nightfly' },
+      colorscheme = { 'onedark' },
     },
     checker = {
       enabled = true, -- To check package updates available
