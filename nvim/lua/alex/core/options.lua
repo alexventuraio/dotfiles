@@ -46,7 +46,15 @@ vim.opt.cursorline = true                          -- highlight the current line
 vim.opt.scrolloff = 8                              -- start scrolling text before reaching the bottom
 vim.opt.sidescrolloff = 8
 vim.opt.showmatch = true                           -- show matching brackets
-vim.opt.guifont = 'OperatorMonoLig Nerd Font Mono:h16:Regular'  -- the font used in graphical neovim applications (bolder)
+
+-- the font used in graphical neovim applications (bolder)
+if vim.fn.has('gui_running') == 1 then
+  if vim.g.neovide then
+    vim.opt.guifont = 'OperatorMonoLig Nerd Font Mono:h16:Regular'  -- (bolder)
+  else
+    vim.opt.guifont = 'OperatorMonoLigNFM:h16'
+  end
+end
 -- vim.opt.guifont = 'OperatorMonoSSmLig Nerd Font Mono:h16:Regular'          -- the font used in graphical neovim applications (bolder)
 
 -- Behaviour
