@@ -91,7 +91,7 @@ return {
     local ruby_lsp = require('alex.utils.ruby-lsp')
     vim.lsp.config('ruby_lsp', {
       capabilities = capabilities,
-      cmd = { '/Users/alex/.rvm/gems/ruby-3.1.4@devpost-teams/bin/ruby-lsp' },
+      cmd = { '/Users/alex/.rvm/gems/ruby-3.3.10@devpost-teams/bin/ruby-lsp' },
       -- cmd = { '/Users/alex/.local/share/nvim/mason/packages/ruby-lsp/ruby-lsp' },
       filetypes = { 'ruby' },
       on_attach = function(client, buffer)
