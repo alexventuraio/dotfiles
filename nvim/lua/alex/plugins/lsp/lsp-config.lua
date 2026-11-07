@@ -69,20 +69,6 @@ return {
       capabilities = capabilities,
       -- add filetypes for typescript, javascript and vue
       filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-      init_options = {
-        vue = {
-          -- disable hybrid mode
-          hybridMode = false,
-        },
-        typescript = {
-          -- tsdk = '/path/to/.npm/lib/node_modules/typescript/lib'
-          -- tsdk = '/Users/alex/.nvm/versions/node/v16.13.2/lib/node_modules/typescript/lib'
-          -- tsdk = '/Users/alex/.config/yarn/global/node_modules/typescript/lib'
-          tsdk = '/Users/alex/.local/share/nvim/mason/packages/typescript-language-server/node_modules/typescript/lib'
-          -- Alternative location if installed as root:
-          -- tsdk = '/usr/local/lib/node_modules/typescript/lib'
-        }
-      }
     })
     vim.lsp.enable('vue_ls')
 
