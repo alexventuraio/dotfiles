@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
   end,
 })
 
--- Custom command for :GBrowser to work properly
+-- Custom command for :GBrowser from 'git-config.lua' to work properly
 vim.api.nvim_create_user_command(
   'Browse',
   function (opts)
